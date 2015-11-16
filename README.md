@@ -1,6 +1,6 @@
 ![logo](http://zixun.github.io/images/custom/vender/icon.png)
 # CocoaChina+
-CocoaChina+是一款开源的第三方CocoaChina移动端。整个App都用Swift2.0编写(除部分第三方OC代码外)。
+CocoaChina+是一款开源的第三方CocoaChina移动端。整个App都用Swift2.0编写(除部分第三方OC代码外，比如JPush和友盟)。
 
 ## QQ群：516326791
 516326791
