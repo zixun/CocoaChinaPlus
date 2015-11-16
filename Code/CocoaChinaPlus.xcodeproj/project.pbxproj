@@ -32,7 +32,6 @@
 		9E5A57121BADBEB000968FC0 /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5A57051BADBEB000968FC0 /* libUMSocial_Sdk_Shake_1.0.a */; };
 		9E5A57131BADBEB000968FC0 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5A57081BADBEB000968FC0 /* libSocialWechat.a */; };
 		9E5A57141BADBEB000968FC0 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5A57091BADBEB000968FC0 /* libWeChatSDK.a */; };
-		9E61C32C1BBC398C00C360E2 /* SwiftFucker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E61C32B1BBC398C00C360E2 /* SwiftFucker.m */; };
 		9E61C3301BBC463800C360E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E61C32F1BBC463800C360E2 /* Localizable.strings */; };
 		9E61C3331BBD4BC900C360E2 /* CCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E61C3321BBD4BC900C360E2 /* CCProfileViewController.swift */; };
 		9E6B7DED1B8E069400591846 /* AppDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6B7DEC1B8E069400591846 /* AppDef.swift */; };
@@ -149,8 +148,6 @@
 		9E5A570C1BADBEB000968FC0 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		9E61C3261BBB19B300C360E2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		9E61C3281BBB19F900C360E2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		9E61C32A1BBC398C00C360E2 /* SwiftFucker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftFucker.h; sourceTree = "<group>"; };
-		9E61C32B1BBC398C00C360E2 /* SwiftFucker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftFucker.m; sourceTree = "<group>"; };
 		9E61C32F1BBC463800C360E2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9E61C3321BBD4BC900C360E2 /* CCProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCProfileViewController.swift; sourceTree = "<group>"; };
 		9E6B7DEC1B8E069400591846 /* AppDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDef.swift; sourceTree = "<group>"; };
@@ -417,8 +414,6 @@
 		9EE4EFFD1B79DEE80071423A /* CocoaChinaPlus */ = {
 			isa = PBXGroup;
 			children = (
-				9E61C32A1BBC398C00C360E2 /* SwiftFucker.h */,
-				9E61C32B1BBC398C00C360E2 /* SwiftFucker.m */,
 				9EE4EFFE1B79DEE80071423A /* AppDelegate.swift */,
 				9E56F9191BB457B200F57CB0 /* CCAppConfiguration.swift */,
 				E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */,
@@ -911,7 +906,6 @@
 				9E56F91A1BB457B200F57CB0 /* CCAppConfiguration.swift in Sources */,
 				9EE4F1161B7B8F760071423A /* CCPBBSViewController.swift in Sources */,
 				9EE4F1131B7B8F2C0071423A /* CCPTableArray.swift in Sources */,
-				9E61C32C1BBC398C00C360E2 /* SwiftFucker.m in Sources */,
 				9EE4F0651B79E1C90071423A /* ZXTabBarController.swift in Sources */,
 				9EE4F1181B7B93450071423A /* CCPBBSParser.swift in Sources */,
 				CE5380BC1BF18F5900751F55 /* CCHTMLParser.swift in Sources */,
