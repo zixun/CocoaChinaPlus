@@ -16,12 +16,5 @@
 //极光推送
 #import "APService.h"
 
-//环信
-//#import "EaseMob.h"
- #import <EaseMobSDK/EaseMob.h>
-
-//本地Vander OC代码
-#import "ChatViewController.h"
-#import "SwiftFucker.h"
 
 #endif

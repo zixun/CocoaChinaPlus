@@ -117,9 +117,7 @@ extension CCProfileViewController:UITableViewDataSource,UITableViewDelegate {
             
             switch indexPath.row {
             case 0 :
-                let chatroom = ChatViewController(chatter: "admin", isGroup: false)
-                chatroom.title = "CocoaChina+"
-                ZXNav().pushViewController(chatroom, animated: true)
+                print("QQqun")
                 
             case 1:
                 let vc = CCAboutViewController()

@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //模拟器模拟自动登录
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             let str = "simulator" as NSString
-            CCAccountMannage.sharedManage.loginWithDeviceToken(str.dataUsingEncoding(NSUTF8StringEncoding)!)
+            
         #endif
         
         return true
@@ -50,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         APService.registerDeviceToken(deviceToken)
-        CCAccountMannage.sharedManage.loginWithDeviceToken(deviceToken)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
@@ -68,13 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // App进入后台
     func applicationDidEnterBackground(application: UIApplication) {
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-        EaseMob.sharedInstance().applicationDidEnterBackground(application)
     }
     
     // App将要从后台返回
     func applicationWillEnterForeground(application: UIApplication) {
         application.applicationIconBadgeNumber = 0
-        EaseMob.sharedInstance().applicationWillEnterForeground(application)
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
@@ -83,7 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // 申请处理时间
     func applicationWillTerminate(application: UIApplication) {
-        EaseMob.sharedInstance().applicationWillTerminate(application)
     }
     
 

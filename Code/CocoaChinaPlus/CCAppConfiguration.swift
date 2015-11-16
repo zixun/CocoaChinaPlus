@@ -21,8 +21,6 @@ class CCAppConfiguration: NSObject {
         //极光推送
         CCAppConfiguration.configureJPush(launchOptions)
         
-        //环信配置
-        CCAppConfiguration.configureHuanXing(application, launchOptions: launchOptions)
     }
     
     /**
@@ -62,11 +60,6 @@ class CCAppConfiguration: NSObject {
                 CCRemoteNotificationHandler.sharedHandler.handle(userInfo);
             }
         }
-    }
-    
-    private class func configureHuanXing(application: UIApplication,launchOptions: [NSObject: AnyObject]?) {
-        EaseMob.sharedInstance().registerSDKWithAppKey("zixun#cocoachinaplus")
-        EaseMob.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
 }
