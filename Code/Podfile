@@ -1,0 +1,23 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+inhibit_all_warnings!
+
+pod 'ZXKit', git: 'https://github.com/zixun/ZXKit.git' # '~> 0.0.2'
+
+pod 'Neon', '~> 0.0.2'
+pod 'SwiftyUserDefaults', '~> 2.0.0'
+pod 'Ji', '~> 1.2.0'
+pod 'Alamofire', '~> 2.0.0'
+pod 'RxSwift', '~> 2.0.0-beta.2'
+pod 'RxCocoa', '~> 2.0.0-beta.2'
+pod 'RxBlocking', '~> 2.0.0-beta.2'
+pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
+pod 'SQLiteCipher.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
+
+#OC库
+pod 'SDWebImage', '~>3.7'
+pod 'SVPullToRefresh', '0.4.1'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'UMengAnalytics', '~> 3.5.10'
+pod 'EaseMobSDK', :git => 'https://github.com/easemob/sdk-ios-cocoapods.git'

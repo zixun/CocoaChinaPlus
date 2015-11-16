@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   PushConfig.plist
+   CocoaChinaPlus
+
+   Created by zixun on 15/9/22.
+   Copyright (c) 2015年 zixun. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>APS_FOR_PRODUCTION</key>
+        <string>0</string>
+        <key>APP_KEY</key>
+        <string>715e2a98775e7ec581728052</string>
+        <key>CHANNEL</key>
+        <string>Developing</string>
+    </dict>
+</plist>

@@ -1,0 +1,96 @@
+PODS:
+  - Alamofire (2.0.2)
+  - EaseMobSDK (2.2.1)
+  - Ji (1.2.0):
+    - Ji/Ji (= 1.2.0)
+  - Ji/Ji (1.2.0):
+    - Ji/Ji-libxml
+  - Ji/Ji-libxml (1.2.0)
+  - MBProgressHUD (0.9.1)
+  - Neon (0.0.3)
+  - RxBlocking (2.0.0-beta.2):
+    - RxSwift (~> 2.0.0-beta)
+  - RxCocoa (2.0.0-beta.2):
+    - RxSwift (~> 2.0.0-beta)
+  - RxSwift (2.0.0-beta.2)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - SQLCipher (3.1.0):
+    - SQLCipher/standard (= 3.1.0)
+  - SQLCipher/common (3.1.0)
+  - SQLCipher/standard (3.1.0):
+    - SQLCipher/common
+  - SQLite.swift (1.0.0)
+  - SQLiteCipher.swift (1.0.0):
+    - SQLCipher
+  - SVPullToRefresh (0.4.1)
+  - SwiftyUserDefaults (2.0.0)
+  - UMengAnalytics (3.5.16)
+  - ZXKit (0.0.3):
+    - MBProgressHUD (~> 0.9.1)
+    - Neon (~> 0.0.3)
+    - RxBlocking (~> 2.0.0-beta.2)
+    - RxCocoa (~> 2.0.0-beta.2)
+    - RxSwift (~> 2.0.0-beta.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 2.0.0)
+  - EaseMobSDK (from `https://github.com/easemob/sdk-ios-cocoapods.git`)
+  - Ji (~> 1.2.0)
+  - MBProgressHUD (~> 0.9.1)
+  - Neon (~> 0.0.2)
+  - RxBlocking (~> 2.0.0-beta.2)
+  - RxCocoa (~> 2.0.0-beta.2)
+  - RxSwift (~> 2.0.0-beta.2)
+  - SDWebImage (~> 3.7)
+  - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
+  - SQLiteCipher.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
+  - SVPullToRefresh (= 0.4.1)
+  - SwiftyUserDefaults (~> 2.0.0)
+  - UMengAnalytics (~> 3.5.10)
+  - ZXKit (from `https://github.com/zixun/ZXKit.git`)
+
+EXTERNAL SOURCES:
+  EaseMobSDK:
+    :git: https://github.com/easemob/sdk-ios-cocoapods.git
+  SQLite.swift:
+    :git: https://github.com/stephencelis/SQLite.swift.git
+  SQLiteCipher.swift:
+    :git: https://github.com/stephencelis/SQLite.swift.git
+  ZXKit:
+    :git: https://github.com/zixun/ZXKit.git
+
+CHECKOUT OPTIONS:
+  EaseMobSDK:
+    :commit: 310614cc1ab4c11686211e2e7f34a66ef4605460
+    :git: https://github.com/easemob/sdk-ios-cocoapods.git
+  SQLite.swift:
+    :commit: c9d3082d1f5ddc2e55a792a8eb1a677b8a1b15f5
+    :git: https://github.com/stephencelis/SQLite.swift.git
+  SQLiteCipher.swift:
+    :commit: c9d3082d1f5ddc2e55a792a8eb1a677b8a1b15f5
+    :git: https://github.com/stephencelis/SQLite.swift.git
+  ZXKit:
+    :commit: 0f6af090b1227136142a6e41eb927d65c63d73e0
+    :git: https://github.com/zixun/ZXKit.git
+
+SPEC CHECKSUMS:
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  EaseMobSDK: fb3586666015a02d63f41dbb3707bce82ab9f18b
+  Ji: ddebb22f9ac445db6e884b66f78ea74fb135fdb7
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Neon: 589d3d217d326abe09726bf81add106cff685bf2
+  RxBlocking: ffb518856fb7712dcef7e18406ccb8c2854b3104
+  RxCocoa: ee39aa3ab24a8dde3832669f8e1e2c7652925e0c
+  RxSwift: 795720c22352cf1f62669ef3695b5df7e195103b
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
+  SQLite.swift: 3bb75f5a650f08673276bc6d3fb1de1b542b8f4d
+  SQLiteCipher.swift: 6405d3937f6afc94614949336fd1fdefa37428b5
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
+  UMengAnalytics: fdf0c0a8c07d8bffc012ffa3c68e5d490af42098
+  ZXKit: 796296aca8f2f9f5ae5740a44970639b1f4fce04
+
+COCOAPODS: 0.39.0
