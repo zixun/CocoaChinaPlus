@@ -42,7 +42,7 @@ app内部整合了聊天室的功能，开发者可以直接进入和其他开�
 CocoaChina+用CocoaPods来管理，主要用到的第三方库为：
 
 	1.Neon   					强大的Swift布局库
-	2.Ji    					家拿到华人写的一个HTML解析库
+	2.Ji    					加拿大华人写的一个HTML解析库
 	3.Alamofire					这个就不说了
 	4.RxSwift					Swift版的RAC框架
 	5.SQLite.swift				Swift上操作SQLite数据库框架
