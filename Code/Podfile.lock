@@ -7,11 +7,11 @@ PODS:
   - Ji/Ji-libxml (1.2.0)
   - MBProgressHUD (0.9.1)
   - Neon (0.0.3)
-  - RxBlocking (2.0.0-beta.2):
+  - RxBlocking (2.0.0-beta.3):
     - RxSwift (~> 2.0.0-beta)
-  - RxCocoa (2.0.0-beta.2):
+  - RxCocoa (2.0.0-beta.3):
     - RxSwift (~> 2.0.0-beta)
-  - RxSwift (2.0.0-beta.2)
+  - RxSwift (2.0.0-beta.3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -73,9 +73,9 @@ SPEC CHECKSUMS:
   Ji: ddebb22f9ac445db6e884b66f78ea74fb135fdb7
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Neon: 589d3d217d326abe09726bf81add106cff685bf2
-  RxBlocking: ffb518856fb7712dcef7e18406ccb8c2854b3104
-  RxCocoa: ee39aa3ab24a8dde3832669f8e1e2c7652925e0c
-  RxSwift: 795720c22352cf1f62669ef3695b5df7e195103b
+  RxBlocking: 331f8bdedf77198f8ff1a37f09c492f1f4f631e5
+  RxCocoa: 1472006304b296d03c847f78b21384523cc4902e
+  RxSwift: 19fbe885b404d1d36d42ac8535134739a9b42952
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
   SQLite.swift: 3bb75f5a650f08673276bc6d3fb1de1b542b8f4d
