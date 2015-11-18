@@ -7,34 +7,32 @@
 //
 
 import UIKit
-import SDWebImage
 import ZXKit
 
+// MARK: CCPHomePage
 class CCPHomePage: ZXPage {
 
-    var displayView:UIView?
+    private weak var internalDisplayView: UIView?
     
-    func setDisplayVieww(view:UIView?) {
-//        if view == self.displayView {
-//            return
-//        }
+    func setDisplayView(view: UIView?) {
         
-        if self.displayView != nil {
-            self.displayView!.removeFromSuperview()
-            self.displayView = nil
+        //清除原先的 internalDisplayView
+        if let displayView = self.internalDisplayView {
+            displayView.removeFromSuperview()
         }
         
-        if view != nil {
-            view!.frame = self.bounds
-            self.contentView.addSubview(view!)
+        //設定為新的 view
+        if let unwrapView = view {
+            unwrapView.frame = self.bounds
+            self.contentView.addSubview(unwrapView)
+            self.internalDisplayView = unwrapView
         }
-        
-        self.displayView = view
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.displayView?.frame = self.bounds
+        self.internalDisplayView?.frame = self.bounds
     }
+    
 }
 
