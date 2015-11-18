@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    var tabbarController: ZXTabBarController!
+    let tabbarController = ZXTabBarController()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -23,10 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CCAppConfiguration.configure(application, launchOptions: launchOptions)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.backgroundColor = UIColor.blackColor()
-        self.tabbarController = ZXTabBarController()
-        self.window!.rootViewController = tabbarController
-        self.window!.makeKeyAndVisible()
+        if let window = self.window {
+            window.backgroundColor = UIColor.blackColor()
+            window.rootViewController = self.tabbarController
+            window.makeKeyAndVisible()
+        }
 
         //UINavigationBar设置
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
