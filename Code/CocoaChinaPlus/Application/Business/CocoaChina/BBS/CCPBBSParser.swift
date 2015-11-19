@@ -10,63 +10,70 @@ import UIKit
 import Alamofire
 import Ji
 
-class CCPBBSParser: NSObject {
+let baseURL = "http://www.cocoachina.com/bbs/3g"
 
-    var baseURL:String = "http://www.cocoachina.com/bbs/3g"
+// MARK: CCPBBSParser
+class CCPBBSParser {
     
-    static let sharedParser : CCPBBSParser = {
-        return CCPBBSParser()
-    }()
-    
-    func parserBBS(result: (model:CCPBBSModel) ->Void) {
+    //解析
+    class func parserBBS(result: (model: CCPBBSModel) -> Void) {
         
         CCRequest(.GET, baseURL).responseJi { (ji, error) -> Void in
             guard let nodes = ji?.xPath("//li[@class='articlelist clearfix']") else {
                 return
             }
-            var options = [CCPBBSOptionModel]()
             
-            for var i = 0; i < nodes.count; i++ {
-                let node = nodes[i]
-                let titleNode = node.xPath(".//p[@class='title bbs_title']/a").first!
-                let contentNode = node.xPath(".//p[@class='bbs_content']").first!
+            //檢查資料是否正確, 將正確的部分建立 model
+            var options = [CCPBBSOptionModel]()
+            for node in nodes {
+                guard
+                    let titleNode = node.xPath(".//p[@class='title bbs_title']/a").first,
+                    let contentNode = node.xPath(".//p[@class='bbs_content']").first,
+                    let title = titleNode.content,
+                    let content = contentNode.content,
+                    let urlString = titleNode["href"]
+                    else {
+                        print("資料毀損")
+                        continue
+                }
                 
-                let title = titleNode.content!
-                let content = contentNode.content!
-                let urlString = titleNode["href"]!
-                
+                //建立一個新的 option model
                 let option = CCPBBSOptionModel(title: title, content: content, urlString: urlString)
-                
                 options.append(option)
             }
-            
             let model = CCPBBSModel(options: options)
             
-            result(model:model)
+            //回調
+            result(model: model)
         }
     }
+    
 }
 
-
-class CCPBBSModel : NSObject {
-    var options:[CCPBBSOptionModel] = [CCPBBSOptionModel]()
+// MARK: CCPBBSModel
+class CCPBBSModel {
     
-    convenience init(options:[CCPBBSOptionModel]) {
+    var options = [CCPBBSOptionModel]()
+    
+    convenience init(options: [CCPBBSOptionModel]) {
         self.init()
         self.options = options
     }
+    
 }
 
-class CCPBBSOptionModel : NSObject {
-    var title : String = ""
-    var content : String = ""
-    var urlString: String = ""
+// MARK: CCPBBSOptionModel
+class CCPBBSOptionModel {
     
-    convenience init(title:String, content: String, urlString:String) {
+    var title  = ""
+    var content  = ""
+    var urlString  = ""
+    
+    convenience init(title: String, content: String, urlString: String) {
         self.init()
         self.title = title
         self.content = content
-        self.urlString = "http://www.cocoachina.com/bbs/3g/\(urlString)"
+        self.urlString = baseURL + "/" + urlString
     }
     
 }

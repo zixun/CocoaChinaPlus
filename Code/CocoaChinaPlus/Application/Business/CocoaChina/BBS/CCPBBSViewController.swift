@@ -7,16 +7,32 @@
 //
 
 import UIKit
-import Alamofire
-import SDWebImage
 import MBProgressHUD
 import ZXKit
 
+// MARK: CCPBBSViewController
 class CCPBBSViewController: ZXBaseViewController {
     
-    var tableView:UITableView = UITableView()
+    //UI
+    private lazy var tableView: UITableView = {
+        let newTableView = UITableView()
+        newTableView.backgroundColor = ZXColor(0x000000, alpha: 0.8)
+        newTableView.delegate = self
+        newTableView.dataSource = self
+        newTableView.separatorStyle = .None
+        
+        //tableview 下拉動作
+        newTableView.addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            guard let sself = self else {
+                return
+            }
+            sself.reloadTableView()
+        })
+        newTableView.registerClass(CCPBBSTableViewCell.self, forCellReuseIdentifier: "CCPBBSTableViewCell")
+        return newTableView
+    }()
     
-    var dataSource:CCPBBSModel = CCPBBSModel(options: [CCPBBSOptionModel]())
+    private var dataSource = CCPBBSModel(options: [CCPBBSOptionModel]())
     
     required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
         super.init(navigatorURL: URL, query: query)
@@ -28,25 +44,9 @@ class CCPBBSViewController: ZXBaseViewController {
         self.setup()
     }
     
-    private func setup() {
-
-        self.tableView.backgroundColor = ZXColor(0x000000, alpha: 0.8)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.separatorStyle = .None
-        self.view.addSubview(self.tableView)
-        
-        weak var weakSelf = self
-        self.tableView.addPullToRefreshWithActionHandler({ () -> Void in
-            if let weakSelf = weakSelf {
-                weakSelf._reloadTableView()
-            }
-        })
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self._reloadTableView()
+        self.reloadTableView()
     }
     
     override func viewWillLayoutSubviews() {
@@ -54,61 +54,84 @@ class CCPBBSViewController: ZXBaseViewController {
         self.tableView.fillSuperview()
     }
     
-    private func _reloadTableView() {
+}
+
+// Private Instance Method
+extension CCPBBSViewController {
+    
+    //初始化參數
+    private func setup() {
+        
+        //設置 tableview
+        self.view.addSubview(self.tableView)
+    }
+    
+    //tableview 重新加載
+    private func reloadTableView() {
         MBProgressHUD.showHUDAddedTo(self.tableView, animated: true)
-        weak var weakSelf = self
-        CCPBBSParser.sharedParser.parserBBS { (model) -> Void in
-            if let weakSelf = weakSelf {
-                weakSelf.dataSource = model
-                weakSelf.tableView.reloadData()
-                weakSelf.tableView.pullToRefreshView.stopAnimating()
-                MBProgressHUD.hideHUDForView(weakSelf.tableView, animated: true)
+        CCPBBSParser.parserBBS { [weak self] (model) -> Void in
+            guard let sself = self else {
+                return
             }
+            
+            sself.dataSource = model
+            sself.tableView.reloadData()
+            sself.tableView.pullToRefreshView.stopAnimating()
+            MBProgressHUD.hideHUDForView(sself.tableView, animated: true)
         }
     }
     
 }
 
-extension CCPBBSViewController : UITableViewDataSource,UITableViewDelegate {
+// MARK: UITableViewDataSource
+extension CCPBBSViewController: UITableViewDataSource {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.options.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("CCPBBSTableViewCell")
-        if cell == nil {
-            cell = CCPBBSTableViewCell(style: .Default, reuseIdentifier: "CCPBBSTableViewCell")
-        }
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CCPBBSTableViewCell", forIndexPath: indexPath) as! CCPBBSTableViewCell
         let option = self.dataSource.options[indexPath.row]
-        
-        (cell as! CCPBBSTableViewCell).configure(option)
-        
-        return cell!
+        cell.configure(option)
+        return cell
     }
+    
+}
+
+// MARK: UITableViewDelegate
+extension CCPBBSViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 40
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let link = self.dataSource.options[indexPath.row].urlString
         ZXOpenURL("go/ccp/edition", param: ["link": link])
     }
+    
 }
 
-class CCPBBSTableViewCell : CCPTableViewCell {
-    private var titleLabel:UILabel!
+// MARK: CCPBBSTableViewCell
+class CCPBBSTableViewCell: CCPTableViewCell {
+    
+    //UI
+    private lazy var titleLabel: UILabel = {
+        let newTitleLabel = UILabel()
+        newTitleLabel.font = UIFont.systemFontOfSize(14)
+        newTitleLabel.textColor = UIColor.whiteColor()
+        newTitleLabel.textAlignment = .Left
+        newTitleLabel.numberOfLines = 2
+        newTitleLabel.lineBreakMode = .ByTruncatingTail
+        return newTitleLabel
+    }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.titleLabel = UILabel()
-        self.titleLabel.font = UIFont.systemFontOfSize(14)
-        self.titleLabel.textColor = UIColor.whiteColor()
-        self.titleLabel.textAlignment = .Left
-        self.titleLabel.numberOfLines = 2
-        self.titleLabel.lineBreakMode = .ByTruncatingTail
+        // 設置 titlelabel
         self.containerView.addSubview(self.titleLabel)
     }
 
@@ -121,7 +144,7 @@ class CCPBBSTableViewCell : CCPTableViewCell {
         self.titleLabel.fillSuperview(left: 4, right: 0, top: 4, bottom: 0)
     }
     
-    func configure(model:CCPBBSOptionModel) {
+    func configure(model: CCPBBSOptionModel) {
         self.titleLabel.text = model.title
     }
     
