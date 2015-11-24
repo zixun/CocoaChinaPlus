@@ -8,7 +8,7 @@
 
 import Foundation
 import Ji
-import SDWebImage
+import Kingfisher
 
 extension CCHTMLParser {
     
@@ -83,14 +83,6 @@ extension CCHTMLParser {
             model.imageURL = imageURL
             
             banners.append(model)
-            
-            //banner图片缓存
-            SDWebImageDownloader.sharedDownloader()
-                .downloadImageWithURL(NSURL(string: imageURL),
-                    options: SDWebImageDownloaderOptions.HighPriority,
-                    progress: nil,
-                    completed: nil)
-            
         }
         return banners
     }

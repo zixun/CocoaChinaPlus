@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Ji
-import SDWebImage
+import Kingfisher
 import ZXKit
 
 class CCCocoaChinaWebView: ZXHighlightWebView {
@@ -63,12 +63,15 @@ extension CCCocoaChinaWebView {
         }
         let imageNode = ji.xPath("//img")!.first!
         self.imageURL = imageNode.attributes["src"]!
-        weak var weakSelf = self
-        SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: self.imageURL)!, options: SDWebImageDownloaderOptions.HighPriority, progress: nil) { (image, data, error, success) -> Void in
-                if let weakSelf = weakSelf {
-                    weakSelf.image = image
-                }
-        }
+        let downloader = KingfisherManager.sharedManager.downloader
+        downloader.downloadImageWithURL(NSURL(string: imageURL)!, progressBlock: nil, completionHandler: { [weak self] (image, error, imageURL, originalData) -> () in
+            
+            if let sself = self,image = image {
+                dispatch_async(dispatch_get_main_queue(), {
+                    sself.image = image
+                })
+            }
+        })
     }
     
     private func _generateNewHTML(originHTML:NSString) -> NSString {

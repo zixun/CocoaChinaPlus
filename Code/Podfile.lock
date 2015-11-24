@@ -5,6 +5,7 @@ PODS:
   - Ji/Ji (1.2.0):
     - Ji/Ji-libxml
   - Ji/Ji-libxml (1.2.0)
+  - Kingfisher (1.8.2)
   - MBProgressHUD (0.9.1)
   - Neon (0.0.3)
   - RxBlocking (2.0.0-beta.3):
@@ -12,9 +13,6 @@ PODS:
   - RxCocoa (2.0.0-beta.3):
     - RxSwift (~> 2.0.0-beta)
   - RxSwift (2.0.0-beta.3)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
   - SQLCipher (3.1.0):
     - SQLCipher/standard (= 3.1.0)
   - SQLCipher/common (3.1.0)
@@ -36,12 +34,12 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 2.0.0)
   - Ji (~> 1.2.0)
+  - Kingfisher (~> 1.8.2)
   - MBProgressHUD (~> 0.9.1)
   - Neon (~> 0.0.2)
   - RxBlocking (~> 2.0.0-beta.2)
   - RxCocoa (~> 2.0.0-beta.2)
   - RxSwift (~> 2.0.0-beta.2)
-  - SDWebImage (~> 3.7)
   - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
   - SQLiteCipher.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
   - SVPullToRefresh (= 0.4.1)
@@ -59,10 +57,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SQLite.swift:
-    :commit: c9d3082d1f5ddc2e55a792a8eb1a677b8a1b15f5
+    :commit: ac517bff273a0a0801fc22ec2bb54f31de1b04e0
     :git: https://github.com/stephencelis/SQLite.swift.git
   SQLiteCipher.swift:
-    :commit: c9d3082d1f5ddc2e55a792a8eb1a677b8a1b15f5
+    :commit: ac517bff273a0a0801fc22ec2bb54f31de1b04e0
     :git: https://github.com/stephencelis/SQLite.swift.git
   ZXKit:
     :commit: 0f6af090b1227136142a6e41eb927d65c63d73e0
@@ -71,12 +69,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   Ji: ddebb22f9ac445db6e884b66f78ea74fb135fdb7
+  Kingfisher: b39315e9dbed7e8ffe73a9ca1be2ee006d1d57e4
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Neon: 589d3d217d326abe09726bf81add106cff685bf2
   RxBlocking: 331f8bdedf77198f8ff1a37f09c492f1f4f631e5
   RxCocoa: 1472006304b296d03c847f78b21384523cc4902e
   RxSwift: 19fbe885b404d1d36d42ac8535134739a9b42952
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
   SQLite.swift: 3bb75f5a650f08673276bc6d3fb1de1b542b8f4d
   SQLiteCipher.swift: 6405d3937f6afc94614949336fd1fdefa37428b5

@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import SDWebImage
+import Kingfisher
 import MBProgressHUD
 import RxSwift
 import ZXKit

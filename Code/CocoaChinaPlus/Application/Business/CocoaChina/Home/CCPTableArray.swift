@@ -155,7 +155,7 @@ extension CCPTableArray: ZXCircleViewDelegate {
                 return
         }
         
-        cell.imageView.sd_setImageWithURL(url)
+        cell.imageView.kf_setImageWithURL(url)
         cell.titleLabel.text = model.title
     }
     

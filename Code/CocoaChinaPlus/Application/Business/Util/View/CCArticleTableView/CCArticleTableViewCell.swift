@@ -98,7 +98,7 @@ class CCArticleTableViewCell: CCPTableViewCell {
         urlString = model.linkURL
         if model.imageURL != nil {
             self.hasImage = true
-            picView.sd_setImageWithURL(NSURL(string:model.imageURL!)!)
+            picView.kf_setImageWithURL(NSURL(string:model.imageURL!)!)
         }else {
             self.hasImage = false
         }
