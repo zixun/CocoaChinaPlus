@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Ji
 
-let baseURL = "http://www.cocoachina.com/bbs/3g"
+private let baseURL = "http://www.cocoachina.com/bbs/3g"
 
 // MARK: CCPBBSParser
 class CCPBBSParser {
