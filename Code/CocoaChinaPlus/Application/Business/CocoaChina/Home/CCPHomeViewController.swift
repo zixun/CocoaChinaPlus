@@ -11,6 +11,7 @@ import SwiftyUserDefaults
 import MBProgressHUD
 import RxSwift
 import ZXKit
+import GuideView
 
 // MARK: ZXBaseViewController
 class CCPHomeViewController: ZXBaseViewController {
@@ -52,12 +53,27 @@ class CCPHomeViewController: ZXBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         //设置引导页面
         if !Defaults[.isGuideShowed] {
             let guideVC = ZXGuideViewController()
             guideVC.delegate = self
             self.presentViewController(guideVC)
         }
+        */
+        
+        /// 设置引导页面
+        let ccp = CCPGuideView(frame:UIScreen.mainScreen().bounds)
+        ccp.contentImages = {
+            return [UIImage.Asset.GuidePage1.image,UIImage.Asset.GuidePage2.image,UIImage.Asset.GuidePage3.image,UIImage.Asset.GuidePage4.image]
+        }
+        ccp.titles = {
+            return ["文章分类,方便阅读","纯黑设计,极客最爱","代码高亮,尊重技术","一键分享,保留精彩"]
+        }
+        ccp.contentSize = {
+            return CGSizeMake(250, 250)
+        }
+        ccp.showGuideView()
         
         //設置視圖
         self.view.addSubview(self.pagingView)
