@@ -71,6 +71,7 @@
 		CE4AB8CC1BE11661009551C1 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8BF1BE11661009551C1 /* SectionModel.swift */; };
 		CE4AB8CD1BE11661009551C1 /* SectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8C01BE11661009551C1 /* SectionModelType.swift */; };
 		CE4B92B61BE881110044F66C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92B51BE881110044F66C /* QuartzCore.framework */; };
+		CE50C4DC1C05E19E0062EBC2 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE50C4DB1C05E19E0062EBC2 /* R.generated.swift */; };
 		CE5380891BF18E3C00751F55 /* CCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5380881BF18E3C00751F55 /* CCCollectionViewController.swift */; };
 		CE5380B01BF18F5900751F55 /* CCArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53808C1BF18F5900751F55 /* CCArticleTableViewController.swift */; };
 		CE5380B11BF18F5900751F55 /* CCDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53808F1BF18F5900751F55 /* CCDataBase.swift */; };
@@ -95,7 +96,6 @@
 		CE5380C41BF18F5900751F55 /* ccstyle.css in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AC1BF18F5900751F55 /* ccstyle.css */; };
 		CE5380C51BF18F5900751F55 /* jquery-1.6.4.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */; };
 		CE5380C61BF18F5900751F55 /* CCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */; };
-		CE6A36A11BF4C28D00FC3D38 /* UIImage+Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A36A01BF4C28D00FC3D38 /* UIImage+Asset.swift */; };
 		E3265D961BB4230700750716 /* CCRemoteNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */; };
 		E36A54CE1BBBAC4800AF5CFB /* CChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36A54CD1BBBAC4800AF5CFB /* CChatListViewController.swift */; };
 		E39E27A11B9F61BD00665C3F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E39E27A01B9F61BD00665C3F /* libstdc++.6.0.9.dylib */; };
@@ -198,6 +198,7 @@
 		CE4B92BE1BE881660044F66C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CE4B92C01BE881710044F66C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CE4B92C21BE8817E0044F66C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE50C4DB1C05E19E0062EBC2 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		CE5380881BF18E3C00751F55 /* CCCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCCollectionViewController.swift; sourceTree = "<group>"; };
 		CE53808C1BF18F5900751F55 /* CCArticleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCArticleTableViewController.swift; sourceTree = "<group>"; };
 		CE53808F1BF18F5900751F55 /* CCDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCDataBase.swift; sourceTree = "<group>"; };
@@ -222,7 +223,6 @@
 		CE5380AC1BF18F5900751F55 /* ccstyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ccstyle.css; sourceTree = "<group>"; };
 		CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.6.4.min.js"; sourceTree = "<group>"; };
 		CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCTableViewCell.swift; sourceTree = "<group>"; };
-		CE6A36A01BF4C28D00FC3D38 /* UIImage+Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Asset.swift"; sourceTree = "<group>"; };
 		E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCRemoteNotificationHandler.swift; sourceTree = "<group>"; };
 		E36A54CD1BBBAC4800AF5CFB /* CChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CChatListViewController.swift; sourceTree = "<group>"; };
 		E39E279C1B9F616700665C3F /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
@@ -396,6 +396,7 @@
 		9EE4EFF21B79DEE80071423A = {
 			isa = PBXGroup;
 			children = (
+				CE50C4DB1C05E19E0062EBC2 /* R.generated.swift */,
 				9EE4EFFD1B79DEE80071423A /* CocoaChinaPlus */,
 				9EE4EFFC1B79DEE80071423A /* Products */,
 				68E123AA6D61955990423E7D /* Pods */,
@@ -595,7 +596,6 @@
 				CE5380971BF18F5900751F55 /* CCURLHelper.swift */,
 				CE5380981BF18F5900751F55 /* HTMLModel */,
 				CE5380A11BF18F5900751F55 /* VenderExt.swift */,
-				CE6A36A01BF4C28D00FC3D38 /* UIImage+Asset.swift */,
 				CE5380A21BF18F5900751F55 /* ZXURLNavigator */,
 			);
 			path = Helper;
@@ -768,6 +768,7 @@
 				9EE4EFF91B79DEE80071423A /* Resources */,
 				FCCDDA200306DF9A0ACC7BC4 /* Embed Pods Frameworks */,
 				E37CFCEFF49CAC392757178C /* Copy Pods Resources */,
+				CE50C4DA1C05E0170062EBC2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -856,6 +857,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CE50C4DA1C05E0170062EBC2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 		E37CFCEFF49CAC392757178C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -933,8 +947,8 @@
 				CE5380C11BF18F5900751F55 /* CCArticleTableView.swift in Sources */,
 				9EE4F1121B7B8F2C0071423A /* CCPHomeViewController.swift in Sources */,
 				9EE4EFFF1B79DEE80071423A /* AppDelegate.swift in Sources */,
-				CE6A36A11BF4C28D00FC3D38 /* UIImage+Asset.swift in Sources */,
 				9EE4F1101B7B8F2C0071423A /* CCPHomePage.swift in Sources */,
+				CE50C4DC1C05E19E0062EBC2 /* R.generated.swift in Sources */,
 				CE4AB8CB1BE11661009551C1 /* SectionedViewType.swift in Sources */,
 				CE4AB8C61BE11661009551C1 /* RxTableViewSectionedDataSource.swift in Sources */,
 				CE4AB8CD1BE11661009551C1 /* SectionModelType.swift in Sources */,

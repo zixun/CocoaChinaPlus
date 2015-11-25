@@ -15,7 +15,7 @@ import ZXKit
 class CCCocoaChinaWebView: ZXHighlightWebView {
     
     var title : String!
-    var image = UIImage.Asset.Sharetest.image
+    var image = R.image.sharetest
     var imageURL : String!
     
     private let styleString = "<link type='text/css' rel='stylesheet' href='ccstyle.css'>" +
@@ -58,7 +58,7 @@ extension CCCocoaChinaWebView {
         self.title = titleNode.content
         
         guard ji.xPath("//img")?.count > 0 else {
-            self.image = UIImage.Asset.Sharetest.image
+            self.image = R.image.sharetest
             return
         }
         let imageNode = ji.xPath("//img")!.first!

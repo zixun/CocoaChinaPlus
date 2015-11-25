@@ -117,7 +117,7 @@ extension CCPHomeViewController {
     //搜尋按鈕
     private func searchButton() -> UIBarButtonItem {
         let searchButton = UIButton(frame: CGRectMake(0, 0, 44, 44))
-        searchButton.setImage(UIImage.Asset.NavSearch.image, forState: .Normal)
+        searchButton.setImage(R.image.nav_search, forState: .Normal)
         searchButton
             .rx_tap
             .subscribeNext { _ in
@@ -216,16 +216,16 @@ extension CCPHomeViewController: ZXGuideViewControllerDelegate {
         let center = self.guideView(guideView, pointCenterAtIndex: index)
         frame.origin = CGPointMake(center.x - frame.size.width / 2, center.y - frame.size.height / 2);
         
-        var image = UIImage.Asset.GuidePage4.image
+        var image = R.image.guide_page_4
         switch (index) {
         case 0:
-            image = UIImage.Asset.GuidePage1.image
+            image = R.image.guide_page_1
         case 1:
-            image = UIImage.Asset.GuidePage2.image
+            image = R.image.guide_page_2
         case 2:
-            image = UIImage.Asset.GuidePage3.image
+            image = R.image.guide_page_3
         case 3:
-            image = UIImage.Asset.GuidePage4.image
+            image = R.image.guide_page_4
         default:
             break
         }

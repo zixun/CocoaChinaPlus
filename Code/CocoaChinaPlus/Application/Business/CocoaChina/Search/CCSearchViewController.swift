@@ -33,7 +33,7 @@ class CCSearchViewController: CCArticleTableViewController {
         self.edgesForExtendedLayout = UIRectEdge.None
         
         self.cancelButton = UIButton(frame: CGRectMake(0, 0, 44, 44))
-        self.cancelButton.setImage(UIImage.Asset.NavCancel.image, forState: UIControlState.Normal)
+        self.cancelButton.setImage(R.image.nav_cancel, forState: UIControlState.Normal)
         self.navigationItem.rightBarButtonItemFixedSpace(UIBarButtonItem(customView: cancelButton))
         
         self.searchfiled = UISearchBar()

@@ -16,6 +16,7 @@ pod 'RxBlocking', '~> 2.0.0-beta.2'
 pod 'SQLite.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
 pod 'SQLiteCipher.swift', git: 'https://github.com/stephencelis/SQLite.swift.git'
 
+pod 'R.swift', '~> 0.12.0'
 #OC库
 pod 'SVPullToRefresh', '0.4.1'
 pod 'MBProgressHUD', '~> 0.9.1'

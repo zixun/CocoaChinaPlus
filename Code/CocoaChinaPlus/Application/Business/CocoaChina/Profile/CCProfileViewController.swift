@@ -164,7 +164,7 @@ class CCProfileFaceCell : CCPTableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.icon = UIImageView(image: UIImage.Asset.Chengxuyuan.image.circleImage())
+        self.icon = UIImageView(image: R.image.chengxuyuan?.circleImage())
         self.containerView.addSubview(self.icon)
         
         self.tostaLabel = UILabel()

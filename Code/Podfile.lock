@@ -8,6 +8,7 @@ PODS:
   - Kingfisher (1.8.2)
   - MBProgressHUD (0.9.1)
   - Neon (0.0.3)
+  - R.swift (0.12.0)
   - RxBlocking (2.0.0-beta.3):
     - RxSwift (~> 2.0.0-beta)
   - RxCocoa (2.0.0-beta.3):
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - Kingfisher (~> 1.8.2)
   - MBProgressHUD (~> 0.9.1)
   - Neon (~> 0.0.2)
+  - R.swift (~> 0.12.0)
   - RxBlocking (~> 2.0.0-beta.2)
   - RxCocoa (~> 2.0.0-beta.2)
   - RxSwift (~> 2.0.0-beta.2)
@@ -72,6 +74,7 @@ SPEC CHECKSUMS:
   Kingfisher: b39315e9dbed7e8ffe73a9ca1be2ee006d1d57e4
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Neon: 589d3d217d326abe09726bf81add106cff685bf2
+  R.swift: 8d8a9f0cb36462d0dff82b70cc2c0396add668fe
   RxBlocking: 331f8bdedf77198f8ff1a37f09c492f1f4f631e5
   RxCocoa: 1472006304b296d03c847f78b21384523cc4902e
   RxSwift: 19fbe885b404d1d36d42ac8535134739a9b42952

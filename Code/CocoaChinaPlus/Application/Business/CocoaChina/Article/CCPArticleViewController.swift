@@ -89,13 +89,13 @@ class CCPArticleViewController: ZXBaseViewController {
 extension CCPArticleViewController {
     
     private func addRightBarButtonItems() {
-        let image = self._isLiked() ? UIImage.Asset.NavLikeYes.image : UIImage.Asset.NavLikeNo.image
+        let image = self._isLiked() ? R.image.nav_like_yes : R.image.nav_like_no
         let likeButton = UIButton(frame: CGRectMake(0, 0, 44, 44))
         likeButton.setImage(image, forState: UIControlState.Normal)
         let collectionItem = UIBarButtonItem(customView: likeButton)
         
         let shareButton = UIButton(frame: CGRectMake(0, 0, 44, 44))
-        shareButton.setImage(UIImage.Asset.Share.image, forState: UIControlState.Normal)
+        shareButton.setImage(R.image.share, forState: UIControlState.Normal)
         shareButton.rx_tap.subscribeNext({[unowned self] _ in
             UMSocialSnsService.presentSnsIconSheetView(self,
                 appKey: CCAppKey.appUM,
@@ -118,7 +118,7 @@ extension CCPArticleViewController {
                     let result = CCArticleService.decollectArticleById(self.identity)
                     if result {
                         MBProgressHUD.showText("取消成功")
-                        likeButton.setImage(UIImage.Asset.NavLikeNo.image , forState: UIControlState.Normal)
+                        likeButton.setImage(R.image.nav_like_no, forState: UIControlState.Normal)
                     }else {
                         MBProgressHUD.showText("取消失败")
                     }
@@ -136,7 +136,7 @@ extension CCPArticleViewController {
                     
                     if result {
                         MBProgressHUD.showText("收藏成功")
-                        likeButton.setImage(UIImage.Asset.NavLikeYes.image, forState: UIControlState.Normal)
+                        likeButton.setImage(R.image.nav_like_yes, forState: UIControlState.Normal)
                     }else {
                         MBProgressHUD.showText("收藏失败")
                     }

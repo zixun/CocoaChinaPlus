@@ -27,7 +27,7 @@ class CCAboutViewController: ZXBaseViewController {
         self.scrollView.delegate = self
         self.view.addSubview(self.scrollView)
         
-        let imageview = UIImageView(image: UIImage.Asset.About.image)
+        let imageview = UIImageView(image: R.image.about)
         imageview.frame = self.scrollView.bounds
         imageview.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         self.scrollView.addSubview(imageview)
