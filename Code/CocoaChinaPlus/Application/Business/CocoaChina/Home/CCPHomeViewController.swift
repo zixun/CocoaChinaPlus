@@ -11,7 +11,6 @@ import SwiftyUserDefaults
 import MBProgressHUD
 import RxSwift
 import ZXKit
-import GuideView
 
 // MARK: ZXBaseViewController
 class CCPHomeViewController: ZXBaseViewController {
@@ -52,15 +51,6 @@ class CCPHomeViewController: ZXBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*
-        //设置引导页面
-        if !Defaults[.isGuideShowed] {
-            let guideVC = ZXGuideViewController()
-            guideVC.delegate = self
-            self.presentViewController(guideVC)
-        }
-        */
         
         /// 设置引导页面
         let ccp = CCPGuideView(frame:UIScreen.mainScreen().bounds)
@@ -211,89 +201,5 @@ extension CCPHomeViewController: ZXPagingViewDelegate {
     
 }
 
-// MARK: ZXGuideViewControllerDelegate
-extension CCPHomeViewController: ZXGuideViewControllerDelegate {
-    
-    func numberOfPagesInGuideView(guideView: ZXGuideViewController) -> NSInteger {
-        return 4
-    }
-    
-    func guideView(guideView: ZXGuideViewController, cellForPageAtIndex index: NSInteger) -> UIView {
-        let frame = guideView.view.frame
-        let view = UIView(frame: frame)
-        view.backgroundColor = UIColor.blackColor()
-        return view;
-    }
-    
-    func guideView(guideView: ZXGuideViewController, imageAtIndex index: NSInteger) -> UIImageView {
-        
-        var frame = CGRectZero
-        frame.size = CGSizeMake(473 / 2, 969 / 2);
-        let center = self.guideView(guideView, pointCenterAtIndex: index)
-        frame.origin = CGPointMake(center.x - frame.size.width / 2, center.y - frame.size.height / 2);
-        
-        var image = UIImage.Asset.GuidePage4.image
-        switch (index) {
-        case 0:
-            image = UIImage.Asset.GuidePage1.image
-        case 1:
-            image = UIImage.Asset.GuidePage2.image
-        case 2:
-            image = UIImage.Asset.GuidePage3.image
-        case 3:
-            image = UIImage.Asset.GuidePage4.image
-        default:
-            break
-        }
-        let imageView = UIImageView(image: image)
-        imageView.frame = frame
-        return imageView
-    }
-    
-    func guideView(guideView: ZXGuideViewController, labelAtIndex index: NSInteger) -> UILabel {
-        var str = ""
-        switch (index) {
-        case 0:
-            str = "文章分类,方便阅读"
-        case 1:
-            str = "纯黑设计,极客最爱"
-        case 2:
-            str = "代码高亮,尊重技术"
-        case 3:
-            str = "一键分享,保留精彩"
-        default:
-            break;
-        }
-        
-        var rect = self.guideView(guideView, imageAtIndex: index).frame
-        rect.origin.x = 0
-        rect.origin.y += rect.size.height
-        rect.size.width = guideView.view.bounds.size.width
-        rect.size.height = 40
-        
-        let label = UILabel(frame: rect)
-        label.text = str
-        label.textAlignment = NSTextAlignment.Center
-        label.textColor = UIColor.whiteColor()
-        label.font = UIFont(name: "ChalkboardSE-Regular", size: 25)
-        return label
-    }
-    
-    func guideView(guideView: ZXGuideViewController, pointCenterAtIndex index: NSInteger) -> CGPoint {
-        var point = CGPointMake(ZXScreenWidth() / 2, ZXScreenHight() / 2);
-        switch (index) {
-        case 0...3:
-            point = CGPointMake(point.x, point.y - 50);
-        default:
-            break;
-        }
-        return point
-    }
-    
-    func didClickEnterButtonInGuideView(guideView: ZXGuideViewController) {
-        Defaults[.isGuideShowed] = true
-    }
-    
-}
 
 
