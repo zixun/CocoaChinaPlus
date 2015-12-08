@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 pod 'ZXKit', git: 'https://github.com/zixun/ZXKit.git' # '~> 0.0.2'
-
+pod 'GuideView', git: 'git@github.com:FengDeng/GuideView.git'
 pod 'Neon', '~> 0.0.2'
 pod 'SwiftyUserDefaults', '~> 2.0.0'
 pod 'Ji', '~> 1.2.0'
