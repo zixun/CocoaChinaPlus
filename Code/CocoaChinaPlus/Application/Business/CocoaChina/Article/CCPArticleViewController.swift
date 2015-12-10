@@ -65,13 +65,14 @@ class CCPArticleViewController: ZXBaseViewController {
         }
     }
     
-    deinit {
-        self.cuteView.removeFromSuperview()
-    }
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.webview.fillSuperview()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.cuteView.removeFromSuperview()
     }
     
     func open(urlString:String) {
