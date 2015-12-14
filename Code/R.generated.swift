@@ -10,6 +10,7 @@ struct R {
   }
   
   struct file {
+    static var baidumobadsdkBundle: NSURL? { return _R.hostingBundle?.URLForResource("baidumobadsdk", withExtension: "bundle") }
     static var ccstyleCss: NSURL? { return _R.hostingBundle?.URLForResource("ccstyle", withExtension: "css") }
     static var iosSocialSdkShakeHtml: NSURL? { return _R.hostingBundle?.URLForResource("ios-social-sdk-shake", withExtension: "html") }
     static var jquery164MinJs: NSURL? { return _R.hostingBundle?.URLForResource("jquery-1.6.4.min", withExtension: "js") }
