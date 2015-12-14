@@ -67,6 +67,9 @@
 		CE19A7E01C1EA78500B4CB6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92C21BE8817E0044F66C /* CoreLocation.framework */; };
 		CE19A7F01C1EA7A500B4CB6A /* baidumobadsdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE19A7E91C1EA7A500B4CB6A /* baidumobadsdk.bundle */; };
 		CE19A7F11C1EA7A500B4CB6A /* libBaiduMobAdSdk64bit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A7EF1C1EA7A500B4CB6A /* libBaiduMobAdSdk64bit.a */; };
+		CE19A7F61C1EA96F00B4CB6A /* CCAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19A7F31C1EA96F00B4CB6A /* CCAD.swift */; };
+		CE19A7F71C1EA96F00B4CB6A /* CCADBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19A7F41C1EA96F00B4CB6A /* CCADBanner.swift */; };
+		CE19A7F81C1EA96F00B4CB6A /* CCADInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19A7F51C1EA96F00B4CB6A /* CCADInterstitial.swift */; };
 		CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */; };
 		CE4AB8C11BE11661009551C1 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B31BE11661009551C1 /* Changeset.swift */; };
 		CE4AB8C21BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */; };
@@ -203,6 +206,9 @@
 		CE19A7ED1C1EA7A500B4CB6A /* BaiduMobAdVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdVideoView.h; sourceTree = "<group>"; };
 		CE19A7EE1C1EA7A500B4CB6A /* BaiduMobAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdView.h; sourceTree = "<group>"; };
 		CE19A7EF1C1EA7A500B4CB6A /* libBaiduMobAdSdk64bit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobAdSdk64bit.a; sourceTree = "<group>"; };
+		CE19A7F31C1EA96F00B4CB6A /* CCAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAD.swift; sourceTree = "<group>"; };
+		CE19A7F41C1EA96F00B4CB6A /* CCADBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCADBanner.swift; sourceTree = "<group>"; };
+		CE19A7F51C1EA96F00B4CB6A /* CCADInterstitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCADInterstitial.swift; sourceTree = "<group>"; };
 		CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPArticleViewController.swift; sourceTree = "<group>"; };
 		CE4AB8B31BE11661009551C1 /* Changeset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changeset.swift; sourceTree = "<group>"; };
 		CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCollectionViewSectionedAnimatedDataSource.swift; sourceTree = "<group>"; };
@@ -435,6 +441,7 @@
 		9EF1CB9E1B92021400E8F243 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				CE19A7F21C1EA96F00B4CB6A /* advert */,
 				CE53808A1BF18F5900751F55 /* Controller */,
 				CE53808D1BF18F5900751F55 /* Helper */,
 				CE5380A61BF18F5900751F55 /* View */,
@@ -608,6 +615,16 @@
 				CE19A7EF1C1EA7A500B4CB6A /* libBaiduMobAdSdk64bit.a */,
 			);
 			path = ios_api;
+			sourceTree = "<group>";
+		};
+		CE19A7F21C1EA96F00B4CB6A /* advert */ = {
+			isa = PBXGroup;
+			children = (
+				CE19A7F31C1EA96F00B4CB6A /* CCAD.swift */,
+				CE19A7F41C1EA96F00B4CB6A /* CCADBanner.swift */,
+				CE19A7F51C1EA96F00B4CB6A /* CCADInterstitial.swift */,
+			);
+			path = advert;
 			sourceTree = "<group>";
 		};
 		CE2FF12E1BE9EB58001396C8 /* Article */ = {
@@ -1021,10 +1038,12 @@
 				CE5380B21BF18F5900751F55 /* CCArticleDAO.swift in Sources */,
 				CE4AB8C31BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift in Sources */,
 				CE4AB8C41BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift in Sources */,
+				CE19A7F61C1EA96F00B4CB6A /* CCAD.swift in Sources */,
 				CE5380B51BF18F5900751F55 /* CCArticleService.swift in Sources */,
 				9E6B7DED1B8E069400591846 /* AppDef.swift in Sources */,
 				CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */,
 				CE5380B31BF18F5900751F55 /* CCTableManager.swift in Sources */,
+				CE19A7F71C1EA96F00B4CB6A /* CCADBanner.swift in Sources */,
 				CE5380BF1BF18F5900751F55 /* ZXBaseViewController.swift in Sources */,
 				CE5380C11BF18F5900751F55 /* CCArticleTableView.swift in Sources */,
 				9EE4F1121B7B8F2C0071423A /* CCPHomeViewController.swift in Sources */,
@@ -1037,6 +1056,7 @@
 				CE4AB8CD1BE11661009551C1 /* SectionModelType.swift in Sources */,
 				CE5380C21BF18F5900751F55 /* CCArticleTableViewCell.swift in Sources */,
 				CE0B09721BDD264400D8F3AC /* CCSearchViewController.swift in Sources */,
+				CE19A7F81C1EA96F00B4CB6A /* CCADInterstitial.swift in Sources */,
 				CE5380BE1BF18F5900751F55 /* NSDate+String.swift in Sources */,
 				CE5380B01BF18F5900751F55 /* CCArticleTableViewController.swift in Sources */,
 				9E61C3331BBD4BC900C360E2 /* CCProfileViewController.swift in Sources */,

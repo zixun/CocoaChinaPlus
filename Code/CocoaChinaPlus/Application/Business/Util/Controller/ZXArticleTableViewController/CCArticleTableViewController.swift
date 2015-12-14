@@ -20,6 +20,13 @@ class CCArticleTableViewController: ZXBaseViewController {
     //加载下一页触发器
     let loadNextPageTrigger = PublishSubject<Void>()
     
+    private let adBanner = CCADBanner()
+    private var adView:UIView?
+    
+    /// 广告位位置枚举
+    private var adPosition:CCADBannerPosition?
+    
+    
     
     required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
         super.init(navigatorURL: URL, query: query)
@@ -27,6 +34,13 @@ class CCArticleTableViewController: ZXBaseViewController {
         //tableview 配置
         let forceHighlight = query["forceHighlight"] == "1" ? true : false
         self.tableView = CCArticleTableView(forceHighlight: forceHighlight)
+        
+        //广告配置
+        let adposStr = query["adpos"]
+        if (adposStr != nil && Int(adposStr!) != nil) {
+            self.adPosition = CCADBannerPosition(rawValue: Int(adposStr!)!)
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +49,41 @@ class CCArticleTableViewController: ZXBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (self.adPosition != nil) {
+            self.adBanner
+                .rx_adModelObservable(self.adPosition!)
+                .subscribeNext({ [weak self] (adModel:CCADModel) -> Void in
+                    guard let sself = self else {
+                        return
+                    }
+                    
+                    if sself.adView != nil {
+                        sself.adView!.removeFromSuperview()
+                        sself.adView = nil
+                    }
+                    sself.adView = adModel.adView
+                    sself.view.addSubview(sself.adView!)
+                    
+                    
+                    adModel
+                        .displayObservable
+                        .subscribeNext({[unowned sself] (success) -> Void in
+                            if success {
+                                sself.adView!.hidden = false
+                                
+                                var rect = sself.view.bounds
+                                rect.size.height -= 50
+                                sself.tableView.frame = rect
+                            }else {
+                                sself.adView!.hidden = true
+                                sself.tableView.frame = sself.view.bounds
+                            }
+                            })
+                        .addDisposableTo(sself.disposeBag)
+                    })
+                .addDisposableTo(self.disposeBag)
+        }
         
         self.tableView.frame = self.view.bounds
         self.view.addSubview(self.tableView)
@@ -63,4 +112,10 @@ class CCArticleTableViewController: ZXBaseViewController {
             .addDisposableTo(disposeBag)
         
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.adView?.anchorAndFillEdge(.Bottom, xPad: 0, yPad: 0, otherSize:48)
+    }
+    
 }
