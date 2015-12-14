@@ -61,7 +61,7 @@ CHECKOUT OPTIONS:
     :commit: da2d43422a72ae0e91356fccfde1959d43b97385
     :git: https://github.com/stephencelis/SQLite.swift.git
   ZXKit:
-    :commit: be2a6815225feec445e6072994303980c520e641
+    :commit: 1eec9fc3bac567dcb1466a264704f7b5dc6b3088
     :git: https://github.com/zixun/ZXKit.git
 
 SPEC CHECKSUMS:

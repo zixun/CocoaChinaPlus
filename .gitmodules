@@ -1,0 +1,3 @@
+[submodule "Code/CocoaChinaPlus/Application/vender-lib"]
+	path = Code/CocoaChinaPlus/Application/vender-lib
+	url = git@git.oschina.net:zixun107/vender-lib.git
