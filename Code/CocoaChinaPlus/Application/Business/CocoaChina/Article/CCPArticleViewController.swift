@@ -23,6 +23,9 @@ class CCPArticleViewController: ZXBaseViewController {
     private var webview:CCCocoaChinaWebView!
     private var cuteView:ZXCuteView!
     
+    private let adBanner = CCADBanner()
+    private var adview : UIView?
+    
     //文章的wap链接
     private var wapURL : String!
     //文章的identity
@@ -56,6 +59,8 @@ class CCPArticleViewController: ZXBaseViewController {
         self.webview = CCCocoaChinaWebView(frame: self.view.bounds)
         self.view.addSubview(self.webview)
         self.open(wapURL)
+        //广告处理
+        self.adHandle()
         //cuteview逻辑
         self.cuteViewHandle()
         
@@ -67,7 +72,7 @@ class CCPArticleViewController: ZXBaseViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.webview.fillSuperview()
+        self.adview?.anchorAndFillEdge(.Bottom, xPad: 0, yPad: 0, otherSize:48)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -153,6 +158,46 @@ extension CCPArticleViewController {
                 likeButton.layer.addAnimation(scaleAnimation, forKey: "likeButtonscale")
                 })
             .addDisposableTo(self.disposeBag)
+    }
+    
+    
+    /**
+     广告处理
+     */
+    private func adHandle(){
+        
+        self.adBanner.rx_adModelObservable(.ArticleBottom)
+            .subscribeNext { [weak self] (adModel:CCADModel) -> Void in
+                guard let sself = self else {
+                    return
+                }
+                
+                if sself.adview != nil {
+                    sself.adview!.removeFromSuperview()
+                    sself.adview = nil
+                }
+                sself.adview = adModel.adView
+                sself.adview!.hidden = true
+                sself.view.addSubview(sself.adview!)
+                
+                
+                adModel
+                    .displayObservable
+                    .subscribeNext({[unowned sself] (success) -> Void in
+                        if success {
+                            sself.adview!.hidden = false
+                            
+                            var rect = sself.view.bounds
+                            rect.size.height -= 50
+                            sself.webview.frame = rect
+                        }else {
+                            sself.adview!.hidden = true
+                            sself.webview.frame = sself.view.bounds
+                        }
+                        })
+                    .addDisposableTo(sself.disposeBag)
+                
+            }.addDisposableTo(self.disposeBag)
     }
     
     private func cuteViewHandle() {

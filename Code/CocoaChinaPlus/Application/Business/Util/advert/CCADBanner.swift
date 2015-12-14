@@ -28,20 +28,6 @@ enum CCADBannerPosition:Int {
             return "2082832"
         }
     }
-    
-    var GoogleID:String {
-        
-        switch self {
-        case ChatBottom:
-            return "ca-app-pub-4051144321317231/1096665504"
-        case ArticleBottom:
-            return "ca-app-pub-4051144321317231/8391955104"
-        case .SearchBottom:
-            return "ca-app-pub-4051144321317231/4541787509"
-        }
-    }
-    
-    
 }
 
 class CCADModel: NSObject {
