@@ -1247,7 +1247,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.cocoachinaplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e32bb647-9e76-4675-b952-f1cb84b15657";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CocoaChinaPlus/CocoaChinaPlus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1320,7 +1320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.cocoachinaplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7383099e-aa76-4870-8a21-e356e9ae99d5";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CocoaChinaPlus/CocoaChinaPlus-Bridging-Header.h";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
