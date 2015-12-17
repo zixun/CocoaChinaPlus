@@ -58,6 +58,12 @@ ZXKit也是基于Neon和RxSwift编写的，目前ZXKit中有三个文件夹：
 	2.controller				各种包装后的controller
 	3.view						各种包装后的view
 	
+##使用
+	1.将工程git clone下来
+	2.因为有子工程，所以要运行一下git submodule update --init --recursive将子工程clone下来
+	3.运行pod install，初始化pod三方库
+	4.build你的工程
+
 
 ##第三方平台
 整个app整合了很多第三方平台，如友盟，极光推送，百度SSP，Google-Admob（已删除），环信IM（已删除）等，对于今后有想做Swift项目的同学有很大的参考价值。
