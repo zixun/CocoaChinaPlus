@@ -120,11 +120,12 @@ class CCArticleTableView: UITableView,UITableViewDelegate {
         
         //数据源绑定
         self.articles
-            .map { repositories in
-                return [SectionModel(model: "Repositories", items: repositories)]
+            .asDriver()
+            .map {
+                [SectionModel(model: "Repositories", items: $0)]
             }
-            .bindTo(self.rx_itemsWithDataSource(tableViewDataSource))
-            .addDisposableTo(disposeBag)
+            .drive(self.rx_itemsWithDataSource(tableViewDataSource))
+            .addDisposableTo(self.disposeBag)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

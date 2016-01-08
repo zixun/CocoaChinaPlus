@@ -55,7 +55,7 @@ class CCADBanner: NSObject {
             adViewBaidu.start()
             self.adModel.adView = adViewBaidu
         
-        return just(self.adModel)
+        return Observable.just(self.adModel)
     }
 
     

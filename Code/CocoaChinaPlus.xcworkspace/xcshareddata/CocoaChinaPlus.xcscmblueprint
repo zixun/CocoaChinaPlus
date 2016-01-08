@@ -4,12 +4,12 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "5E0FF934EC639FE4CFD6274899E3E330A3B525C3" : 0,
+    "127B9CE83113B9BEDA9FDF4200E01B72E67658A5" : 0,
     "C62255808153EEEE009D1828449E2B5B0A6F05B5" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9FCB355E-B69A-4847-A18D-6D88743EFB7D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "5E0FF934EC639FE4CFD6274899E3E330A3B525C3" : "CocoaChinaPlus\/Code\/CocoaChinaPlus\/Application\/Vender\/vender-lib\/",
+    "127B9CE83113B9BEDA9FDF4200E01B72E67658A5" : "CocoaChinaPlus\/Code\/CocoaChinaPlus\/Application\/Vender\/vender-lib\/",
     "C62255808153EEEE009D1828449E2B5B0A6F05B5" : "CocoaChinaPlus\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "CocoaChinaPlus",
@@ -19,7 +19,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.oschina.net:zixun107\/vender-lib.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E0FF934EC639FE4CFD6274899E3E330A3B525C3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "127B9CE83113B9BEDA9FDF4200E01B72E67658A5"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zixun\/CocoaChinaPlus.git",

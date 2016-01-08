@@ -5,17 +5,17 @@ PODS:
   - Ji/Ji (1.2.0):
     - Ji/Ji-libxml
   - Ji/Ji-libxml (1.2.0)
-  - Kingfisher (1.8.2)
-  - MBProgressHUD (0.9.1)
+  - Kingfisher (1.8.5)
+  - MBProgressHUD (0.9.2)
   - Neon (0.0.3)
   - R.swift (0.12.0)
-  - RxCocoa (2.0.0-beta.3):
-    - RxSwift (~> 2.0.0-beta)
-  - RxSwift (2.0.0-beta.3)
-  - SQLCipher (3.1.0):
-    - SQLCipher/standard (= 3.1.0)
-  - SQLCipher/common (3.1.0)
-  - SQLCipher/standard (3.1.0):
+  - RxCocoa (2.0.0):
+    - RxSwift (~> 2.0)
+  - RxSwift (2.0.0)
+  - SQLCipher (3.3.1):
+    - SQLCipher/standard (= 3.3.1)
+  - SQLCipher/common (3.3.1)
+  - SQLCipher/standard (3.3.1):
     - SQLCipher/common
   - SQLite.swift (1.0.0)
   - SQLiteCipher.swift (1.0.0):
@@ -26,18 +26,18 @@ PODS:
   - ZXKit (0.1.0):
     - MBProgressHUD (~> 0.9.1)
     - Neon (~> 0.0.3)
-    - RxCocoa (~> 2.0.0-beta.2)
-    - RxSwift (~> 2.0.0-beta.2)
+    - RxCocoa (~> 2.0.0)
+    - RxSwift (~> 2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 2.0.0)
   - Ji (~> 1.2.0)
   - Kingfisher (~> 1.8.2)
   - MBProgressHUD (~> 0.9.1)
-  - Neon (~> 0.0.2)
+  - Neon (~> 0.0.3)
   - R.swift (~> 0.12.0)
-  - RxCocoa (~> 2.0.0-beta.2)
-  - RxSwift (~> 2.0.0-beta.2)
+  - RxCocoa (~> 2.0.0)
+  - RxSwift (~> 2.0.0)
   - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
   - SQLiteCipher.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
   - SVPullToRefresh (= 0.4.1)
@@ -55,30 +55,30 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SQLite.swift:
-    :commit: da2d43422a72ae0e91356fccfde1959d43b97385
+    :commit: 5638f1f791e60713fdee06f267107f21a5ad9b59
     :git: https://github.com/stephencelis/SQLite.swift.git
   SQLiteCipher.swift:
-    :commit: da2d43422a72ae0e91356fccfde1959d43b97385
+    :commit: 5638f1f791e60713fdee06f267107f21a5ad9b59
     :git: https://github.com/stephencelis/SQLite.swift.git
   ZXKit:
-    :commit: 1eec9fc3bac567dcb1466a264704f7b5dc6b3088
+    :commit: 10ab25e2e5ec45b728384df8a0def2b612da4176
     :git: https://github.com/zixun/ZXKit.git
 
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   Ji: ddebb22f9ac445db6e884b66f78ea74fb135fdb7
-  Kingfisher: b39315e9dbed7e8ffe73a9ca1be2ee006d1d57e4
-  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Kingfisher: 780fed0fa82692a3bd59d53329ae2b85cdd354a5
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Neon: 589d3d217d326abe09726bf81add106cff685bf2
   R.swift: 8d8a9f0cb36462d0dff82b70cc2c0396add668fe
-  RxCocoa: 1472006304b296d03c847f78b21384523cc4902e
-  RxSwift: 19fbe885b404d1d36d42ac8535134739a9b42952
-  SQLCipher: c44fcca49c31483c2489cfb79aa7a69407f3794a
+  RxCocoa: b0ebd70b4f7450bdb3c8987b122f8fd568dc1e2f
+  RxSwift: d83246efa6f16c50c143bec134649d045498f601
+  SQLCipher: d490d2effe735895d2204d25a154b1e722278421
   SQLite.swift: 3bb75f5a650f08673276bc6d3fb1de1b542b8f4d
   SQLiteCipher.swift: 6405d3937f6afc94614949336fd1fdefa37428b5
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
   UMengAnalytics: fdf0c0a8c07d8bffc012ffa3c68e5d490af42098
-  ZXKit: 0b8e90155463b7a2946f78310c160fea5542848e
+  ZXKit: c2ab6e4961361d9736689e9b9beea888c3e4761c
 
 COCOAPODS: 0.39.0

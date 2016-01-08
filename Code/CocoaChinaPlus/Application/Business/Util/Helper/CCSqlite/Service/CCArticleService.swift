@@ -139,7 +139,7 @@ class CCArticleService: NSObject {
         }
         
         var result = [CCArticleModel]()
-        for article in  CCDB.connection.prepare(query) {
+        for article in  try! CCDB.connection.prepare(query) {
             let model = CCArticleModel()
             model.identity = article[kArticleDAO.identity]
             model.linkURL = article[kArticleDAO.linkURL]
