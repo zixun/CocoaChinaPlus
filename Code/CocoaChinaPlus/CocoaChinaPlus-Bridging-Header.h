@@ -16,10 +16,6 @@
 //极光推送
 #import "APService.h"
 
-#import "BaiduMobAdDelegateProtocol.h"
-#import "BaiduMobAdView.h"
-#import "BaiduMobAdInterstitial.h"
-
 #import <CCAD/CCADBanner.h>
 #import <CCAD/CCADInterstitialService.h>
 
