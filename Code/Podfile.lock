@@ -12,14 +12,7 @@ PODS:
   - RxCocoa (2.0.0):
     - RxSwift (~> 2.0)
   - RxSwift (2.0.0)
-  - SQLCipher (3.3.1):
-    - SQLCipher/standard (= 3.3.1)
-  - SQLCipher/common (3.3.1)
-  - SQLCipher/standard (3.3.1):
-    - SQLCipher/common
-  - SQLite.swift (1.0.0)
-  - SQLiteCipher.swift (1.0.0):
-    - SQLCipher
+  - SQLite.swift (0.9.1)
   - SVPullToRefresh (0.4.1)
   - SwiftyUserDefaults (2.0.0)
   - UMengAnalytics (3.5.16)
@@ -38,28 +31,17 @@ DEPENDENCIES:
   - R.swift (~> 0.12.0)
   - RxCocoa (~> 2.0.0)
   - RxSwift (~> 2.0.0)
-  - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
-  - SQLiteCipher.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
+  - SQLite.swift (~> 0.9.1)
   - SVPullToRefresh (= 0.4.1)
   - SwiftyUserDefaults (~> 2.0.0)
   - UMengAnalytics (~> 3.5.10)
   - ZXKit (from `https://github.com/zixun/ZXKit.git`)
 
 EXTERNAL SOURCES:
-  SQLite.swift:
-    :git: https://github.com/stephencelis/SQLite.swift.git
-  SQLiteCipher.swift:
-    :git: https://github.com/stephencelis/SQLite.swift.git
   ZXKit:
     :git: https://github.com/zixun/ZXKit.git
 
 CHECKOUT OPTIONS:
-  SQLite.swift:
-    :commit: 5638f1f791e60713fdee06f267107f21a5ad9b59
-    :git: https://github.com/stephencelis/SQLite.swift.git
-  SQLiteCipher.swift:
-    :commit: 5638f1f791e60713fdee06f267107f21a5ad9b59
-    :git: https://github.com/stephencelis/SQLite.swift.git
   ZXKit:
     :commit: 10ab25e2e5ec45b728384df8a0def2b612da4176
     :git: https://github.com/zixun/ZXKit.git
@@ -73,9 +55,7 @@ SPEC CHECKSUMS:
   R.swift: 8d8a9f0cb36462d0dff82b70cc2c0396add668fe
   RxCocoa: b0ebd70b4f7450bdb3c8987b122f8fd568dc1e2f
   RxSwift: d83246efa6f16c50c143bec134649d045498f601
-  SQLCipher: d490d2effe735895d2204d25a154b1e722278421
-  SQLite.swift: 3bb75f5a650f08673276bc6d3fb1de1b542b8f4d
-  SQLiteCipher.swift: 6405d3937f6afc94614949336fd1fdefa37428b5
+  SQLite.swift: b9574f52c058b680e10e70b72e487312e0e4d26f
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
   UMengAnalytics: fdf0c0a8c07d8bffc012ffa3c68e5d490af42098

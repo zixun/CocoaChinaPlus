@@ -20,4 +20,7 @@
 #import "BaiduMobAdView.h"
 #import "BaiduMobAdInterstitial.h"
 
+#import <CCAD/CCADBanner.h>
+#import <CCAD/CCADInterstitialService.h>
+
 #endif

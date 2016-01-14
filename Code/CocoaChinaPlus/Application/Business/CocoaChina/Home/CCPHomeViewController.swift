@@ -121,7 +121,7 @@ extension CCPHomeViewController {
         searchButton
             .rx_tap
             .subscribeNext { _ in
-                ZXPresentURL("go/ccp/search?adpos=2")
+                ZXPresentURL("go/ccp/search?adpos=1")
             }
             .addDisposableTo(self.disposeBag)
         

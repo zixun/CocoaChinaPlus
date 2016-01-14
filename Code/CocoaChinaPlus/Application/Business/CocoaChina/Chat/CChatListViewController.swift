@@ -12,11 +12,11 @@ import SwiftyUserDefaults
 import Neon
 import RxSwift
 import ZXKit
+import CCAD
 
 class CChatListViewController: ZXBaseViewController {
     
-    var adview:UIView?
-    private let adBanner = CCADBanner()
+    private var adBanner: CCADBanner!
     
     private let disposeBag = DisposeBag()
     
@@ -28,30 +28,17 @@ class CChatListViewController: ZXBaseViewController {
     required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
         super.init(navigatorURL: URL, query: query)
         
-        self.adBanner
-            .rx_adModelObservable(.ChatBottom)
-            .subscribeNext { [weak self] (adModel:CCADModel) -> Void in
-                guard let sself = self else {
-                    return
-                }
-                
-                if sself.adview != nil {
-                    sself.adview!.removeFromSuperview()
-                    sself.adview = nil
-                }
-                sself.adview = adModel.adView
-                sself.view.addSubview(sself.adview!)
-            }
-            .addDisposableTo(self.disposeBag)
-        
-        
+        self.adBanner = CCADBanner(type: CCADBannerViewType.Chat, rootViewController: self, completionBlock: { (succeed:Bool, userInfo:[NSObject : AnyObject]!) -> Void in
+            
+        })
+        self.view.addSubview(self.adBanner);
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         alert("请加QQ群:516326791")
         
-        self.adview?.anchorAndFillEdge(.Bottom, xPad: 0, yPad: 0, otherSize:48)
+        self.adBanner.anchorAndFillEdge(.Bottom, xPad: 0, yPad: 0, otherSize:48)
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

@@ -81,7 +81,7 @@ struct R {
 }
 
 struct _R {
-  static var hostingBundle: NSBundle? { return NSBundle(identifier: "com.zixun.cocoachinaplus") }
+  static var hostingBundle: NSBundle? { return NSBundle(identifier: "com.zixun.myhelper") }
   
   struct nib {
     struct _UMSCommentDetailController: NibResource {

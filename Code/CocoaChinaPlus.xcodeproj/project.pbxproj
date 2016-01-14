@@ -47,9 +47,6 @@
 		CE19A7DE1C1EA76400B4CB6A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92BE1BE881660044F66C /* AVFoundation.framework */; };
 		CE19A7DF1C1EA77D00B4CB6A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92C01BE881710044F66C /* MessageUI.framework */; };
 		CE19A7E01C1EA78500B4CB6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92C21BE8817E0044F66C /* CoreLocation.framework */; };
-		CE19A7F61C1EA96F00B4CB6A /* CCAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19A7F31C1EA96F00B4CB6A /* CCAD.swift */; };
-		CE19A7F71C1EA96F00B4CB6A /* CCADBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19A7F41C1EA96F00B4CB6A /* CCADBanner.swift */; };
-		CE19A7F81C1EA96F00B4CB6A /* CCADInterstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19A7F51C1EA96F00B4CB6A /* CCADInterstitial.swift */; };
 		CE19A8391C1EB55E00B4CB6A /* baidumobadsdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8021C1EB55D00B4CB6A /* baidumobadsdk.bundle */; };
 		CE19A83A1C1EB55E00B4CB6A /* libBaiduMobAdSdk64bit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8081C1EB55E00B4CB6A /* libBaiduMobAdSdk64bit.a */; };
 		CE19A83B1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A80C1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a */; };
@@ -71,6 +68,9 @@
 		CE19A84B1C1EB55E00B4CB6A /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8341C1EB55E00B4CB6A /* libSocialWechat.a */; };
 		CE19A84C1C1EB55E00B4CB6A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8351C1EB55E00B4CB6A /* libWeChatSDK.a */; };
 		CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */; };
+		CE3FD60F1C46B6BD00FBEA19 /* CCAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; };
+		CE3FD6101C46BE2B00FBEA19 /* CCAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; };
+		CE3FD6111C46BE2B00FBEA19 /* CCAD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE4AB8C11BE11661009551C1 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B31BE11661009551C1 /* Changeset.swift */; };
 		CE4AB8C21BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */; };
 		CE4AB8C31BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B61BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift */; };
@@ -110,10 +110,26 @@
 		CE5380C41BF18F5900751F55 /* ccstyle.css in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AC1BF18F5900751F55 /* ccstyle.css */; };
 		CE5380C51BF18F5900751F55 /* jquery-1.6.4.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */; };
 		CE5380C61BF18F5900751F55 /* CCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */; };
+		CEC9BAED1C46D13A00E5B949 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */; };
+		CEC9BAEF1C46D14000E5B949 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9BAEE1C46D14000E5B949 /* EventKit.framework */; };
 		E3265D961BB4230700750716 /* CCRemoteNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */; };
 		E36A54CE1BBBAC4800AF5CFB /* CChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36A54CD1BBBAC4800AF5CFB /* CChatListViewController.swift */; };
 		E39E27A11B9F61BD00665C3F /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E39E27A01B9F61BD00665C3F /* libstdc++.6.0.9.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE3FD6121C46BE2B00FBEA19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE3FD6111C46BE2B00FBEA19 /* CCAD.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5A619E00D361396FDA3FC696 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,9 +173,6 @@
 		9EF1CB981B91FE0000E8F243 /* CCPBBSEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPBBSEditionViewController.swift; sourceTree = "<group>"; };
 		A47496B69C33267C4F4BF8B3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0B09711BDD264400D8F3AC /* CCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CCSearchViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		CE19A7F31C1EA96F00B4CB6A /* CCAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAD.swift; sourceTree = "<group>"; };
-		CE19A7F41C1EA96F00B4CB6A /* CCADBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCADBanner.swift; sourceTree = "<group>"; };
-		CE19A7F51C1EA96F00B4CB6A /* CCADInterstitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCADInterstitial.swift; sourceTree = "<group>"; };
 		CE19A7FC1C1EB55D00B4CB6A /* BaiduMobAdCommonConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdCommonConfig.h; sourceTree = "<group>"; };
 		CE19A7FD1C1EB55D00B4CB6A /* BaiduMobAdDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdDelegateProtocol.h; sourceTree = "<group>"; };
 		CE19A7FE1C1EB55D00B4CB6A /* BaiduMobAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdInterstitial.h; sourceTree = "<group>"; };
@@ -210,6 +223,7 @@
 		CE19A8371C1EB55E00B4CB6A /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		CE19A8381C1EB55E00B4CB6A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPArticleViewController.swift; sourceTree = "<group>"; };
+		CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CCAD.framework; sourceTree = "<group>"; };
 		CE4AB8B31BE11661009551C1 /* Changeset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changeset.swift; sourceTree = "<group>"; };
 		CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCollectionViewSectionedAnimatedDataSource.swift; sourceTree = "<group>"; };
 		CE4AB8B61BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCollectionViewSectionedDataSource.swift; sourceTree = "<group>"; };
@@ -254,6 +268,8 @@
 		CE5380AC1BF18F5900751F55 /* ccstyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ccstyle.css; sourceTree = "<group>"; };
 		CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.6.4.min.js"; sourceTree = "<group>"; };
 		CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCTableViewCell.swift; sourceTree = "<group>"; };
+		CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		CEC9BAEE1C46D14000E5B949 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCRemoteNotificationHandler.swift; sourceTree = "<group>"; };
 		E36A54CD1BBBAC4800AF5CFB /* CChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CChatListViewController.swift; sourceTree = "<group>"; };
 		E39E279C1B9F616700665C3F /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
@@ -267,11 +283,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC9BAEF1C46D14000E5B949 /* EventKit.framework in Frameworks */,
+				CEC9BAED1C46D13A00E5B949 /* EventKitUI.framework in Frameworks */,
 				CE19A7E01C1EA78500B4CB6A /* CoreLocation.framework in Frameworks */,
 				CE19A7DF1C1EA77D00B4CB6A /* MessageUI.framework in Frameworks */,
 				CE19A7DE1C1EA76400B4CB6A /* AVFoundation.framework in Frameworks */,
 				CE19A83B1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a in Frameworks */,
 				CE19A7DD1C1EA75D00B4CB6A /* MediaPlayer.framework in Frameworks */,
+				CE3FD60F1C46B6BD00FBEA19 /* CCAD.framework in Frameworks */,
 				CE19A7DC1C1EA75600B4CB6A /* CoreMotion.framework in Frameworks */,
 				CE19A7DB1C1EA74F00B4CB6A /* AudioToolbox.framework in Frameworks */,
 				CE19A7DA1C1EA74600B4CB6A /* StoreKit.framework in Frameworks */,
@@ -287,6 +306,7 @@
 				9E0EAB681BB08E2E00DFEF33 /* Foundation.framework in Frameworks */,
 				9E0EAB661BB08E2000DFEF33 /* CoreGraphics.framework in Frameworks */,
 				9E0EAB641BB08E0E00DFEF33 /* CoreTelephony.framework in Frameworks */,
+				CE3FD6101C46BE2B00FBEA19 /* CCAD.framework in Frameworks */,
 				9E0EAB621BB08DFF00DFEF33 /* CoreFoundation.framework in Frameworks */,
 				E39E27A11B9F61BD00665C3F /* libstdc++.6.0.9.dylib in Frameworks */,
 				CE19A84B1C1EB55E00B4CB6A /* libSocialWechat.a in Frameworks */,
@@ -403,6 +423,7 @@
 		9EE4F03F1B79E1C80071423A /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */,
 				CE19A7F91C1EB55D00B4CB6A /* vender-lib */,
 				CE4AB8B21BE11661009551C1 /* RxDataSourceStarterKit */,
 			);
@@ -441,7 +462,6 @@
 		9EF1CB9E1B92021400E8F243 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				CE19A7F21C1EA96F00B4CB6A /* advert */,
 				CE53808A1BF18F5900751F55 /* Controller */,
 				CE53808D1BF18F5900751F55 /* Helper */,
 				CE5380A61BF18F5900751F55 /* View */,
@@ -455,16 +475,6 @@
 				CE0B09711BDD264400D8F3AC /* CCSearchViewController.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		CE19A7F21C1EA96F00B4CB6A /* advert */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A7F31C1EA96F00B4CB6A /* CCAD.swift */,
-				CE19A7F41C1EA96F00B4CB6A /* CCADBanner.swift */,
-				CE19A7F51C1EA96F00B4CB6A /* CCADInterstitial.swift */,
-			);
-			path = advert;
 			sourceTree = "<group>";
 		};
 		CE19A7F91C1EB55D00B4CB6A /* vender-lib */ = {
@@ -821,6 +831,8 @@
 		EDD8214EC046EF89D8B5AB5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEC9BAEE1C46D14000E5B949 /* EventKit.framework */,
+				CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */,
 				CE4B92C21BE8817E0044F66C /* CoreLocation.framework */,
 				CE4B92C01BE881710044F66C /* MessageUI.framework */,
 				CE4B92BE1BE881660044F66C /* AVFoundation.framework */,
@@ -866,6 +878,7 @@
 				FCCDDA200306DF9A0ACC7BC4 /* Embed Pods Frameworks */,
 				E37CFCEFF49CAC392757178C /* Copy Pods Resources */,
 				CE50C4DA1C05E0170062EBC2 /* ShellScript */,
+				CE3FD6121C46BE2B00FBEA19 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1037,12 +1050,10 @@
 				CE5380B21BF18F5900751F55 /* CCArticleDAO.swift in Sources */,
 				CE4AB8C31BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift in Sources */,
 				CE4AB8C41BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift in Sources */,
-				CE19A7F61C1EA96F00B4CB6A /* CCAD.swift in Sources */,
 				CE5380B51BF18F5900751F55 /* CCArticleService.swift in Sources */,
 				9E6B7DED1B8E069400591846 /* AppDef.swift in Sources */,
 				CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */,
 				CE5380B31BF18F5900751F55 /* CCTableManager.swift in Sources */,
-				CE19A7F71C1EA96F00B4CB6A /* CCADBanner.swift in Sources */,
 				CE5380BF1BF18F5900751F55 /* ZXBaseViewController.swift in Sources */,
 				CE5380C11BF18F5900751F55 /* CCArticleTableView.swift in Sources */,
 				9EE4F1121B7B8F2C0071423A /* CCPHomeViewController.swift in Sources */,
@@ -1055,7 +1066,6 @@
 				CE4AB8CD1BE11661009551C1 /* SectionModelType.swift in Sources */,
 				CE5380C21BF18F5900751F55 /* CCArticleTableViewCell.swift in Sources */,
 				CE0B09721BDD264400D8F3AC /* CCSearchViewController.swift in Sources */,
-				CE19A7F81C1EA96F00B4CB6A /* CCADInterstitial.swift in Sources */,
 				CE5380BE1BF18F5900751F55 /* NSDate+String.swift in Sources */,
 				CE5380B01BF18F5900751F55 /* CCArticleTableViewController.swift in Sources */,
 				9E61C3331BBD4BC900C360E2 /* CCProfileViewController.swift in Sources */,
@@ -1106,8 +1116,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yilong Chen (655C5M7FZH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yilong Chen (655C5M7FZH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1131,7 +1141,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "e32bb647-9e76-4675-b952-f1cb84b15657";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1155,8 +1165,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yilong Chen (L35WZWVC98)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yilong Chen (L35WZWVC98)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1173,7 +1183,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
-				PROVISIONING_PROFILE = "7383099e-aa76-4870-8a21-e356e9ae99d5";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -1187,9 +1197,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yilong Chen (655C5M7FZH)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Yilong Chen (655C5M7FZH)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yilong Chen (655C5M7FZH)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1205,6 +1215,7 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/mob/ShareSDK/UI",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/YouMeng/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/HXChatUI/3rdparty/Parse",
+					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender",
 				);
 				INFOPLIST_FILE = CocoaChinaPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1245,7 +1256,7 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/vender-lib/UM/UMSocial/UMSocial_Sdk_Extra_Frameworks/UMSocial_Shake_Sdk",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/vender-lib/UM/UMSocial/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.cocoachinaplus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.myhelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CocoaChinaPlus/CocoaChinaPlus-Bridging-Header.h";
@@ -1261,8 +1272,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yilong Chen (L35WZWVC98)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yilong Chen (L35WZWVC98)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1278,6 +1289,7 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/mob/ShareSDK/UI",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/YouMeng/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/HXChatUI/3rdparty/Parse",
+					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender",
 				);
 				INFOPLIST_FILE = CocoaChinaPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1318,7 +1330,7 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/vender-lib/UM/UMSocial/UMSocial_Sdk_Extra_Frameworks/UMSocial_Shake_Sdk",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/vender-lib/UM/UMSocial/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.cocoachinaplus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.myhelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CocoaChinaPlus/CocoaChinaPlus-Bridging-Header.h";
