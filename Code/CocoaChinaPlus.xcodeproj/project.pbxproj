@@ -65,6 +65,7 @@
 		CE19A84A1C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8311C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a */; };
 		CE19A84B1C1EB55E00B4CB6A /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8341C1EB55E00B4CB6A /* libSocialWechat.a */; };
 		CE19A84C1C1EB55E00B4CB6A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8351C1EB55E00B4CB6A /* libWeChatSDK.a */; };
+		CE27F5511C53E789005A5DDF /* miku-dancing.coding.io in Resources */ = {isa = PBXBuildFile; fileRef = CE27F5501C53E789005A5DDF /* miku-dancing.coding.io */; };
 		CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */; };
 		CE3FD60F1C46B6BD00FBEA19 /* CCAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; };
 		CE3FD6101C46BE2B00FBEA19 /* CCAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; };
@@ -207,6 +208,7 @@
 		CE19A8361C1EB55E00B4CB6A /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
 		CE19A8371C1EB55E00B4CB6A /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		CE19A8381C1EB55E00B4CB6A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		CE27F5501C53E789005A5DDF /* miku-dancing.coding.io */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "miku-dancing.coding.io"; path = "CocoaChinaPlus/miku-dancing.coding.io"; sourceTree = "<group>"; };
 		CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPArticleViewController.swift; sourceTree = "<group>"; };
 		CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CCAD.framework; sourceTree = "<group>"; };
 		CE4AB8B31BE11661009551C1 /* Changeset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changeset.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 		9EE4EFF21B79DEE80071423A = {
 			isa = PBXGroup;
 			children = (
+				CE27F5501C53E789005A5DDF /* miku-dancing.coding.io */,
 				CE50C4DB1C05E19E0062EBC2 /* R.generated.swift */,
 				9EE4EFFD1B79DEE80071423A /* CocoaChinaPlus */,
 				9EE4EFFC1B79DEE80071423A /* Products */,
@@ -899,6 +902,7 @@
 				CE19A8401C1EB55E00B4CB6A /* UMSCommentInputController.xib in Resources */,
 				CE5380C41BF18F5900751F55 /* ccstyle.css in Resources */,
 				CE19A8441C1EB55E00B4CB6A /* UMSLoginViewController.xib in Resources */,
+				CE27F5511C53E789005A5DDF /* miku-dancing.coding.io in Resources */,
 				CE19A8471C1EB55E00B4CB6A /* UMSocialSDKResourcesNew.bundle in Resources */,
 				CE19A8411C1EB55E00B4CB6A /* UMSCommentInputControlleriPad.xib in Resources */,
 			);

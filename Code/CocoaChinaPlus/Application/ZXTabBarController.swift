@@ -11,7 +11,6 @@ import ZXKit
 
 class ZXTabBarController: UITabBarController,UITabBarControllerDelegate {
     
-    
     var chatController:CChatListViewController!
     
     override func viewDidLoad() {
@@ -42,3 +41,4 @@ class ZXTabBarController: UITabBarController,UITabBarControllerDelegate {
     }
 
 }
+

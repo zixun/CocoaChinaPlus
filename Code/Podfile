@@ -4,6 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 pod 'ZXKit', git: 'https://github.com/zixun/ZXKit.git'
+pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
 pod 'Neon', '~> 0.0.3'
 pod 'SwiftyUserDefaults', '~> 2.0.0'
@@ -20,3 +21,6 @@ pod 'R.swift', '~> 0.12.0'
 pod 'SVPullToRefresh', '0.4.1'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'UMengAnalytics', '~> 3.5.10'
+
+pod 'GCDWebServer', '~> 3.2.7'
+

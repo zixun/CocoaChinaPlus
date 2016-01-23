@@ -8,6 +8,9 @@
 
 import UIKit
 import RxSwift
+import GCDWebServer
+import JavaScriptCore
+import Neon
 
 
 @UIApplicationMain
@@ -17,7 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let tabbarController = ZXTabBarController()
     
+    var webserver = GCDWebServer()
+    
+    private var webview:UIWebView?
+    
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        //开启webserver
+        self.startWebServer()
         
         //各种平台配置
         CCAppConfiguration.configure(application, launchOptions: launchOptions)
@@ -27,6 +39,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.backgroundColor = UIColor.blackColor()
             window.rootViewController = self.tabbarController
             window.makeKeyAndVisible()
+            
+            //程序员鼓励师Miku
+            let webview = UIWebView()
+            webview.delegate = self
+            self.webview = webview;
+            self.window!.addSubview(self.webview!)
+            self.webview!.backgroundColor = UIColor.clearColor()
+            self.webview!.opaque = false;
+            
+            self.webview!.anchorInCorner(Corner.BottomLeft, xPad: 20, yPad: 20, width: 100, height: 100);
+            let url = "http://localhost:8989/miku-dancing.coding.io/index.html"
+            self.webview!.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+
+            
         }
 
         //UINavigationBar设置
@@ -40,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //删除一个星期前阅读过的未收藏的文章
         CCArticleService.cleanMouthAgo()
         
+        
+        
         //模拟器模拟自动登录
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             let str = "simulator" as NSString
@@ -48,6 +76,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    private func startWebServer() {
+        if let web = NSBundle.mainBundle().resourcePath?.NS.stringByAppendingPathComponent("miku-dancing.coding.io") {
+            self.webserver.addGETHandlerForBasePath("/miku-dancing.coding.io/", directoryPath: web, indexFilename: nil, cacheAge: 0, allowRangeRequests: true)
+        }
+        
+        self.webserver.startWithPort(8989, bonjourName: "Code+")
+        print("Visit \(self.webserver?.serverURL) in your web browser")
+    }
+    
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         APService.registerDeviceToken(deviceToken)
@@ -94,4 +132,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UMSocialSnsService.handleOpenURL(url)
     }
 }
+
+extension AppDelegate : UIWebViewDelegate {
+    func webViewDidFinishLoad(webView: UIWebView) {
+        
+        let context = self.webview!.valueForKeyPath("documentView.webView.mainFrame.javaScriptContext") as! JSContext
+        context.evaluateScript("control.music(false)")
+        context.evaluateScript("control.mute(false)")
+        
+        
+        context.evaluateScript("control.dance(1)")
+        context.evaluateScript("control.play()")
+    }
+}
+
 

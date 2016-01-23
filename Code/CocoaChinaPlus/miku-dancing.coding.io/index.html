@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MMD</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<style>
+		html,body {
+			background-color: transparent;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		div {
+			width: 100%;
+			height: 100%;
+		}
+		#battery{
+			width: 100%;
+			height: 8%;
+			bottom: 3%;
+			text-align: center;
+			position: absolute;
+			display: none;
+		}
+		#battery img{
+			width: 15%;
+		}
+	</style>
+</head>
+
+<body>
+<div id="battery">
+	<img src="battery.png">
+</div>
+<!-- TODO 控制音乐播放 -->
+<audio id="miku-music"></audio>
+<script src="./lib/three.js"></script>
+<script src="./lib/MMDLoader.js"></script>
+<script src="./lib/MorphAnimation2.js"></script>
+<script src="./lib/CCDIKSolver.js"></script>
+<script src="./main.js"></script>
+
+</body>
+</html>

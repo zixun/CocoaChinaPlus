@@ -14,6 +14,7 @@ struct R {
     static var iosSocialSdkShakeHtml: NSURL? { return _R.hostingBundle?.URLForResource("ios-social-sdk-shake", withExtension: "html") }
     static var jquery164MinJs: NSURL? { return _R.hostingBundle?.URLForResource("jquery-1.6.4.min", withExtension: "js") }
     static var localizableStrings: NSURL? { return _R.hostingBundle?.URLForResource("Localizable", withExtension: "strings") }
+    static var mikuDancingCodingIo: NSURL? { return _R.hostingBundle?.URLForResource("miku-dancing.coding", withExtension: "io") }
     static var pushConfigPlist: NSURL? { return _R.hostingBundle?.URLForResource("PushConfig", withExtension: "plist") }
     static var uMSocialSDKResourcesNewBundle: NSURL? { return _R.hostingBundle?.URLForResource("UMSocialSDKResourcesNew", withExtension: "bundle") }
   }
