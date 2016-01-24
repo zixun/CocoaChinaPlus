@@ -10,6 +10,7 @@ import UIKit
 import JavaScriptCore
 import Neon
 import RxSwift
+import RxCocoa
 
 
 class CCMikuView: UIView {
@@ -28,8 +29,6 @@ class CCMikuView: UIView {
         self.backgroundColor = UIColor.clearColor()
         self.addSubview(self.webview);
         self.webview.userInteractionEnabled = false;
-        self.webview.show()
-        
         
         let pan = UIPanGestureRecognizer()
         self.addGestureRecognizer(pan);
@@ -51,19 +50,7 @@ class CCMikuView: UIView {
     
     func dragMe(ges:UIPanGestureRecognizer) {
         let dragPoint = ges.locationInView(self.superview)
-        
         self.center = dragPoint;
-        
-        print(NSStringFromCGPoint(dragPoint))
-        
-        if ges.state == .Began {
-            
-        }else if(ges.state == .Changed) {
-            
-        }else if (ges.state == .Ended || ges.state == .Cancelled || ges.state == .Failed) {
-            
-            
-        }
     }
     
     
@@ -71,7 +58,7 @@ class CCMikuView: UIView {
 }
 
 
-private class CCMikuWebView: UIWebView {
+private class CCMikuWebView: UIWebView { //2：42
     
     convenience init() {
         self.init(frame:CGRectZero)
@@ -83,17 +70,18 @@ private class CCMikuWebView: UIWebView {
         self.delegate = self
         self.backgroundColor = UIColor.clearColor()
         self.opaque = false;
+        
+        let url = "http://localhost:8989/miku-dancing.coding.io/index.html"
+        self.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(2*60 + 42, target: self, selector: Selector("timerAction"), userInfo: nil, repeats: true)
+        
     }
     
     
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func show() {
-        let url = "http://localhost:8989/miku-dancing.coding.io/index.html"
-        self.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
     }
     
     /**
@@ -111,6 +99,9 @@ private class CCMikuWebView: UIWebView {
     }
     
     
+    func timerAction() {
+        self.play()
+    }
     
     private func evaluateScript(string:String) {
         let context = self.valueForKeyPath("documentView.webView.mainFrame.javaScriptContext") as! JSContext
@@ -127,8 +118,6 @@ extension CCMikuWebView: UIWebViewDelegate {
         
         context.evaluateScript("control.dance(1)")
         context.evaluateScript("control.play()")
-        
-        //        context.evaluateScript("control.mute(true)")
         
         context.exceptionHandler = { context, exception in
             print("JS Error: \(exception)")
