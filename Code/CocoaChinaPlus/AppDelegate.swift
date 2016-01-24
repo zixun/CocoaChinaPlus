@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import GCDWebServer
+import Neon
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,7 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
             
             //程序员鼓励师Miku
-            CCMikuView.showMiku()
+            let miku = CCMikuView();
+            window.addSubview(miku)
+            miku.anchorInCorner(Corner.BottomLeft, xPad: 20, yPad: 20, width: 100, height: 100);
         }
 
         //UINavigationBar设置
