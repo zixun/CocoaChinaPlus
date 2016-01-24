@@ -9,9 +9,6 @@
 import UIKit
 import RxSwift
 import GCDWebServer
-import JavaScriptCore
-import Neon
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,18 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
             
             //程序员鼓励师Miku
-            let webview = UIWebView()
-            webview.delegate = self
-            self.webview = webview;
-            self.window!.addSubview(self.webview!)
-            self.webview!.backgroundColor = UIColor.clearColor()
-            self.webview!.opaque = false;
-            
-            self.webview!.anchorInCorner(Corner.BottomLeft, xPad: 20, yPad: 20, width: 100, height: 100);
-            let url = "http://localhost:8989/miku-dancing.coding.io/index.html"
-            self.webview!.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
-
-            
+            CCMikuView.showMiku()
         }
 
         //UINavigationBar设置
@@ -132,18 +118,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UMSocialSnsService.handleOpenURL(url)
     }
 }
-
-extension AppDelegate : UIWebViewDelegate {
-    func webViewDidFinishLoad(webView: UIWebView) {
-        
-        let context = self.webview!.valueForKeyPath("documentView.webView.mainFrame.javaScriptContext") as! JSContext
-        context.evaluateScript("control.music(false)")
-        context.evaluateScript("control.mute(false)")
-        
-        
-        context.evaluateScript("control.dance(1)")
-        context.evaluateScript("control.play()")
-    }
-}
-
 

@@ -109,6 +109,7 @@
 		CE5380C41BF18F5900751F55 /* ccstyle.css in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AC1BF18F5900751F55 /* ccstyle.css */; };
 		CE5380C51BF18F5900751F55 /* jquery-1.6.4.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */; };
 		CE5380C61BF18F5900751F55 /* CCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */; };
+		CE68F2CE1C54072B00E0328D /* CCMikuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68F2CD1C54072B00E0328D /* CCMikuView.swift */; };
 		CEC9BAED1C46D13A00E5B949 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */; };
 		CEC9BAEF1C46D14000E5B949 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9BAEE1C46D14000E5B949 /* EventKit.framework */; };
 		E3265D961BB4230700750716 /* CCRemoteNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */; };
@@ -255,6 +256,7 @@
 		CE5380AC1BF18F5900751F55 /* ccstyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ccstyle.css; sourceTree = "<group>"; };
 		CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.6.4.min.js"; sourceTree = "<group>"; };
 		CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCTableViewCell.swift; sourceTree = "<group>"; };
+		CE68F2CD1C54072B00E0328D /* CCMikuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMikuView.swift; sourceTree = "<group>"; };
 		CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		CEC9BAEE1C46D14000E5B949 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCRemoteNotificationHandler.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				9EE4EFFE1B79DEE80071423A /* AppDelegate.swift */,
+				CE68F2CD1C54072B00E0328D /* CCMikuView.swift */,
 				9E56F9191BB457B200F57CB0 /* CCAppConfiguration.swift */,
 				E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */,
 				9E6B7DEC1B8E069400591846 /* AppDef.swift */,
@@ -1026,6 +1029,7 @@
 				CE0B09721BDD264400D8F3AC /* CCSearchViewController.swift in Sources */,
 				CE5380BE1BF18F5900751F55 /* NSDate+String.swift in Sources */,
 				CE5380B01BF18F5900751F55 /* CCArticleTableViewController.swift in Sources */,
+				CE68F2CE1C54072B00E0328D /* CCMikuView.swift in Sources */,
 				9E61C3331BBD4BC900C360E2 /* CCProfileViewController.swift in Sources */,
 				E3265D961BB4230700750716 /* CCRemoteNotificationHandler.swift in Sources */,
 				CE4AB8C51BE11661009551C1 /* RxTableViewSectionedAnimatedDataSource.swift in Sources */,
