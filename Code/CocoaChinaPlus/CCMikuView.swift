@@ -73,9 +73,13 @@ private class CCMikuWebView: UIWebView { //2：42
         
         let url = "http://localhost:8989/miku-dancing.coding.io/index.html"
         self.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+        let timer = NSTimer.scheduledTimerWithTimeInterval(2*60 + 42, target: self, selector: "timerAction", userInfo: nil, repeats: true)
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(2*60 + 42, target: self, selector: Selector("timerAction"), userInfo: nil, repeats: true)
-        
+    }
+    
+    //@objc的用处 Swift中的NSTimer不能调用私有方法(包括target是private这种情况)，加入@objc后则可以
+    @objc func timerAction() {
+        self.play()
     }
     
     
@@ -98,10 +102,6 @@ private class CCMikuWebView: UIWebView { //2：42
         self.evaluateScript("control.pause()")
     }
     
-    
-    func timerAction() {
-        self.play()
-    }
     
     private func evaluateScript(string:String) {
         let context = self.valueForKeyPath("documentView.webView.mainFrame.javaScriptContext") as! JSContext
