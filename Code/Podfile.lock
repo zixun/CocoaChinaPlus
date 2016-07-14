@@ -16,7 +16,7 @@ PODS:
   - RxCocoa (2.0.0):
     - RxSwift (~> 2.0)
   - RxSwift (2.0.0)
-  - SQLite.swift (0.9.1)
+  - SQLite.swift (0.10.1)
   - SVPullToRefresh (0.4.1)
   - SwiftyUserDefaults (2.0.0)
   - UMengAnalytics (3.5.16)
@@ -37,7 +37,7 @@ DEPENDENCIES:
   - Reveal-iOS-SDK
   - RxCocoa (~> 2.0.0)
   - RxSwift (~> 2.0.0)
-  - SQLite.swift (~> 0.9.1)
+  - SQLite.swift (~> 0.10.1)
   - SVPullToRefresh (= 0.4.1)
   - SwiftyUserDefaults (~> 2.0.0)
   - UMengAnalytics (~> 3.5.10)
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   RxCocoa: b0ebd70b4f7450bdb3c8987b122f8fd568dc1e2f
   RxSwift: d83246efa6f16c50c143bec134649d045498f601
-  SQLite.swift: b9574f52c058b680e10e70b72e487312e0e4d26f
+  SQLite.swift: 6a6e4b034efc317ce4e203b6af2d3024fee2b570
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
   UMengAnalytics: fdf0c0a8c07d8bffc012ffa3c68e5d490af42098
