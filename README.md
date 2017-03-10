@@ -2,6 +2,11 @@
 # CocoaChina+
 CocoaChina+是一款开源的第三方CocoaChina移动端。整个App都用Swift2.0编写(除部分第三方OC代码外，比如JPush和友盟)。
 
+##GodEye调试工具
+[GodEye](https://github.com/zixun/GodEye)是本人研发的一款纯Swift实现的APM(应用性能管理工具)，它可以自动展示日志，崩溃，网络，卡顿，内存泄露，CPU、RAM使用率，帧率FPS,网络流量，文件目录结构等信息。并且只需要一行代码接入，零代码入侵，线上版本不编译进一行代码，做到绝对的线上安全，就像上帝睁开了他的眼睛。
+
+目前该工具已经接入CococaChinaPlus！
+
 ## QQ群：516326791
 516326791
 516326791

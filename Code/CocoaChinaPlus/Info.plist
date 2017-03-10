@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -39,18 +39,90 @@
 			<string>sina</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>sina.55dd4329e0f55a36b3003830</string>
+				<string>wb640791572</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>weixin</string>
 		<string>wechat</string>
+		<string>weixin</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
 		<string>sinaweibosso</string>
-		<string>cydia</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
+		<string>mqqapi</string>
+		<string>mqq</string>
+		<string>mqqOpensdkSSoLogin</string>
+		<string>mqqconnect</string>
+		<string>mqqopensdkdataline</string>
+		<string>mqqopensdkgrouptribeshare</string>
+		<string>mqqopensdkfriend</string>
+		<string>mqqopensdkapi</string>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqopensdkapiV3</string>
+		<string>mqqopensdkapiV4</string>
+		<string>mqzoneopensdk</string>
+		<string>wtloginmqq</string>
+		<string>wtloginmqq2</string>
+		<string>mqqwpa</string>
+		<string>mqzone</string>
+		<string>mqzonev2</string>
+		<string>mqzoneshare</string>
+		<string>wtloginqzone</string>
+		<string>mqzonewx</string>
+		<string>mqzoneopensdkapiV2</string>
+		<string>mqzoneopensdkapi19</string>
+		<string>mqzoneopensdkapi</string>
+		<string>mqqbrowser</string>
+		<string>mttbrowser</string>
+		<string>alipay</string>
+		<string>alipayshare</string>
+		<string>dingtalk</string>
+		<string>dingtalk-open</string>
+		<string>laiwangsso</string>
+		<string>yixin</string>
+		<string>yixinopenapi</string>
+		<string>instagram</string>
+		<string>whatsapp</string>
+		<string>line</string>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>kakaofa63a0b2356e923f3edd6512d531f546</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaotalk-4.5.0</string>
+		<string>kakaostory-2.9.0</string>
+		<string>pinterestsdk.v1</string>
+		<string>tumblr</string>
+		<string>evernote</string>
+		<string>en</string>
+		<string>enx</string>
+		<string>evernotecid</string>
+		<string>evernotemsg</string>
+		<string>youdaonote</string>
+		<string>ynotedictfav</string>
+		<string>com.youdao.note.todayViewNote</string>
+		<string>ynotesharesdk</string>
+		<string>gplus</string>
+		<string>pocket</string>
+		<string>readitlater</string>
+		<string>pocket-oauth-v1</string>
+		<string>fb131450656879143</string>
+		<string>en-readitlater-5776</string>
+		<string>com.ideashower.ReadItLaterPro3</string>
+		<string>com.ideashower.ReadItLaterPro</string>
+		<string>com.ideashower.ReadItLaterProAlpha</string>
+		<string>com.ideashower.ReadItLaterProEnterprise</string>
+		<string>vk</string>
+		<string>vk-share</string>
+		<string>vkauthorize</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

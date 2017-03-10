@@ -1,6 +1,0 @@
-framework module CCAD {
-  umbrella header "CCAD.h"
-
-  export *
-  module * { export * }
-}

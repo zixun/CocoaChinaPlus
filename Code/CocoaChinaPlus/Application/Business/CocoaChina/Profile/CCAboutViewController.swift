@@ -10,9 +10,9 @@ import UIKit
 
 class CCAboutViewController: ZXBaseViewController {
 
-    private var scrollView:UIScrollView!
+    fileprivate var scrollView:UIScrollView!
     
-    required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
+    required init(navigatorURL URL: URL?, query: Dictionary<String, String>) {
         super.init(navigatorURL: URL, query: query)
     }
 
@@ -27,9 +27,9 @@ class CCAboutViewController: ZXBaseViewController {
         self.scrollView.delegate = self
         self.view.addSubview(self.scrollView)
         
-        let imageview = UIImageView(image: R.image.about)
+        let imageview = UIImageView(image: R.image.about())
         imageview.frame = self.scrollView.bounds
-        imageview.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        imageview.autoresizingMask = UIViewAutoresizing.flexibleHeight
         self.scrollView.addSubview(imageview)
     }
 }

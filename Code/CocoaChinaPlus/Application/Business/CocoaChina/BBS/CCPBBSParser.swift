@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Ji
+import Log4G
 
 private let baseURL = "http://www.cocoachina.com/bbs/3g"
 
@@ -16,9 +17,9 @@ private let baseURL = "http://www.cocoachina.com/bbs/3g"
 class CCPBBSParser {
     
     //解析
-    class func parserBBS(result: (model: CCPBBSModel) -> Void) {
+    class func parserBBS(_ result: @escaping (_ model: CCPBBSModel) -> Void) {
         
-        CCRequest(.GET, baseURL).responseJi { (ji, error) -> Void in
+        _ = CCRequest(.get, baseURL).responseJi { (ji, error) -> Void in
             guard let nodes = ji?.xPath("//li[@class='articlelist clearfix']") else {
                 return
             }
@@ -33,7 +34,7 @@ class CCPBBSParser {
                     let content = contentNode.content,
                     let urlString = titleNode["href"]
                     else {
-                        print("資料毀損")
+                        Log4G.warning("資料毀損")
                         continue
                 }
                 
@@ -44,7 +45,7 @@ class CCPBBSParser {
             let model = CCPBBSModel(options: options)
             
             //回調
-            result(model: model)
+            result(model)
         }
     }
     

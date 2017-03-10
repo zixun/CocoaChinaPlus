@@ -11,16 +11,16 @@ import MBProgressHUD
 
 class CCCollectionViewController: CCArticleTableViewController {
     
-    private var dataSource : [CCArticleModel] = []
-    private var currentIndex : Int = 0
-    private var type : CCArticleType!
+    fileprivate var dataSource : [CCArticleModel] = []
+    fileprivate var currentIndex : Int = 0
+    fileprivate var type : CCArticleType!
     
-    required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
+    required init(navigatorURL URL: URL?, query: Dictionary<String, String>) {
         var query2 = query
         query2["forceHighlight"] = "1"
         super.init(navigatorURL: URL, query: query2)
         
-        self.type = query["type"] == "0" ? .All : .Collection
+        self.type = query["type"] == "0" ? .all : .collection
         self.dataSource = CCArticleService.queryArticles(type, index: currentIndex)
     }
 
@@ -33,18 +33,18 @@ class CCCollectionViewController: CCArticleTableViewController {
         
         self.tableView.append(self.dataSource)
         
-        self.tableView.addPullToRefreshWithActionHandler({[unowned self] () -> Void in
-                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        self.tableView.addPullToRefresh(actionHandler: {[unowned self] () -> Void in
+                MBProgressHUD.showAdded(to: self.view, animated: true)
                 self.currentIndex = 0
                 self.dataSource = CCArticleService.queryArticles(self.type, index:self.currentIndex)
                 self.tableView.reload(self.dataSource)
                 self.tableView.pullToRefreshView.stopAnimating()
                 self.tableView.infiniteScrollingView.stopAnimating()
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                MBProgressHUD.hide(for: self.view, animated: true)
         })
         
-        self.tableView.addInfiniteScrollingWithActionHandler({[unowned self] () -> Void in
-                self.currentIndex++
+        self.tableView.addInfiniteScrolling(actionHandler: {[unowned self] () -> Void in
+                self.currentIndex += 1
                 let model = CCArticleService.queryArticles(self.type, index: self.currentIndex)
                 self.tableView.append(model)
                 self.tableView.infiniteScrollingView.stopAnimating()

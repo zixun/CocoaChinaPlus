@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import ZXKit
 
 private let URLMaps: Dictionary<String,ZXBaseViewController.Type> =
    ["go/ccp/article":CCPArticleViewController.self,
@@ -21,31 +20,31 @@ func ZXNavBarSize() ->CGSize {
 }
 
 //如果URL要带参数，请严格检查参数是否正确
-func ZXOpenURL(url:String) {
+func ZXOpenURL(_ url:String) {
     let param =  ZXURLNavigator.sharedNavigator.paramFromURL(url)
     ZXOpenURL(url, param: param)
 }
 
-func ZXOpenURL(url:String, param:Dictionary<String,String>) {
+func ZXOpenURL(_ url:String, param:Dictionary<String,String>) {
     ZXURLNavigator.sharedNavigator.openURL(url, param: param)
 }
 
-func ZXPresentURL(url:String) {
+func ZXPresentURL(_ url:String) {
     let param =  ZXURLNavigator.sharedNavigator.paramFromURL(url)
     ZXURLNavigator.sharedNavigator.presentURL(url, param: param)
     
 }
 
-func ZXPresentURL(url:String, param:Dictionary<String,String>) {
+func ZXPresentURL(_ url:String, param:Dictionary<String,String>) {
     
 }
 
 func ZXPop() {
-   ZXNav().popViewControllerAnimated(true)
+   ZXNav().popViewController(animated: true)
 }
 
 func ZXNav() -> ZXNavigationController {
-    let tabBarController = (UIApplication.sharedApplication().delegate as! AppDelegate).tabbarController
+    let tabBarController = (UIApplication.shared.delegate as! AppDelegate).tabbarController
     let selet = tabBarController.selectedViewController
     return selet as! ZXNavigationController
 }
@@ -57,31 +56,31 @@ private class ZXURLNavigator: NSObject {
     }()
     
     
-    private func openURL(url:String, param:Dictionary<String,String>) {
+    fileprivate func openURL(_ url:String, param:Dictionary<String,String>) {
         guard let clazz = self.controllerFromURL(url) else {
             return
         }
         
-        let vc = clazz.init(navigatorURL:  NSURL(string: url)!, query: param)
+        let vc = clazz.init(navigatorURL:  URL(string: url)!, query: param)
         ZXNav().pushViewController(vc, animated: true)
     }
     
-    private func presentURL(url:String,param:Dictionary<String,String>) {
+    fileprivate func presentURL(_ url:String,param:Dictionary<String,String>) {
         guard let clazz = self.controllerFromURL(url) else {
             return
         }
-        let vc = clazz.init(navigatorURL:  NSURL(string: url)!, query: param)
+        let vc = clazz.init(navigatorURL:  URL(string: url)!, query: param)
         ZXNav().presentViewController(vc, withNavigation: true, animated: true, completion: nil)
     }
     
-    private func controllerFromURL(url:String) -> ZXBaseViewController.Type? {
-        let path = url.componentsSeparatedByString("?").first!
+    fileprivate func controllerFromURL(_ url:String) -> ZXBaseViewController.Type? {
+        let path = url.components(separatedBy: "?").first!
         let type: ZXBaseViewController.Type? = URLMaps[path]
         return type
     }
     
-    private func paramFromURL(url: String) -> [String:String] {
-        let components:[String] = url.componentsSeparatedByString("?")
+    fileprivate func paramFromURL(_ url: String) -> [String:String] {
+        let components:[String] = url.components(separatedBy: "?")
         guard components.count >= 2 else {
             return [String:String]()
         }
@@ -89,10 +88,10 @@ private class ZXURLNavigator: NSObject {
         let paramString:String = components[1]
         var dic:[String:String] = [String:String]()
         
-        let paramComponents:[String] = paramString.componentsSeparatedByString("&")
+        let paramComponents:[String] = paramString.components(separatedBy: "&")
         
         for param: String in paramComponents {
-            let entity:[String] = param.componentsSeparatedByString("=")
+            let entity:[String] = param.components(separatedBy: "=")
             dic[entity[0]] = entity[1]
         }
         

@@ -8,19 +8,19 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
     func string() ->String {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
-        return dateFormatter.stringFromDate(self)
+        return dateFormatter.string(from: self)
     }
 }
 
 extension String {
     
-    func date() -> NSDate {
-        let dateFormatter = NSDateFormatter()
+    func date() -> Date {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
-        return dateFormatter.dateFromString(self)!
+        return dateFormatter.date(from: self)!
     }
 }

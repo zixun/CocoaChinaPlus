@@ -10,18 +10,19 @@ import UIKit
 import SVPullToRefresh
 import MBProgressHUD
 import RxSwift
-import ZXKit
 import Neon
+import Kingfisher
+import Log4G
 
 class CCPTableArray: NSObject {
 
     //RxSwift资源回收包
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
     //加载下一页触发器
-    private var loadNextPageTriggers = [PublishSubject<Void>]()
+    fileprivate var loadNextPageTriggers = [PublishSubject<Void>]()
     
-    private(set) var tableViews = [CCArticleTableView]()
+    fileprivate(set) var tableViews = [CCArticleTableView]()
     
     //private
     var homeModel: CCPHomeModel
@@ -39,7 +40,7 @@ class CCPTableArray: NSObject {
             let table = CCArticleTableView()
             table.tag = i
             
-            table.addPullToRefreshWithActionHandler({ () -> Void in
+            table.addPullToRefresh(actionHandler: { () -> Void in
                 self.reloadDataOfTable(table)
             })
             
@@ -50,65 +51,62 @@ class CCPTableArray: NSObject {
                 
                 let view = ZXCircleView()
                 view.circleDelegate = self
-                view.anchorToEdge(Edge.Top, padding: 0, width: ZXScreenWidth(), height: ZXScreenWidth() * 0.8)
+                view.anchorToEdge(Edge.top, padding: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width * 0.8)
                 view.reloadData()
                 self.tableViews[0].tableHeaderView = view
             } else {
-                table.addInfiniteScrollingWithActionHandler({ [weak self] () -> Void in
+                table.addInfiniteScrolling(actionHandler: { [weak self] () -> Void in
                     guard let sself = self else {
                         return
                     }
                     
-                    sself.loadNextPageTriggers[table.tag].on(.Next())
+                    sself.loadNextPageTriggers[table.tag].on(.next())
                 })
-                table.infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+                table.infiniteScrollingView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
             }
             
-            table.selectSubject.subscribeNext({ (article) -> Void in
-                ZXOpenURL("go/ccp/article?identity=\(article.identity)")
-            }).addDisposableTo(disposeBag)
+            table.selectSubject.bindNext({ (article:CCArticleModel) in
+                ZXOpenURL("go/ccp/article?identity=\(article.identity!)")
+            }).addDisposableTo(self.disposeBag)
         }
     }
     
-    func reloadDataAtIndexIfEmpty(index: Int) {
+    func reloadDataAtIndexIfEmpty(_ index: Int) {
         guard self.tableViews[index].isEmpty() == true else {
             return
         }
         self.reloadDataOfTable(self.tableViews[index])
     }
     
-    func reloadDataAtIndex(index: Int) {
+    func reloadDataAtIndex(_ index: Int) {
         self.reloadDataOfTable(self.tableViews[index])
     }
     
-    private func reloadDataOfTable(table: CCArticleTableView) {
-        MBProgressHUD.showHUDAddedTo(table, animated: true)
+    fileprivate func reloadDataOfTable(_ table: CCArticleTableView) {
+        MBProgressHUD.showAdded(to: table, animated: true)
         let index = table.tag
         let urlString = self.urlStringAtIndex(index)
         
         if index > 0 {
             table.clean()
             
-            CCHTMLModelHandler.sharedHandler.handleOptionPage(urlString, loadNextPageTrigger: self.loadNextPageTriggers[table.tag]).subscribeNext({ (models) -> Void in
+            CCHTMLModelHandler.sharedHandler.handleOptionPage(urlString, loadNextPageTrigger: self.loadNextPageTriggers[table.tag]).bindNext({ (models:Array<CCArticleModel>) in
                 table.pullToRefreshView.stopAnimating()
                 table.append(models)
                 table.infiniteScrollingView.stopAnimating()
-                MBProgressHUD.hideHUDForView(table, animated: true)
-                
-            }).addDisposableTo(disposeBag)
-            
+                MBProgressHUD.hide(for: table, animated: true)
+            }).addDisposableTo(self.disposeBag)
         } else {
             
-            CCHTMLModelHandler.sharedHandler.handleHomePage().subscribeNext({ (homeModel) -> Void in
+            CCHTMLModelHandler.sharedHandler.handleHomePage().bindNext({ (homeModel:CCPHomeModel) in
                 table.reload(homeModel.page)
                 
                 table.pullToRefreshView.stopAnimating()
-                MBProgressHUD.hideHUDForView(table, animated: true)
+                MBProgressHUD.hide(for: table, animated: true)
                 
                 let view = table.tableHeaderView as! ZXCircleView
                 view.reloadData()
-            }).addDisposableTo(disposeBag)
-            
+            }).addDisposableTo(self.disposeBag)
         }
     }
     
@@ -123,7 +121,7 @@ extension CCPTableArray {
     
     :returns: 数据获取的URL
     */
-    private func urlStringAtIndex(index: Int) -> String {
+    fileprivate func urlStringAtIndex(_ index: Int) -> String {
         return self.homeModel.options[index].urlString
     }
     
@@ -136,10 +134,10 @@ extension CCPTableArray: ZXCircleViewDelegate {
         return self.homeModel.banners.count
     }
     
-    func circleView(circleView: ZXCircleView, configureCell cellRef: ZXCircleViewCellRef) {
-        let cell = cellRef.memory
+    func circleView(circleView:ZXCircleView, configureCell cellRef:ZXCircleViewCellRef) {
+        let cell = cellRef.pointee
         
-        func modelFrom(cell: ZXCircleViewCell) -> CCArticleModel? {
+        func modelFrom(_ cell: ZXCircleViewCell) -> CCArticleModel? {
             guard let cellIndex = cell.index else {
                 return nil
             }
@@ -149,17 +147,17 @@ extension CCPTableArray: ZXCircleViewDelegate {
         guard
             let model = modelFrom(cell),
             let urlString = model.imageURL,
-            let url = NSURL(string: urlString)
+            let url = URL(string: urlString)
             else {
-                print("資料缺失")
+                Log4G.error("資料缺失")
                 return
         }
         
-        cell.imageView.kf_setImageWithURL(url)
+        cell.imageView.kf.setImage(with: url)
         cell.titleLabel.text = model.title
     }
     
-    func circleView(circleView: ZXCircleView, didSelectedCellAtIndex index: Int) {
+    func circleView(circleView:ZXCircleView, didSelectedCellAtIndex index:Int) {
         
         //model
         let model = self.homeModel.banners[index]

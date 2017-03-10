@@ -18,9 +18,9 @@ let CCXPath_Search_ViewedNode = "span"
 
 extension CCHTMLParser {
     
-    func parseSearch(url:String,result: (model:[CCArticleModel],nextURL:String?) ->Void) {
+    func parseSearch(_ url:String,result: @escaping (_ model:[CCArticleModel],_ nextURL:String?) ->Void) {
         
-        CCRequest(.GET, url,cheat: false).responseJi {[weak self] (ji, error) -> Void in
+        CCRequest(.get, url, cheat: false).responseJi {[weak self] (ji, error) -> Void in
             
             guard let sself = self else {
                 return
@@ -34,11 +34,11 @@ extension CCHTMLParser {
             let items = sself.parserSearchItems(ji!)
             let nextURL_ = sself.parserNextURL(ji!)
             
-            result(model: items, nextURL: nextURL_)
+            result(items, nextURL_)
         }
     }
     
-    private func parserSearchItems(ji:Ji) -> [CCArticleModel] {
+    fileprivate func parserSearchItems(_ ji:Ji) -> [CCArticleModel] {
         
         guard let divNodes = ji.xPath(CCXPath_Search_MainNode) else {
             return  [CCArticleModel]()
@@ -73,7 +73,7 @@ extension CCHTMLParser {
         return models
     }
     
-    private func parserNextURL(ji:Ji) -> String? {
+    fileprivate func parserNextURL(_ ji:Ji) -> String? {
         guard let contentNodes = ji.xPath("//td/a") else {
             return nil
         }

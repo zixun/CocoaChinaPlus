@@ -39,7 +39,7 @@ public struct Changeset<S: SectionModelType> : CustomStringConvertible {
     var movedItems: [(from: ItemPath, to: ItemPath)] = []
     var updatedItems: [ItemPath] = []
 
-    public static func initialValue(sections: [S]) -> Changeset<S> {
+    public static func initialValue(_ sections: [S]) -> Changeset<S> {
         var initialValue = Changeset<S>()
         initialValue.insertedSections = Array(0 ..< sections.count)
         initialValue.finalSections = sections
@@ -48,7 +48,7 @@ public struct Changeset<S: SectionModelType> : CustomStringConvertible {
 
     public var description : String {
         get {
-            let serializedSections = "[\n" + finalSections.map { "\($0)" }.joinWithSeparator(",\n") + "\n]\n"
+            let serializedSections = "[\n" + finalSections.map { "\($0)" }.joined(separator: ",\n") + "\n]\n"
             return " >> Final sections"
             + "   \n\(serializedSections)"
             + (insertedSections.count > 0 || deletedSections.count > 0 || movedSections.count > 0 || updatedSections.count > 0 ? "\nSections:" : "")

@@ -8,7 +8,8 @@
 
 import Foundation
 import SQLite
-import ZXKit
+import AppBaseKit
+import Log4G
 
 let CCDB = CCDataBase.sharedDB
 
@@ -19,20 +20,20 @@ class CCDataBase: NSObject {
     }()
     
     
-    private(set) var tableManager : CCTableManager!
+    fileprivate(set) var tableManager : CCTableManager!
     
-    private(set) var connection : Connection!
+    fileprivate(set) var connection : Connection!
     
     override init() {
         super.init()
         do{
             //获取路径
-            let path = ZXPathForApplicationSupportResource(NSBundle.mainBundle().bundleIdentifier!)
+            let path = AppPathForApplicationSupportResource(relativePath: Bundle.main.bundleIdentifier!)
             
             //创建文件
-            if !NSFileManager.defaultManager().fileExistsAtPath(path) {
-                try NSFileManager.defaultManager().createDirectoryAtPath(
-                    path, withIntermediateDirectories: true, attributes: nil
+            if !FileManager.default.fileExists(atPath: path) {
+                try FileManager.default.createDirectory(
+                    atPath: path, withIntermediateDirectories: true, attributes: nil
                 )
             }
             
@@ -42,7 +43,7 @@ class CCDataBase: NSObject {
             //建立数据库表
             self.tableManager = CCTableManager(connection: self.connection)
         }catch {
-            println("创建数据库失败！原因: \(error)")
+            Log4G.error("创建数据库失败！原因: \(error)")
         }
     }
 }

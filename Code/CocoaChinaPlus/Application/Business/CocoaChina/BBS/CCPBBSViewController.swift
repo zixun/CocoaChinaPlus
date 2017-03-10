@@ -8,33 +8,32 @@
 
 import UIKit
 import MBProgressHUD
-import ZXKit
 
 // MARK: CCPBBSViewController
 class CCPBBSViewController: ZXBaseViewController {
     
     //UI
-    private lazy var tableView: UITableView = {
+    fileprivate lazy var tableView: UITableView = {
         let newTableView = UITableView()
-        newTableView.backgroundColor = ZXColor(0x000000, alpha: 0.8)
+        newTableView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.8)
         newTableView.delegate = self
         newTableView.dataSource = self
-        newTableView.separatorStyle = .None
+        newTableView.separatorStyle = .none
         
         //tableview 下拉動作
-        newTableView.addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+        newTableView.addPullToRefresh(actionHandler: { [weak self] () -> Void in
             guard let sself = self else {
                 return
             }
             sself.reloadTableView()
         })
-        newTableView.registerClass(CCPBBSTableViewCell.self, forCellReuseIdentifier: "CCPBBSTableViewCell")
+        newTableView.register(CCPBBSTableViewCell.self, forCellReuseIdentifier: "CCPBBSTableViewCell")
         return newTableView
     }()
     
-    private var dataSource = CCPBBSModel(options: [CCPBBSOptionModel]())
+    fileprivate var dataSource = CCPBBSModel(options: [CCPBBSOptionModel]())
     
-    required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
+    required init(navigatorURL URL: URL?, query: Dictionary<String, String>) {
         super.init(navigatorURL: URL, query: query)
         self.setup()
     }
@@ -60,15 +59,15 @@ class CCPBBSViewController: ZXBaseViewController {
 extension CCPBBSViewController {
     
     //初始化參數
-    private func setup() {
+    fileprivate func setup() {
         
         //設置 tableview
         self.view.addSubview(self.tableView)
     }
     
     //tableview 重新加載
-    private func reloadTableView() {
-        MBProgressHUD.showHUDAddedTo(self.tableView, animated: true)
+    fileprivate func reloadTableView() {
+        MBProgressHUD.showAdded(to: self.tableView, animated: true)
         CCPBBSParser.parserBBS { [weak self] (model) -> Void in
             guard let sself = self else {
                 return
@@ -77,7 +76,7 @@ extension CCPBBSViewController {
             sself.dataSource = model
             sself.tableView.reloadData()
             sself.tableView.pullToRefreshView.stopAnimating()
-            MBProgressHUD.hideHUDForView(sself.tableView, animated: true)
+            MBProgressHUD.hide(for: sself.tableView, animated: true)
         }
     }
     
@@ -86,12 +85,12 @@ extension CCPBBSViewController {
 // MARK: UITableViewDataSource
 extension CCPBBSViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.options.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CCPBBSTableViewCell", forIndexPath: indexPath) as! CCPBBSTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CCPBBSTableViewCell", for: indexPath) as! CCPBBSTableViewCell
         let option = self.dataSource.options[indexPath.row]
         cell.configure(option)
         return cell
@@ -102,12 +101,12 @@ extension CCPBBSViewController: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension CCPBBSViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let link = self.dataSource.options[indexPath.row].urlString
         ZXOpenURL("go/ccp/edition", param: ["link": link])
     }
@@ -118,13 +117,13 @@ extension CCPBBSViewController: UITableViewDelegate {
 class CCPBBSTableViewCell: CCPTableViewCell {
     
     //UI
-    private lazy var titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let newTitleLabel = UILabel()
-        newTitleLabel.font = UIFont.systemFontOfSize(14)
-        newTitleLabel.textColor = UIColor.whiteColor()
-        newTitleLabel.textAlignment = .Left
+        newTitleLabel.font = UIFont.systemFont(ofSize: 14)
+        newTitleLabel.textColor = UIColor.white
+        newTitleLabel.textAlignment = .left
         newTitleLabel.numberOfLines = 2
-        newTitleLabel.lineBreakMode = .ByTruncatingTail
+        newTitleLabel.lineBreakMode = .byTruncatingTail
         return newTitleLabel
     }()
     
@@ -144,7 +143,7 @@ class CCPBBSTableViewCell: CCPTableViewCell {
         self.titleLabel.fillSuperview(left: 4, right: 0, top: 4, bottom: 0)
     }
     
-    func configure(model: CCPBBSOptionModel) {
+    func configure(_ model: CCPBBSOptionModel) {
         self.titleLabel.text = model.title
     }
     

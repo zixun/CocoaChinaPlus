@@ -10,7 +10,7 @@ import Foundation
 import SQLite
 
 class CCTableManager: NSObject {
-    private(set) var articleDAO : CCArticleDAO!
+    fileprivate(set) var articleDAO : CCArticleDAO!
     
     convenience init(connection:Connection) {
         self.init()

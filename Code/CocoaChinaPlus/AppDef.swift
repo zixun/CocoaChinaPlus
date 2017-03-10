@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftyUserDefaults
-import ZXKit
 
 extension DefaultsKeys {
     //标志导航页是否显示过
@@ -39,10 +38,10 @@ func kADText() -> String {
 
 extension UIColor {
     static func assistColor() ->UIColor {
-        return ZXColor(0x00B9FF)
+        return UIColor(hex:0x00B9FF)
     }
     
     static func appGrayColor() ->UIColor {
-        return ZXColor(0xB4B4B4)
+        return UIColor(hex:0xB4B4B4)
     }
 }

@@ -11,34 +11,21 @@ import MBProgressHUD
 import SwiftyUserDefaults
 import Neon
 import RxSwift
-import ZXKit
-import CCAD
+import AppBaseKit
 
 class CChatListViewController: ZXBaseViewController {
     
-    private var adBanner: CCADBanner!
     
-    private let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     
-    convenience init() {
-        self.init(navigatorURL: NSURL(string: "go/ccp/chatlist")!, query: Dictionary<String, String>())
-    }
-    
-    
-    required init(navigatorURL URL: NSURL, query: Dictionary<String, String>) {
-        super.init(navigatorURL: URL, query: query)
-        
-        self.adBanner = CCADBanner(type: CCADBannerViewType.Chat, rootViewController: self, completionBlock: { (succeed:Bool, userInfo:[NSObject : AnyObject]!) -> Void in
-            
-        })
-        self.view.addSubview(self.adBanner);
+    init() {
+        super.init(navigatorURL: URL(string: "go/ccp/chatlist")!, query: Dictionary<String, String>())
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        alert("请加QQ群:516326791")
+        UIAlertView.quickTip(message: "请加QQ群:516326791")
         
-        self.adBanner.anchorAndFillEdge(.Bottom, xPad: 0, yPad: 0, otherSize:48)
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -48,4 +35,9 @@ class CChatListViewController: ZXBaseViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    required init(navigatorURL URL: URL?, query: Dictionary<String, String>) {
+        fatalError("init(navigatorURL:query:) has not been implemented")
+    }
+
 }

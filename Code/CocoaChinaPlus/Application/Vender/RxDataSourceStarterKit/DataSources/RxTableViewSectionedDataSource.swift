@@ -14,60 +14,60 @@ import RxCocoa
 #endif
 
 // objc monkey business
-public class _RxTableViewSectionedDataSource : NSObject
+open class _RxTableViewSectionedDataSource : NSObject
                                              , UITableViewDataSource {
     
-    func _numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func _numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
         return 1
     }
     
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return _numberOfSectionsInTableView(tableView)
     }
 
-    func _tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func _tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return _tableView(tableView, numberOfRowsInSection: section)
     }
 
-    func _tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func _tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         return (nil as UITableViewCell?)!
     }
     
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return _tableView(tableView, cellForRowAtIndexPath: indexPath)
     }
 
-    func _tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func _tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return nil
     }
     
-    public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return _tableView(tableView, titleForHeaderInSection: section)
     }
 
-    func _tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func _tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return nil
     }
     
-    public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return _tableView(tableView, titleForFooterInSection: section)
     }
     
     //NOTE: add by CHEN YILONG
-    public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return false
     }
 }
 
-public class RxTableViewSectionedDataSource<S: SectionModelType> : _RxTableViewSectionedDataSource {
+open class RxTableViewSectionedDataSource<S: SectionModelType> : _RxTableViewSectionedDataSource {
     
     public typealias I = S.Item
     public typealias Section = S
-    public typealias CellFactory = (UITableView, NSIndexPath, I) -> UITableViewCell
+    public typealias CellFactory = (UITableView, IndexPath, I) -> UITableViewCell
     
     public typealias IncrementalUpdateObserver = AnyObserver<Changeset<S>>
     
@@ -83,26 +83,26 @@ public class RxTableViewSectionedDataSource<S: SectionModelType> : _RxTableViewS
     
     var sectionModels: [SectionModelSnapshot] = []
 
-    public func sectionAtIndex(section: Int) -> S {
+    open func sectionAtIndex(_ section: Int) -> S {
         return self.sectionModels[section].model
     }
 
-    public func itemAtIndexPath(indexPath: NSIndexPath) -> I {
+    open func itemAtIndexPath(_ indexPath: IndexPath) -> I {
         return self.sectionModels[indexPath.section].items[indexPath.item]
     }
 
     var incrementalUpdateObservers: Bag<IncrementalUpdateObserver> = Bag()
     
-    public func setSections(sections: [S]) {
+    open func setSections(_ sections: [S]) {
         self.sectionModels = sections.map { SectionModelSnapshot(model: $0, items: $0.items) }
     }
     
-    public var cellFactory: CellFactory! = nil
+    open var cellFactory: CellFactory! = nil
     
-    public var titleForHeaderInSection: ((section: Int) -> String)?
-    public var titleForFooterInSection: ((section: Int) -> String)?
+    open var titleForHeaderInSection: ((_ section: Int) -> String)?
+    open var titleForFooterInSection: ((_ section: Int) -> String)?
     
-    public var rowAnimation: UITableViewRowAnimation = .Automatic
+    open var rowAnimation: UITableViewRowAnimation = .automatic
     
     public override init() {
         super.init()
@@ -117,37 +117,37 @@ public class RxTableViewSectionedDataSource<S: SectionModelType> : _RxTableViewS
     
     // observers
     
-    public func addIncrementalUpdatesObserver(observer: IncrementalUpdateObserver) -> IncrementalUpdateDisposeKey {
+    open func addIncrementalUpdatesObserver(_ observer: IncrementalUpdateObserver) -> IncrementalUpdateDisposeKey {
         return incrementalUpdateObservers.insert(observer)
     }
     
-    public func removeIncrementalUpdatesObserver(key: IncrementalUpdateDisposeKey) {
+    open func removeIncrementalUpdatesObserver(_ key: IncrementalUpdateDisposeKey) {
         let element = incrementalUpdateObservers.removeKey(key)
         precondition(element != nil, "Element removal failed")
     }
     
     // UITableViewDataSource
     
-    override func _numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func _numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
         return sectionModels.count
     }
     
-    override func _tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func _tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sectionModels[section].items.count
     }
     
-    override func _tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func _tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         precondition(indexPath.item < sectionModels[indexPath.section].items.count)
         
         return cellFactory(tableView, indexPath, itemAtIndexPath(indexPath))
     }
     
-    override func _tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleForHeaderInSection?(section: section)
+    override func _tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titleForHeaderInSection?(section)
     }
     
-    override func _tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return titleForFooterInSection?(section: section)
+    override func _tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return titleForFooterInSection?(section)
     }
     
 }

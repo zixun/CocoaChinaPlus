@@ -12,16 +12,16 @@ import Kingfisher
 
 extension CCHTMLParser {
     
-    func parseHome(result: (model:CCPHomeModel) ->Void) {
+    func parseHome(_ result: @escaping (_ model:CCPHomeModel) ->Void) {
         let baseURL:String = "http://www.cocoachina.com"
         
-        CCRequest(.GET, baseURL).responseJi { [weak self] (ji, error) -> Void in
+        _ = CCRequest(.get, baseURL).responseJi { [weak self] (ji, error) -> Void in
             //TODO: ERROR处理
             
             if let sself = self {
                 var options = sself.parseOptions(ji!)
                 let first = CCPOptionModel(href: "", title: "最新")
-                options.insert(first, atIndex: options.startIndex)
+                options.insert(first, at: options.startIndex)
                 
                 //banner轮播信息
                 let banners = sself.parseBanner(ji!)
@@ -29,12 +29,12 @@ extension CCHTMLParser {
                 let page =  sself.parseNewest(ji!)
                 
                 let model = CCPHomeModel(options: options, banners: banners, page: page)
-                result(model: model)
+                result(model)
             }
         }
     }
     
-    private func parseNewest(ji: Ji) -> [CCArticleModel] {
+    fileprivate func parseNewest(_ ji: Ji) -> [CCArticleModel] {
         var models = [CCArticleModel]()
         
         guard let nodes = ji.xPath("//div[@class='forum-c']/ul/li/a") else {
@@ -65,7 +65,7 @@ extension CCHTMLParser {
         return models
     }
     
-    private func parseBanner(ji:Ji) -> [CCArticleModel] {
+    fileprivate func parseBanner(_ ji:Ji) -> [CCArticleModel] {
         guard let nodes = ji.xPath("//ul[@class='role-main']/li/a") else {
             return [CCArticleModel]()
         }
@@ -87,7 +87,7 @@ extension CCHTMLParser {
         return banners
     }
     
-    private func parseOptions(ji:Ji) ->[CCPOptionModel] {
+    fileprivate func parseOptions(_ ji:Ji) ->[CCPOptionModel] {
         guard let nodes = ji.xPath("//div[@class='m-board']/div/h3/a") else {
             return [CCPOptionModel]()
         }
@@ -96,7 +96,9 @@ extension CCHTMLParser {
         for node:JiNode in nodes {
             let model = CCPOptionModel(href:node["href"]! , title: node.content!)
             
-            if model.title.lowercaseString.containsString("android") == false {
+            
+            
+            if model.title.lowercased().contains("android") == false {
                 //因为app store 审核不能有android的任何信息
                 options.append(model)
             }

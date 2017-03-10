@@ -14,14 +14,14 @@ class CCRemoteNotificationHandler: NSObject,UIAlertViewDelegate {
         return CCRemoteNotificationHandler()
     }()
     
-    private var identity : String?
+    fileprivate var identity : String?
     
-    func handle(userInfo:NSDictionary) {
+    func handle(_ userInfo:NSDictionary) {
         guard userInfo.count > 1 else {
             return;
         }
         
-        let state = UIApplication.sharedApplication().applicationState
+        let state = UIApplication.shared.applicationState
         
         if let aps = userInfo["aps"] as? NSDictionary {
             
@@ -29,7 +29,7 @@ class CCRemoteNotificationHandler: NSObject,UIAlertViewDelegate {
             if let cocoachina_url = userInfo["cocoachina"] {
                 self.identity = CCURLHelper.generateIdentity(cocoachina_url  as! String)
                 
-                if state == UIApplicationState.Active {
+                if state == UIApplicationState.active {
                     
                     UIAlertView(title: "新消息",
                               message: alert,
@@ -45,7 +45,7 @@ class CCRemoteNotificationHandler: NSObject,UIAlertViewDelegate {
         }
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 1  && self.identity != nil {
             ZXOpenURL("go/ccp/article?identity=\(self.identity!)")
         }

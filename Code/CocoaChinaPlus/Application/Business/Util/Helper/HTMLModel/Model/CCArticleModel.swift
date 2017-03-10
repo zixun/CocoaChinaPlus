@@ -21,12 +21,12 @@ class CCArticleModel: NSObject {
         set {
             var str = newValue
             if (str != nil) {
-                str = str!.stringByReplacingOccurrencesOfString("\t", withString: "")
-                str = str!.stringByReplacingOccurrencesOfString("\r", withString: "")
-                str = str!.stringByReplacingOccurrencesOfString("\n", withString: "")
-                str = str!.stringByReplacingOccurrencesOfString("\n", withString: "")
-                str = str!.stringByReplacingOccurrencesOfString("\n", withString: "")
-                str = str!.stringByReplacingOccurrencesOfString(" ", withString: "")
+                str = str!.replacingOccurrences(of: "\t", with: "")
+                str = str!.replacingOccurrences(of: "\r", with: "")
+                str = str!.replacingOccurrences(of: "\n", with: "")
+                str = str!.replacingOccurrences(of: "\n", with: "")
+                str = str!.replacingOccurrences(of: "\n", with: "")
+                str = str!.replacingOccurrences(of: " ", with: "")
             }
             
             _postTime = str
@@ -60,9 +60,9 @@ class CCArticleModel: NSObject {
     var type:Int?
     
     
-    private var _linkURL : String = "http://www.cocoachina.com"
+    fileprivate var _linkURL : String = "http://www.cocoachina.com"
     
-    private var _postTime : String?
+    fileprivate var _postTime : String?
 }
 
 class CCPOptionModel: NSObject {

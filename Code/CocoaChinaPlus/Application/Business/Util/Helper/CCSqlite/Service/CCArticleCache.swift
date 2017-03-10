@@ -17,21 +17,21 @@ class CCArticleCache: NSObject {
         return CCArticleCache()
     }()
     
-    private var model_collection =  CCArticleService.queryArticles(.Collection)
-    private var model_uncollection =  CCArticleService.queryArticles(.UnCollection)
+    fileprivate var model_collection =  CCArticleService.queryArticles(.collection)
+    fileprivate var model_uncollection =  CCArticleService.queryArticles(.unCollection)
     
     func updateCache() {
-        self.model_collection =  CCArticleService.queryArticles(.Collection)
-        self.model_uncollection =  CCArticleService.queryArticles(.UnCollection)
+        self.model_collection =  CCArticleService.queryArticles(.collection)
+        self.model_uncollection =  CCArticleService.queryArticles(.unCollection)
     }
     
-    func articlesOfType(type:CCArticleType) ->[CCArticleModel] {
+    func articlesOfType(_ type:CCArticleType) ->[CCArticleModel] {
         switch type {
             
-            case .Collection:
+            case .collection:
                 return model_collection
             
-            case .UnCollection:
+            case .unCollection:
                 return model_uncollection
             
             default:

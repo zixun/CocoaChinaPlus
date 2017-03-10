@@ -16,17 +16,17 @@ class CCArticleTableViewCell: CCPTableViewCell {
     //标志cell是否有图片
     var hasImage:Bool = false
     
-    private var picView:UIImageView!
+    fileprivate var picView:UIImageView!
     
-    private var picMaskView:UIView!
+    fileprivate var picMaskView:UIView!
     
-    private var titleLabel:UILabel!
+    fileprivate var titleLabel:UILabel!
     
-    private var postDateLabel:UILabel!
+    fileprivate var postDateLabel:UILabel!
     
-    private var watchLabel:UILabel!
+    fileprivate var watchLabel:UILabel!
     
-    private var bottomLine:UIImageView!
+    fileprivate var bottomLine:UIImageView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,27 +37,27 @@ class CCArticleTableViewCell: CCPTableViewCell {
         self.containerView.addSubview(picView)
         
         self.picMaskView = UIView()
-        self.picMaskView.hidden = true
-        self.picMaskView.backgroundColor = UIColor.appGrayColor().colorWithAlphaComponent(0.6)
+        self.picMaskView.isHidden = true
+        self.picMaskView.backgroundColor = UIColor.appGrayColor().withAlphaComponent(0.6)
         self.containerView.addSubview(self.picMaskView)
         
         self.titleLabel = UILabel()
-        self.titleLabel.font = UIFont.systemFontOfSize(14)
-        self.titleLabel.textColor = UIColor.whiteColor()
-        self.titleLabel.textAlignment = NSTextAlignment.Left
+        self.titleLabel.font = UIFont.systemFont(ofSize: 14)
+        self.titleLabel.textColor = UIColor.white
+        self.titleLabel.textAlignment = NSTextAlignment.left
         self.titleLabel.numberOfLines = 2
-        self.titleLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        self.titleLabel.lineBreakMode = NSLineBreakMode.byTruncatingTail
         self.containerView.addSubview(titleLabel)
         
         self.postDateLabel = UILabel()
-        self.postDateLabel.font = UIFont.systemFontOfSize(10)
-        self.postDateLabel.textColor = UIColor.grayColor()
-        self.postDateLabel.textAlignment = NSTextAlignment.Left
+        self.postDateLabel.font = UIFont.systemFont(ofSize: 10)
+        self.postDateLabel.textColor = UIColor.gray
+        self.postDateLabel.textAlignment = NSTextAlignment.left
         self.containerView.addSubview(postDateLabel)
         
         self.watchLabel = UILabel()
-        self.watchLabel.font = UIFont.systemFontOfSize(10)
-        self.watchLabel.textColor = UIColor.grayColor()
+        self.watchLabel.font = UIFont.systemFont(ofSize: 10)
+        self.watchLabel.textColor = UIColor.gray
         self.containerView.addSubview(watchLabel)
     }
     
@@ -65,22 +65,22 @@ class CCArticleTableViewCell: CCPTableViewCell {
         super.layoutSubviews()
         if self.hasImage {
             //有图片的布局
-            self.picView.hidden = false
+            self.picView.isHidden = false
             
-            self.picView.anchorAndFillEdge(Edge.Left, xPad: 4, yPad: 4, otherSizeTupling: 1.5)
+            self.picView.anchorAndFillEdge(Edge.left, xPad: 4, yPad: 4, otherSizeTupling: 1.5)
             self.picMaskView.frame = self.picView.frame
             
-            self.titleLabel.alignAndFillWidth(align: .ToTheRightMatchingTop, relativeTo: self.picView, padding: 4, height: AutoHeight)
-            self.postDateLabel.anchorInCornerWithAutoSize(Corner.BottomLeft, xPad: self.picView.xMax, yPad: 2)
-            self.watchLabel.anchorInCornerWithAutoSize(Corner.BottomRight, xPad: 4, yPad: 2)
+            self.titleLabel.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: self.picView, padding: 4, height: AutoHeight)
+            self.postDateLabel.anchorInCornerWithAutoSize(Corner.bottomLeft, xPad: self.picView.xMax, yPad: 2)
+            self.watchLabel.anchorInCornerWithAutoSize(Corner.bottomRight, xPad: 4, yPad: 2)
         }else {
             let xPad : CGFloat = 10.0
             let yPad : CGFloat = 4.0
-            self.picView.hidden = true
-            self.titleLabel.anchorAndFillEdge(Edge.Top, xPad: xPad, yPad: yPad, otherSize: AutoHeight)
+            self.picView.isHidden = true
+            self.titleLabel.anchorAndFillEdge(Edge.top, xPad: xPad, yPad: yPad, otherSize: AutoHeight)
             
-            self.postDateLabel.anchorInCornerWithAutoSize(Corner.BottomLeft, xPad: xPad, yPad: yPad)
-            self.watchLabel.anchorInCornerWithAutoSize(Corner.BottomRight, xPad: xPad, yPad: yPad)
+            self.postDateLabel.anchorInCornerWithAutoSize(Corner.bottomLeft, xPad: xPad, yPad: yPad)
+            self.watchLabel.anchorInCornerWithAutoSize(Corner.bottomRight, xPad: xPad, yPad: yPad)
         }
         
     }
@@ -89,16 +89,16 @@ class CCArticleTableViewCell: CCPTableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configure(model:CCArticleModel) {
+    func configure(_ model:CCArticleModel) {
 
         self.configure(model, forceHighlight: false)
     }
     
-    func configure(model:CCArticleModel, forceHighlight:Bool) {
+    func configure(_ model:CCArticleModel, forceHighlight:Bool) {
         urlString = model.linkURL
         if model.imageURL != nil {
             self.hasImage = true
-            picView.kf_setImageWithURL(NSURL(string:model.imageURL!)!)
+            picView.kf.setImage(with: URL(string:model.imageURL!)!)
         }else {
             self.hasImage = false
         }
@@ -118,13 +118,13 @@ class CCArticleTableViewCell: CCPTableViewCell {
         }
     }
     
-    func highlightCell(highlight:Bool) {
+    func highlightCell(_ highlight:Bool) {
         if highlight {
-            self.titleLabel.textColor = UIColor.whiteColor()
-            self.picMaskView.hidden = true
+            self.titleLabel.textColor = UIColor.white
+            self.picMaskView.isHidden = true
         }else {
             self.titleLabel.textColor = UIColor.appGrayColor()
-            self.picMaskView.hidden = false
+            self.picMaskView.isHidden = false
         }
     }
     

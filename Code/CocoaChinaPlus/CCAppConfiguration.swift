@@ -10,7 +10,7 @@ import UIKit
 
 class CCAppConfiguration: NSObject {
     
-    class func configure(application: UIApplication, launchOptions: [NSObject: AnyObject]?) {
+    class func configure(_ application: UIApplication, launchOptions: [AnyHashable: Any]?) {
         
         //友盟统计配置
         CCAppConfiguration.configureYoumengStatistics()
@@ -26,12 +26,12 @@ class CCAppConfiguration: NSObject {
     /**
     友盟统计配置
     */
-    private class func configureYoumengStatistics() {
+    fileprivate class func configureYoumengStatistics() {
         
-        let channel = NSBundle.mainBundle().infoDictionary!["ZXApplicationChannel"] as! String
-        let version = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        let channel = Bundle.main.infoDictionary!["ZXApplicationChannel"] as! String
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
         
-        MobClick.startWithAppkey(CCAppKey.appUM, reportPolicy: BATCH, channelId: channel)
+        MobClick.start(withAppkey: CCAppKey.appUM, reportPolicy: BATCH, channelId: channel)
         MobClick.setAppVersion(version)
         
         MobClick.updateOnlineConfig()
@@ -40,26 +40,27 @@ class CCAppConfiguration: NSObject {
     /**
     友盟分享配置
     */
-    private class func configureYoumengSocial() {
-        UMSocialData.setAppKey(CCAppKey.appUM)
-        UMSocialWechatHandler.setWXAppId(CCAppKey.appWeChat.appkey, appSecret: CCAppKey.appWeChat.secret, url: nil)
-        UMSocialSinaHandler.openSSOWithRedirectURL("http://sns.whalecloud.com/sina2/callback")
-        UMSocialConfig.hiddenNotInstallPlatforms([UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline])
+    fileprivate class func configureYoumengSocial() {
+        UMSocialManager.default().umSocialAppkey = CCAppKey.appUM
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.wechatSession, appKey: CCAppKey.appWeChat.appkey, appSecret: CCAppKey.appWeChat.secret, redirectURL: "http://sns.whalecloud.com/sina2/callback")
+        
+        UMSocialManager.default().setPlaform(UMSocialPlatformType.sina, appKey: CCAppKey.appSina.appkey, appSecret: CCAppKey.appSina.secret, redirectURL: "http://sns.whalecloud.com/sina2/callback")
+        
     }
     
     /**
     极光推送配置
     */
-    private class func configureJPush(launchOptions: [NSObject: AnyObject]?) {
-        let type = UIUserNotificationType.Badge.rawValue | UIUserNotificationType.Sound.rawValue | UIUserNotificationType.Alert.rawValue
-        APService.registerForRemoteNotificationTypes(type, categories: nil)
-        APService.setupWithOption(launchOptions)
-        
-        if launchOptions != nil {
-            if let userInfo = launchOptions![UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary {
-                CCRemoteNotificationHandler.sharedHandler.handle(userInfo);
-            }
-        }
+    fileprivate class func configureJPush(_ launchOptions: [AnyHashable: Any]?) {
+//        let type = UIUserNotificationType.badge.rawValue | UIUserNotificationType.sound.rawValue | UIUserNotificationType.alert.rawValue
+//        APService.register(forRemoteNotificationTypes: type, categories: nil)
+//        APService.setup(withOption: launchOptions)
+//        
+//        if launchOptions != nil {
+//            if let userInfo = launchOptions![UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary {
+//                CCRemoteNotificationHandler.sharedHandler.handle(userInfo);
+//            }
+//        }
     }
     
 }

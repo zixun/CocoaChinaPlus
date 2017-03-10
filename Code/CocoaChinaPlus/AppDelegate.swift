@@ -8,8 +8,21 @@
 
 import UIKit
 import RxSwift
-import GCDWebServer
 import Neon
+#if DEBUG // 判断是否在测试环境下
+    import GodEye
+#endif
+
+
+
+
+func ZXScreenWidth() -> CGFloat {
+    return UIScreen.main.bounds.size.width
+}
+
+func ZXScreenHeight() -> CGFloat {
+    return UIScreen.main.bounds.size.height
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,107 +31,84 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let tabbarController = ZXTabBarController()
     
-    var webserver = GCDWebServer()
-    
-    private var webview:UIWebView?
+    fileprivate var webview:UIWebView?
     
     
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        //开启webserver
-        self.startWebServer()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //各种平台配置
-        CCAppConfiguration.configure(application, launchOptions: launchOptions)
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        #if DEBUG // 判断是否在测试环境下
+            GodEye.makeEye(with: self.window!)
+        #endif
+        
+        CCAppConfiguration.configure(application, launchOptions: launchOptions)
         if let window = self.window {
-            window.backgroundColor = UIColor.blackColor()
+            window.backgroundColor = UIColor.black
             window.rootViewController = self.tabbarController
             window.makeKeyAndVisible()
-            
-            //程序员鼓励师Miku
-            let miku = CCMikuView();
-            window.addSubview(miku)
-            miku.anchorInCorner(Corner.BottomLeft, xPad: 20, yPad: 20, width: 100, height: 100);
         }
 
         //UINavigationBar设置
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
-        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        UINavigationBar.appearance().barTintColor = UIColor.black
         
         //statusBar设置
-        UIApplication.sharedApplication().statusBarHidden = false
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UIApplication.shared.isStatusBarHidden = false
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         //删除一个星期前阅读过的未收藏的文章
         CCArticleService.cleanMouthAgo()
         
-        
-        
-        //模拟器模拟自动登录
-        #if (arch(i386) || arch(x86_64)) && os(iOS)
-            let str = "simulator" as NSString
-            
-        #endif
-        
         return true
     }
     
-    private func startWebServer() {
-        if let web = NSBundle.mainBundle().resourcePath?.NS.stringByAppendingPathComponent("miku-dancing.coding.io") {
-            self.webserver.addGETHandlerForBasePath("/miku-dancing.coding.io/", directoryPath: web, indexFilename: nil, cacheAge: 0, allowRangeRequests: true)
-        }
-        
-        self.webserver.startWithPort(8989, bonjourName: "Code+")
-        print("Visit \(self.webserver?.serverURL) in your web browser")
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        APService.registerDeviceToken(deviceToken)
     }
     
-    
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        APService.registerDeviceToken(deviceToken)
-    }
-    
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        APService.handleRemoteNotification(userInfo)
-        CCRemoteNotificationHandler.sharedHandler.handle(userInfo)
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+//        APService.handleRemoteNotification(userInfo)
+        CCRemoteNotificationHandler.sharedHandler.handle(userInfo as NSDictionary)
     }
     
     
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
     
     // App进入后台
-    func applicationDidEnterBackground(application: UIApplication) {
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     // App将要从后台返回
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
     // 申请处理时间
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
     }
     
 
     
     //分享跳转相关
-    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-        return UMSocialSnsService.handleOpenURL(url)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return UMSocialManager.default().handleOpen(url)
     }
-    
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return UMSocialSnsService.handleOpenURL(url)
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        return UMSocialManager.default().handleOpen(url)
     }
 }
 

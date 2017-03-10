@@ -8,7 +8,7 @@
 
 import UIKit
 import Neon
-import ZXKit
+import AppBaseKit
 
 class CCPTableViewCell: UITableViewCell {
     
@@ -17,14 +17,13 @@ class CCPTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = ZXColor(0x272626)
-        
+        self.backgroundColor = UIColor(hex:0x272626)
         let view = UIView()
-        view.backgroundColor = ZXColor(0xf8f8f8, alpha: 0.1)
+        view.backgroundColor = UIColor(hex: 0xf8f8f8, alpha: 0.1)
         self.selectedBackgroundView = view
         
         self.containerView = UIView()
-        self.containerView.backgroundColor = UIColor.blackColor()
+        self.containerView.backgroundColor = UIColor.black
         self.addSubview(self.containerView)
     }
     

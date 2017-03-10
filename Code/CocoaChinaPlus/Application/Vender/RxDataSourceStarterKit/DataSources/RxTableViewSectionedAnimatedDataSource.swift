@@ -17,7 +17,7 @@ class RxTableViewSectionedAnimatedDataSource<S: SectionModelType> : RxTableViewS
                                                                   , RxTableViewDataSourceType {
     typealias Element = [Changeset<S>]
     
-    func tableView(tableView: UITableView, observedEvent: Event<Element>) {
+    func tableView(_ tableView: UITableView, observedEvent: Event<Element>) {
         switch observedEvent {
         case .Next(let element):
             for c in element {

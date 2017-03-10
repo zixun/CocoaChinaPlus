@@ -10,10 +10,10 @@ import Foundation
 import RxSwift
 import RxCocoa
 import MBProgressHUD
-import ZXKit
+import AppBaseKit
 
 
-class CCArticleTableView: UITableView,UITableViewDelegate {
+class CCArticleTableView: UITableView,UITableViewDelegate, UITableViewDataSource {
 
     /// cell是否一直高亮
     var forceHighlight:Bool = false
@@ -22,25 +22,27 @@ class CCArticleTableView: UITableView,UITableViewDelegate {
     var selectSubject = PublishSubject<CCArticleModel>()
     
     //RxSwift资源回收包
-    private let disposeBag = DisposeBag()
-    //文章数组Variable
-    private let articles = Variable([CCArticleModel]())
-    //数据源
-    private let tableViewDataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, CCArticleModel>>()
-    
-    
+    fileprivate let disposeBag = DisposeBag()
+    //文章数组
+    fileprivate var articles = [CCArticleModel]()
+
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         
-        self.backgroundColor = ZXColor(0x000000, alpha: 0.8)
-        self.separatorStyle  = .None
-
-        self.subscribes()
+        self.backgroundColor = UIColor(hex: 0x000000, alpha: 0.8)
+        self.separatorStyle  = .none
+        
+        self.delegate = self
+        self.dataSource = self
     }
     
     convenience init(forceHighlight:Bool) {
-        self.init(frame:CGRectZero,style:.Plain)
+        self.init(frame:CGRect.zero,style:.plain)
         self.forceHighlight = forceHighlight
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     /**
@@ -48,28 +50,33 @@ class CCArticleTableView: UITableView,UITableViewDelegate {
      
      - parameter models: 一组文章model
      */
-    func append(models:[CCArticleModel]) {
+    func append(_ models:[CCArticleModel]) {
         if models.count == 0 {
-            if self.articles.value.count == 0 {
+            if self.articles.count == 0 {
                 MBProgressHUD.showText("没找到...")
             }else {
                 MBProgressHUD.showText("没有了...")
             }
         }
-        self.articles.value += models
+        
+        for m in models {
+            self.articles.append(m)
+        }
+        
+        self.reloadData()
     }
     
     /**
      清空数据
      */
     func clean() {
-        self.articles.value = [CCArticleModel]()
+        self.articles.removeAll()
     }
     
     /**
      重新加载
      */
-    func reload(models:[CCArticleModel]) {
+    func reload(_ models:[CCArticleModel]) {
         self.clean()
         self.append(models)
     }
@@ -78,61 +85,40 @@ class CCArticleTableView: UITableView,UITableViewDelegate {
      tableview是否没有数据
      */
     func isEmpty() -> Bool {
-        return self.articles.value.count == 0 ? true : false
+        return self.articles.count == 0 ? true : false
     }
     
     
-    private func subscribes() {
-        //代理设置
-        self.rx_setDelegate(self)
-            .addDisposableTo(disposeBag)
-        
-        //TableViewCell设置
-        tableViewDataSource.cellFactory = {[unowned self] (tv, ip, model: CCArticleModel) in
-            var cell = tv.dequeueReusableCellWithIdentifier("CCArticleTableViewCell")
-            if cell == nil {
-                cell = CCArticleTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CCArticleTableViewCell")
-            }
-            (cell! as! CCArticleTableViewCell).configure(model, forceHighlight: self.forceHighlight)
-            return cell!
-        }
-        
-        //tableView中Cell点击Observable
-        self.rx_itemSelected
-            .subscribeNext {[weak self] (indexPath:NSIndexPath) -> Void in
-                guard let sself = self else {
-                    return
-                }
-                sself.deselectRowAtIndexPath(indexPath, animated: true)
-                
-                let article = sself.articles.value[indexPath.row]
-                
-                if !CCArticleService.isArticleExsitById(article.identity) {
-                    CCArticleService.insertArtice(article)
-                }
-                
-                let cell = sself.cellForRowAtIndexPath(indexPath) as! CCArticleTableViewCell
-                cell.highlightCell(false)
-                
-                sself.selectSubject.on(.Next(article))
-            }
-            .addDisposableTo(disposeBag)
-        
-        //数据源绑定
-        self.articles
-            .asDriver()
-            .map {
-                [SectionModel(model: "Repositories", items: $0)]
-            }
-            .drive(self.rx_itemsWithDataSource(tableViewDataSource))
-            .addDisposableTo(self.disposeBag)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.articles.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CCArticleTableViewCell") as? CCArticleTableViewCell
+        if cell == nil {
+            cell = CCArticleTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "CCArticleTableViewCell")
+        }
+        
+        cell?.configure(self.articles[indexPath.row], forceHighlight: self.forceHighlight)
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.deselectRow(at: indexPath, animated: true)
+        
+        let article = self.articles[indexPath.row]
+        
+        if !CCArticleService.isArticleExsitById(article.identity) {
+            _ = CCArticleService.insertArtice(article)
+        }
+        
+        let cell = self.cellForRow(at: indexPath) as! CCArticleTableViewCell
+        cell.highlightCell(false)
+        
+        self.selectSubject.on(.next(article))
     }
 }

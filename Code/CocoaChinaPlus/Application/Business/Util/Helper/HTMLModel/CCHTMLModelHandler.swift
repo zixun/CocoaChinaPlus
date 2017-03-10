@@ -15,7 +15,7 @@ class CCHTMLModelHandler: NSObject {
     
     let disposeBag = DisposeBag()
     
-    private let parser = CCHTMLParser()
+    fileprivate let parser = CCHTMLParser()
 }
 
 
@@ -26,7 +26,7 @@ extension CCHTMLModelHandler {
         let psubject = PublishSubject<CCPHomeModel>()
         
         self.parser.parseHome { (model) -> Void in
-            psubject.on(.Next(model))
+            psubject.on(.next(model))
         }
         return psubject
     }
@@ -35,35 +35,32 @@ extension CCHTMLModelHandler {
 // MARK: - 搜索页
 extension CCHTMLModelHandler {
     
-    func handleSearchPage(query:String, loadNextPageTrigger trigger:PublishSubject<Void>) -> PublishSubject<[CCArticleModel]> {
+    func handleSearchPage(_ query:String, loadNextPageTrigger trigger:PublishSubject<Void>) -> PublishSubject<[CCArticleModel]> {
         
         struct Holder {
             static var nextURL = ""
         }
         
         let psubject = PublishSubject<[CCArticleModel]>()
-        
-        trigger.subscribeNext {[weak self] _ in
-            
+        trigger.bindNext {[weak self] _ in
             guard let sself = self else {
                 return
             }
             
             guard Holder.nextURL.characters.count > 0  else {
-                return psubject.on(.Next([CCArticleModel]()))
+                return psubject.on(.next([CCArticleModel]()))
             }
             
             sself.parser.parseSearch(Holder.nextURL, result: { (model, nextURL) -> Void in
-                psubject.on(.Next(model))
+                psubject.on(.next(model))
                 Holder.nextURL = nextURL != nil ? nextURL! : ""
             })
-            
-            }.addDisposableTo(self.disposeBag)
+        }.addDisposableTo(self.disposeBag)
         
         
         let url = self.searchFullURL(query)
         self.parser.parseSearch(url) { (model, nextURL) -> Void in
-            psubject.on(.Next(model))
+            psubject.on(.next(model))
             Holder.nextURL = nextURL != nil ? nextURL! : ""
         }
         
@@ -77,14 +74,14 @@ extension CCHTMLModelHandler {
      
      - returns: 搜索页面URL
      */
-    private func searchFullURL(keyword:String) -> String {
+    fileprivate func searchFullURL(_ keyword:String) -> String {
         return "http://www.cocoachina.com/cms/plus/search.php?kwtype=0&keyword=\(self.URLEscape(keyword))&searchtype=titlekeyword"
     }
     
-    private func URLEscape(pathSegment: String) -> String {
+    fileprivate func URLEscape(_ pathSegment: String) -> String {
         var seg = pathSegment
-        seg = seg.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        seg = seg.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        seg = seg.trimmingCharacters(in: CharacterSet.whitespaces)
+        seg = seg.replacingOccurrences(of: " ", with: "+")
         return seg
     }
     
@@ -93,35 +90,34 @@ extension CCHTMLModelHandler {
 // MARK: - 类目页
 extension CCHTMLModelHandler {
     
-    func handleOptionPage(urlString:String, loadNextPageTrigger trigger:PublishSubject<Void>) ->PublishSubject<[CCArticleModel]> {
+    func handleOptionPage(_ urlString:String, loadNextPageTrigger trigger:PublishSubject<Void>) ->PublishSubject<[CCArticleModel]> {
         struct Holder {
             static var nextURLDic = [String : String]()
         }
         
         let psubject = PublishSubject<[CCArticleModel]>()
         
-        
-        trigger.subscribeNext {[weak self] _ in
-            
+        trigger.bindNext { [weak self] _  in
             guard let sself = self else {
                 return
             }
             
+            guard let url = Holder.nextURLDic[urlString] else {
+                return psubject.on(.next([CCArticleModel]()))
+            }
             
-            guard Holder.nextURLDic[urlString]?.characters.count > 0  else {
-                return psubject.on(.Next([CCArticleModel]()))
+            guard url.characters.count > 0  else {
+                return psubject.on(.next([CCArticleModel]()))
             }
             
             sself.parser.parsePage(Holder.nextURLDic[urlString]!, result: { (model, nextURL) -> Void in
-                psubject.on(.Next(model))
+                psubject.on(.next(model))
                 Holder.nextURLDic[urlString] = nextURL != nil ? nextURL! : ""
             })
-            
-            }.addDisposableTo(self.disposeBag)
-        
+        }.addDisposableTo(self.disposeBag)
         
         self.parser.parsePage(urlString) { (model, nextURL) -> Void in
-            psubject.on(.Next(model))
+            psubject.on(.next(model))
             Holder.nextURLDic[urlString] = nextURL != nil ? nextURL! : ""
         }
         

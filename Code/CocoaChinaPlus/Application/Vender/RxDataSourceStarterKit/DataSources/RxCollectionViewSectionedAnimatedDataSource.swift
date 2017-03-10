@@ -21,7 +21,7 @@ class RxCollectionViewSectionedAnimatedDataSource<S: SectionModelType> : RxColle
     // it crashes. Still need to figure out that one.
     var set = false
     
-    func collectionView(collectionView: UICollectionView, observedEvent: Event<Element>) {
+    func collectionView(_ collectionView: UICollectionView, observedEvent: Event<Element>) {
         switch observedEvent {
         case .Next(let element):
             for c in element {

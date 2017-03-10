@@ -8,18 +8,18 @@
 
 import Foundation
 import UIKit
-import ZXKit
+import Log4G
 
 class ZXBaseViewController: UIViewController{
     
-    var navURL = NSURL()
+    var navURL: URL?
     var navQuery = Dictionary<String,String>()
     
     convenience init(){
-        self.init(navigatorURL: NSURL(), query: Dictionary<String, String>())
+        self.init(navigatorURL: nil, query: Dictionary<String, String>())
     }
     
-    required init(navigatorURL URL: NSURL,query:Dictionary<String,String>) {
+    required init(navigatorURL URL: URL?,query:Dictionary<String,String>) {
         self.navURL = URL
         self.navQuery = query
         super.init(nibName: nil, bundle: nil)
@@ -32,20 +32,20 @@ class ZXBaseViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blackColor()
+        self.view.backgroundColor = UIColor.black
         self.automaticallyAdjustsScrollViewInsets = false
-        self.edgesForExtendedLayout = UIRectEdge.None
+        self.edgesForExtendedLayout = UIRectEdge()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     deinit {
-        println("\(self.classForCoder)已正常释放!")
+        Log4G.log("\(self.classForCoder)已正常释放!")
     }
 }

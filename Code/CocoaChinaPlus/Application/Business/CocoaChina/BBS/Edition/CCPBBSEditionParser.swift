@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import ZXKit
+import Log4G
 
 // MARK: CCPBBSEditionParser
 class CCPBBSEditionParser {
     
     //解析版面文章
-    class func parserEdition(urlString: String, result: (model: CCPBBSEditionModel) -> Void) {
-        CCRequest(.GET, urlString).responseJi { (ji, error) -> Void in
+    class func parserEdition(_ urlString: String, result: @escaping (_ model: CCPBBSEditionModel) -> Void) {
+        
+        _ = CCRequest(.get, urlString).responseJi { (ji, error) -> Void in
             guard let list = ji?.xPath("//li[@class='articlelist clearfix']") else {
                 return
             }
@@ -27,11 +28,12 @@ class CCPBBSEditionParser {
                     let timeElement = article.xPath(".//p[@class='bbs_author']/span").first,
                     var author = authorElement.rawContent
                     else {
-                        print("//获取H5元素失敗")
+                        Log4G.warning("//获取H5元素失敗")
                         continue
                 }
                 
                 //作者
+                
                 author = author.stringByDeletingScopeString("<span>", end: "</span>")
                 author = author.stringByDeletingOccurrencesOfString("<span></span></p>")
                 author = author.stringByDeletingOccurrencesOfString("<p class=\"bbs_author\">")
@@ -58,12 +60,13 @@ class CCPBBSEditionParser {
                 edition.pagenext = Int(pagenowNode.content!)! + 1
             } else {
                 //没有就拿url中的+1
-                let url = NSURL(string: urlString)!
-                edition.pagenext = Int(url.paramValue("page")!)! + 1
+                let url = URL(string: urlString)!
+                
+                edition.pagenext = Int(url.paramValue(key: "page")!)! + 1
             }
             
             //回調
-            result(model: edition)
+            result(edition)
         }
     }
     
@@ -81,7 +84,7 @@ class CCPBBSEditionModel {
         self.pagenext = pagenext
     }
     
-    func append(model: CCPBBSEditionModel) -> Void {
+    func append(_ model: CCPBBSEditionModel) -> Void {
         self.posts += model.posts
         self.pagenext = model.pagenext
     }

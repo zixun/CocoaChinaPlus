@@ -8,20 +8,21 @@
 
 import UIKit
 import Neon
+import Log4G
 
 class CCProfileViewController: ZXBaseViewController {
 
-    private var tableview: UITableView!
+    fileprivate var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        self.tableview = UITableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
-        self.tableview.backgroundColor = UIColor.blackColor()
+        self.tableview = UITableView(frame: CGRect.zero, style: UITableViewStyle.grouped)
+        self.tableview.backgroundColor = UIColor.black
         self.tableview.delegate = self
         self.tableview.dataSource = self
-        self.tableview.separatorStyle = .None
+        self.tableview.separatorStyle = .none
         self.tableview.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
         self.view.addSubview(self.tableview)
     }
@@ -36,11 +37,11 @@ class CCProfileViewController: ZXBaseViewController {
 
 extension CCProfileViewController:UITableViewDataSource,UITableViewDelegate {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
@@ -52,17 +53,17 @@ extension CCProfileViewController:UITableViewDataSource,UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            var cell = tableview.dequeueReusableCellWithIdentifier("CCProfileFaceCell") as? CCProfileFaceCell
+            var cell = tableview.dequeueReusableCell(withIdentifier: "CCProfileFaceCell") as? CCProfileFaceCell
             if cell == nil {
-                cell = CCProfileFaceCell(style: .Default, reuseIdentifier: "CCProfileViewController")
+                cell = CCProfileFaceCell(style: .default, reuseIdentifier: "CCProfileViewController")
             }
             return cell!
         }else {
-            var cell = tableview.dequeueReusableCellWithIdentifier("CCProfileUsualCell") as? CCProfileUsualCell
+            var cell = tableview.dequeueReusableCell(withIdentifier: "CCProfileUsualCell") as? CCProfileUsualCell
             if cell == nil {
-                cell = CCProfileUsualCell(style: .Default, reuseIdentifier: "CCProfileUsualCell")
+                cell = CCProfileUsualCell(style: .default, reuseIdentifier: "CCProfileUsualCell")
             }
             
             
@@ -88,14 +89,14 @@ extension CCProfileViewController:UITableViewDataSource,UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 120
         }
         return 50
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 1
         }else {
@@ -103,8 +104,8 @@ extension CCProfileViewController:UITableViewDataSource,UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
@@ -117,7 +118,7 @@ extension CCProfileViewController:UITableViewDataSource,UITableViewDelegate {
             
             switch indexPath.row {
             case 0 :
-                print("QQqun")
+                Log4G.log("QQqun")
                 
             case 1:
                 let vc = CCAboutViewController()
@@ -139,9 +140,9 @@ class CCProfileUsualCell : CCPTableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.infoLabel = UILabel()
-        self.infoLabel.textColor = UIColor.whiteColor()
-        self.infoLabel.textAlignment = NSTextAlignment.Left
-        self.infoLabel.font = UIFont.systemFontOfSize(16)
+        self.infoLabel.textColor = UIColor.white
+        self.infoLabel.textAlignment = NSTextAlignment.left
+        self.infoLabel.font = UIFont.systemFont(ofSize: 16)
         self.containerView.addSubview(self.infoLabel)
     }
     
@@ -152,26 +153,26 @@ class CCProfileUsualCell : CCPTableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.infoLabel.anchorAndFillEdge(Edge.Left, xPad: 20, yPad: 0, otherSize: self.containerView.frame.size.width - 20)
+        self.infoLabel.anchorAndFillEdge(Edge.left, xPad: 20, yPad: 0, otherSize: self.containerView.frame.size.width - 20)
     }
 }
 
 class CCProfileFaceCell : CCPTableViewCell {
-    private var icon : UIImageView!
+    fileprivate var icon : UIImageView!
     
-    private var tostaLabel: UILabel!
+    fileprivate var tostaLabel: UILabel!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.icon = UIImageView(image: R.image.chengxuyuan?.circleImage())
+        self.icon = UIImageView(image: R.image.chengxuyuan()!.circleImage())
         self.containerView.addSubview(self.icon)
         
         self.tostaLabel = UILabel()
         self.tostaLabel.text = "这个世界上只有10种人：懂二进制的和不懂二进制的"
-        self.tostaLabel.textColor = UIColor.whiteColor()
-        self.tostaLabel.textAlignment = .Center
-        self.tostaLabel.font = UIFont.systemFontOfSize(12)
+        self.tostaLabel.textColor = UIColor.white
+        self.tostaLabel.textAlignment = .center
+        self.tostaLabel.font = UIFont.systemFont(ofSize: 12)
         self.containerView.addSubview(self.tostaLabel)
         
     }
@@ -180,9 +181,9 @@ class CCProfileFaceCell : CCPTableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.tostaLabel.anchorAndFillEdge(.Bottom, xPad: 0, yPad: 0, otherSize: 20)
+        self.tostaLabel.anchorAndFillEdge(.bottom, xPad: 0, yPad: 0, otherSize: 20)
         let distance = self.tostaLabel.frame.origin.y
-        self.icon.align(.AboveCentered, relativeTo: self.tostaLabel, padding: 0, width: distance , height: distance)
+        self.icon.align(.aboveCentered, relativeTo: self.tostaLabel, padding: 0, width: distance , height: distance)
     }
     
     required init?(coder aDecoder: NSCoder) {

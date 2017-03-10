@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98E2EB1574E5ABD141674664 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47496B69C33267C4F4BF8B3 /* Pods.framework */; };
+		5909215C9A691525CC3483B4 /* Pods_CocoaChinaPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F62B142ECF6987B06FCC097A /* Pods_CocoaChinaPlus.framework */; };
 		9E0EAB621BB08DFF00DFEF33 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0EAB611BB08DFF00DFEF33 /* CoreFoundation.framework */; };
 		9E0EAB641BB08E0E00DFEF33 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0EAB631BB08E0E00DFEF33 /* CoreTelephony.framework */; };
 		9E0EAB661BB08E2000DFEF33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0EAB651BB08E2000DFEF33 /* CoreGraphics.framework */; };
 		9E0EAB681BB08E2E00DFEF33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0EAB671BB08E2E00DFEF33 /* Foundation.framework */; };
 		9E0EAB6A1BB08E3900DFEF33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0EAB691BB08E3900DFEF33 /* UIKit.framework */; };
 		9E0EAB6C1BB08EF400DFEF33 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E0EAB6B1BB08EF400DFEF33 /* PushConfig.plist */; };
+		9E18D1751E364D9700AB1DC2 /* ZXHighlightWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18D1741E364D9700AB1DC2 /* ZXHighlightWebView.swift */; };
+		9E18D1771E364F4100AB1DC2 /* ZXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E18D1761E364F4100AB1DC2 /* ZXNavigationController.swift */; };
 		9E56F91A1BB457B200F57CB0 /* CCAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56F9191BB457B200F57CB0 /* CCAppConfiguration.swift */; };
 		9E61C3301BBC463800C360E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E61C32F1BBC463800C360E2 /* Localizable.strings */; };
 		9E61C3331BBD4BC900C360E2 /* CCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E61C3321BBD4BC900C360E2 /* CCProfileViewController.swift */; };
 		9E6B7DED1B8E069400591846 /* AppDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6B7DEC1B8E069400591846 /* AppDef.swift */; };
+		9E991A231E385440000E221A /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E991A221E385440000E221A /* UIImage+.swift */; };
+		9E991A251E38865B000E221A /* highlight in Resources */ = {isa = PBXBuildFile; fileRef = 9E991A241E38865B000E221A /* highlight */; };
 		9EA065FC1BBEE2E500F8884C /* CCAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA065FB1BBEE2E500F8884C /* CCAboutViewController.swift */; };
 		9EA066431BC3A03800F8884C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E61C3261BBB19B300C360E2 /* Accounts.framework */; };
 		9EA066441BC3A08D00F8884C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E61C3281BBB19F900C360E2 /* Social.framework */; };
@@ -38,6 +42,15 @@
 		9EE4F1181B7B93450071423A /* CCPBBSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE4F1171B7B93450071423A /* CCPBBSParser.swift */; };
 		9EF1CB991B91FE0000E8F243 /* CCPBBSEditionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF1CB971B91FE0000E8F243 /* CCPBBSEditionParser.swift */; };
 		9EF1CB9A1B91FE0000E8F243 /* CCPBBSEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF1CB981B91FE0000E8F243 /* CCPBBSEditionViewController.swift */; };
+		9EF330A81E36519400477A9F /* ZXPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330A71E36519400477A9F /* ZXPagingView.swift */; };
+		9EF330AB1E365B0700477A9F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330AA1E365B0700477A9F /* String+.swift */; };
+		9EF330AE1E365C6300477A9F /* ZXOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330AD1E365C6300477A9F /* ZXOptionView.swift */; };
+		9EF330B11E36FD0000477A9F /* ZXGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330B01E36FD0000477A9F /* ZXGuideViewController.swift */; };
+		9EF330B41E36FD2200477A9F /* ZXCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330B31E36FD2200477A9F /* ZXCircleView.swift */; };
+		9EF330B71E36FDE100477A9F /* ZXPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330B61E36FDE100477A9F /* ZXPageControl.swift */; };
+		9EF330B91E36FE3C00477A9F /* NSURL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330B81E36FE3C00477A9F /* NSURL+.swift */; };
+		9EF330BC1E36FF1D00477A9F /* ZXCuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330BB1E36FF1D00477A9F /* ZXCuteView.swift */; };
+		9EF330BE1E377DCB00477A9F /* UINavigationItem+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF330BD1E377DCB00477A9F /* UINavigationItem+.swift */; };
 		CE0B09721BDD264400D8F3AC /* CCSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B09711BDD264400D8F3AC /* CCSearchViewController.swift */; };
 		CE19A7D91C1EA73E00B4CB6A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92B71BE881210044F66C /* AdSupport.framework */; };
 		CE19A7DA1C1EA74600B4CB6A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE4F0741B79E2AB0071423A /* StoreKit.framework */; };
@@ -47,36 +60,8 @@
 		CE19A7DE1C1EA76400B4CB6A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92BE1BE881660044F66C /* AVFoundation.framework */; };
 		CE19A7DF1C1EA77D00B4CB6A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92C01BE881710044F66C /* MessageUI.framework */; };
 		CE19A7E01C1EA78500B4CB6A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4B92C21BE8817E0044F66C /* CoreLocation.framework */; };
-		CE19A83B1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A80C1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a */; };
-		CE19A83C1C1EB55E00B4CB6A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE19A80D1C1EB55E00B4CB6A /* README.md */; };
-		CE19A83D1C1EB55E00B4CB6A /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8111C1EB55E00B4CB6A /* UMSocialLocalizable.strings */; };
-		CE19A83E1C1EB55E00B4CB6A /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A81F1C1EB55E00B4CB6A /* libUMSocial_Sdk_4.2.3.a */; };
-		CE19A83F1C1EB55E00B4CB6A /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8211C1EB55E00B4CB6A /* UMSCommentDetailController.xib */; };
-		CE19A8401C1EB55E00B4CB6A /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8221C1EB55E00B4CB6A /* UMSCommentInputController.xib */; };
-		CE19A8411C1EB55E00B4CB6A /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8231C1EB55E00B4CB6A /* UMSCommentInputControlleriPad.xib */; };
-		CE19A8421C1EB55E00B4CB6A /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8241C1EB55E00B4CB6A /* UMShareEditViewController.xib */; };
-		CE19A8431C1EB55E00B4CB6A /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8251C1EB55E00B4CB6A /* UMShareEditViewControlleriPad.xib */; };
-		CE19A8441C1EB55E00B4CB6A /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8261C1EB55E00B4CB6A /* UMSLoginViewController.xib */; };
-		CE19A8451C1EB55E00B4CB6A /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8271C1EB55E00B4CB6A /* UMSnsAccountViewController.xib */; };
-		CE19A8461C1EB55E00B4CB6A /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8281C1EB55E00B4CB6A /* UMSShareListController.xib */; };
-		CE19A8471C1EB55E00B4CB6A /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8291C1EB55E00B4CB6A /* UMSocialSDKResourcesNew.bundle */; };
-		CE19A8481C1EB55E00B4CB6A /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A82D1C1EB55E00B4CB6A /* libSocialSina.a */; };
-		CE19A8491C1EB55E00B4CB6A /* ios-social-sdk-shake.html in Resources */ = {isa = PBXBuildFile; fileRef = CE19A8301C1EB55E00B4CB6A /* ios-social-sdk-shake.html */; };
-		CE19A84A1C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8311C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a */; };
-		CE19A84B1C1EB55E00B4CB6A /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8341C1EB55E00B4CB6A /* libSocialWechat.a */; };
-		CE19A84C1C1EB55E00B4CB6A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19A8351C1EB55E00B4CB6A /* libWeChatSDK.a */; };
-		CE27F5511C53E789005A5DDF /* miku-dancing.coding.io in Resources */ = {isa = PBXBuildFile; fileRef = CE27F5501C53E789005A5DDF /* miku-dancing.coding.io */; };
 		CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */; };
-		CE3FD60F1C46B6BD00FBEA19 /* CCAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; };
-		CE3FD6101C46BE2B00FBEA19 /* CCAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; };
-		CE3FD6111C46BE2B00FBEA19 /* CCAD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE4AB8C11BE11661009551C1 /* Changeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B31BE11661009551C1 /* Changeset.swift */; };
-		CE4AB8C21BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */; };
-		CE4AB8C31BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B61BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift */; };
-		CE4AB8C41BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B71BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift */; };
-		CE4AB8C51BE11661009551C1 /* RxTableViewSectionedAnimatedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B81BE11661009551C1 /* RxTableViewSectionedAnimatedDataSource.swift */; };
-		CE4AB8C61BE11661009551C1 /* RxTableViewSectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8B91BE11661009551C1 /* RxTableViewSectionedDataSource.swift */; };
-		CE4AB8C71BE11661009551C1 /* RxTableViewSectionedReloadDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8BA1BE11661009551C1 /* RxTableViewSectionedReloadDataSource.swift */; };
 		CE4AB8C81BE11661009551C1 /* Differentiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8BB1BE11661009551C1 /* Differentiator.swift */; };
 		CE4AB8C91BE11661009551C1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8BC1BE11661009551C1 /* README.md */; };
 		CE4AB8CA1BE11661009551C1 /* RxDataSourceStarterKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AB8BD1BE11661009551C1 /* RxDataSourceStarterKit.swift */; };
@@ -109,7 +94,6 @@
 		CE5380C41BF18F5900751F55 /* ccstyle.css in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AC1BF18F5900751F55 /* ccstyle.css */; };
 		CE5380C51BF18F5900751F55 /* jquery-1.6.4.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */; };
 		CE5380C61BF18F5900751F55 /* CCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */; };
-		CE68F2CE1C54072B00E0328D /* CCMikuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68F2CD1C54072B00E0328D /* CCMikuView.swift */; };
 		CEC9BAED1C46D13A00E5B949 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */; };
 		CEC9BAEF1C46D14000E5B949 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC9BAEE1C46D14000E5B949 /* EventKit.framework */; };
 		E3265D961BB4230700750716 /* CCRemoteNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */; };
@@ -124,7 +108,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CE3FD6111C46BE2B00FBEA19 /* CCAD.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,20 +115,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5A619E00D361396FDA3FC696 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		8F6C2095090AAFB7289671D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		30AB96711D154F2CD81B5D3F /* Pods-CocoaChinaPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaChinaPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaChinaPlus/Pods-CocoaChinaPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		75E63D8D397E5339C926ABFC /* Pods-CocoaChinaPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaChinaPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaChinaPlus/Pods-CocoaChinaPlus.release.xcconfig"; sourceTree = "<group>"; };
 		9E0EAB611BB08DFF00DFEF33 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		9E0EAB631BB08E0E00DFEF33 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		9E0EAB651BB08E2000DFEF33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9E0EAB671BB08E2E00DFEF33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E0EAB691BB08E3900DFEF33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E0EAB6B1BB08EF400DFEF33 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
+		9E18D1741E364D9700AB1DC2 /* ZXHighlightWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXHighlightWebView.swift; sourceTree = "<group>"; };
+		9E18D1761E364F4100AB1DC2 /* ZXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXNavigationController.swift; sourceTree = "<group>"; };
 		9E56F9191BB457B200F57CB0 /* CCAppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAppConfiguration.swift; sourceTree = "<group>"; };
 		9E61C3261BBB19B300C360E2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		9E61C3281BBB19F900C360E2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9E61C32F1BBC463800C360E2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9E61C3321BBD4BC900C360E2 /* CCProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCProfileViewController.swift; sourceTree = "<group>"; };
 		9E6B7DEC1B8E069400591846 /* AppDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDef.swift; sourceTree = "<group>"; };
+		9E991A221E385440000E221A /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		9E991A241E38865B000E221A /* highlight */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight; sourceTree = "<group>"; };
 		9EA065FB1BBEE2E500F8884C /* CCAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCAboutViewController.swift; sourceTree = "<group>"; };
 		9EA066251BC2B5FB00F8884C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9EE4EFFB1B79DEE80071423A /* CocoaChinaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaChinaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,54 +158,19 @@
 		9EE4F1171B7B93450071423A /* CCPBBSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPBBSParser.swift; sourceTree = "<group>"; };
 		9EF1CB971B91FE0000E8F243 /* CCPBBSEditionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPBBSEditionParser.swift; sourceTree = "<group>"; };
 		9EF1CB981B91FE0000E8F243 /* CCPBBSEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPBBSEditionViewController.swift; sourceTree = "<group>"; };
+		9EF330A71E36519400477A9F /* ZXPagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXPagingView.swift; sourceTree = "<group>"; };
+		9EF330AA1E365B0700477A9F /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		9EF330AD1E365C6300477A9F /* ZXOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXOptionView.swift; sourceTree = "<group>"; };
+		9EF330B01E36FD0000477A9F /* ZXGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXGuideViewController.swift; sourceTree = "<group>"; };
+		9EF330B31E36FD2200477A9F /* ZXCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXCircleView.swift; sourceTree = "<group>"; };
+		9EF330B61E36FDE100477A9F /* ZXPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXPageControl.swift; sourceTree = "<group>"; };
+		9EF330B81E36FE3C00477A9F /* NSURL+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+.swift"; sourceTree = "<group>"; };
+		9EF330BB1E36FF1D00477A9F /* ZXCuteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXCuteView.swift; sourceTree = "<group>"; };
+		9EF330BD1E377DCB00477A9F /* UINavigationItem+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+.swift"; sourceTree = "<group>"; };
 		A47496B69C33267C4F4BF8B3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0B09711BDD264400D8F3AC /* CCSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CCSearchViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		CE19A80B1C1EB55E00B4CB6A /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
-		CE19A80C1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.5.a"; sourceTree = "<group>"; };
-		CE19A80D1C1EB55E00B4CB6A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		CE19A8121C1EB55E00B4CB6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
-		CE19A8141C1EB55E00B4CB6A /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
-		CE19A8151C1EB55E00B4CB6A /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
-		CE19A8161C1EB55E00B4CB6A /* UMSocialBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialBar.h; sourceTree = "<group>"; };
-		CE19A8171C1EB55E00B4CB6A /* UMSocialConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialConfig.h; sourceTree = "<group>"; };
-		CE19A8181C1EB55E00B4CB6A /* UMSocialControllerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerService.h; sourceTree = "<group>"; };
-		CE19A8191C1EB55E00B4CB6A /* UMSocialControllerServiceComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerServiceComment.h; sourceTree = "<group>"; };
-		CE19A81A1C1EB55E00B4CB6A /* UMSocialData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialData.h; sourceTree = "<group>"; };
-		CE19A81B1C1EB55E00B4CB6A /* UMSocialDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialDataService.h; sourceTree = "<group>"; };
-		CE19A81C1C1EB55E00B4CB6A /* UMSocialSnsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsData.h; sourceTree = "<group>"; };
-		CE19A81D1C1EB55E00B4CB6A /* UMSocialSnsPlatformManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsPlatformManager.h; sourceTree = "<group>"; };
-		CE19A81E1C1EB55E00B4CB6A /* UMSocialSnsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsService.h; sourceTree = "<group>"; };
-		CE19A81F1C1EB55E00B4CB6A /* libUMSocial_Sdk_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_4.2.3.a; sourceTree = "<group>"; };
-		CE19A8211C1EB55E00B4CB6A /* UMSCommentDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentDetailController.xib; sourceTree = "<group>"; };
-		CE19A8221C1EB55E00B4CB6A /* UMSCommentInputController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputController.xib; sourceTree = "<group>"; };
-		CE19A8231C1EB55E00B4CB6A /* UMSCommentInputControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputControlleriPad.xib; sourceTree = "<group>"; };
-		CE19A8241C1EB55E00B4CB6A /* UMShareEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewController.xib; sourceTree = "<group>"; };
-		CE19A8251C1EB55E00B4CB6A /* UMShareEditViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewControlleriPad.xib; sourceTree = "<group>"; };
-		CE19A8261C1EB55E00B4CB6A /* UMSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSLoginViewController.xib; sourceTree = "<group>"; };
-		CE19A8271C1EB55E00B4CB6A /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
-		CE19A8281C1EB55E00B4CB6A /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
-		CE19A8291C1EB55E00B4CB6A /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
-		CE19A82A1C1EB55E00B4CB6A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
-		CE19A82D1C1EB55E00B4CB6A /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
-		CE19A82E1C1EB55E00B4CB6A /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
-		CE19A8301C1EB55E00B4CB6A /* ios-social-sdk-shake.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ios-social-sdk-shake.html"; sourceTree = "<group>"; };
-		CE19A8311C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_Shake_1.0.a; sourceTree = "<group>"; };
-		CE19A8321C1EB55E00B4CB6A /* UMSocialShakeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialShakeService.h; sourceTree = "<group>"; };
-		CE19A8341C1EB55E00B4CB6A /* libSocialWechat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWechat.a; sourceTree = "<group>"; };
-		CE19A8351C1EB55E00B4CB6A /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		CE19A8361C1EB55E00B4CB6A /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
-		CE19A8371C1EB55E00B4CB6A /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		CE19A8381C1EB55E00B4CB6A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		CE27F5501C53E789005A5DDF /* miku-dancing.coding.io */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "miku-dancing.coding.io"; path = "CocoaChinaPlus/miku-dancing.coding.io"; sourceTree = "<group>"; };
 		CE2FF12F1BE9EB58001396C8 /* CCPArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPArticleViewController.swift; sourceTree = "<group>"; };
-		CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CCAD.framework; sourceTree = "<group>"; };
 		CE4AB8B31BE11661009551C1 /* Changeset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Changeset.swift; sourceTree = "<group>"; };
-		CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCollectionViewSectionedAnimatedDataSource.swift; sourceTree = "<group>"; };
-		CE4AB8B61BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCollectionViewSectionedDataSource.swift; sourceTree = "<group>"; };
-		CE4AB8B71BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCollectionViewSectionedReloadDataSource.swift; sourceTree = "<group>"; };
-		CE4AB8B81BE11661009551C1 /* RxTableViewSectionedAnimatedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewSectionedAnimatedDataSource.swift; sourceTree = "<group>"; };
-		CE4AB8B91BE11661009551C1 /* RxTableViewSectionedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewSectionedDataSource.swift; sourceTree = "<group>"; };
-		CE4AB8BA1BE11661009551C1 /* RxTableViewSectionedReloadDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTableViewSectionedReloadDataSource.swift; sourceTree = "<group>"; };
 		CE4AB8BB1BE11661009551C1 /* Differentiator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Differentiator.swift; sourceTree = "<group>"; };
 		CE4AB8BC1BE11661009551C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE4AB8BD1BE11661009551C1 /* RxDataSourceStarterKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxDataSourceStarterKit.swift; sourceTree = "<group>"; };
@@ -256,7 +208,6 @@
 		CE5380AC1BF18F5900751F55 /* ccstyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ccstyle.css; sourceTree = "<group>"; };
 		CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.6.4.min.js"; sourceTree = "<group>"; };
 		CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCTableViewCell.swift; sourceTree = "<group>"; };
-		CE68F2CD1C54072B00E0328D /* CCMikuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCMikuView.swift; sourceTree = "<group>"; };
 		CEC9BAEC1C46D13A00E5B949 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		CEC9BAEE1C46D14000E5B949 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCRemoteNotificationHandler.swift; sourceTree = "<group>"; };
@@ -265,6 +216,7 @@
 		E39E279E1B9F619200665C3F /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		E39E27A01B9F61BD00665C3F /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		E39E27A21B9F61D600665C3F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F62B142ECF6987B06FCC097A /* Pods_CocoaChinaPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaChinaPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,49 +229,32 @@
 				CE19A7E01C1EA78500B4CB6A /* CoreLocation.framework in Frameworks */,
 				CE19A7DF1C1EA77D00B4CB6A /* MessageUI.framework in Frameworks */,
 				CE19A7DE1C1EA76400B4CB6A /* AVFoundation.framework in Frameworks */,
-				CE19A83B1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a in Frameworks */,
 				CE19A7DD1C1EA75D00B4CB6A /* MediaPlayer.framework in Frameworks */,
-				CE3FD60F1C46B6BD00FBEA19 /* CCAD.framework in Frameworks */,
 				CE19A7DC1C1EA75600B4CB6A /* CoreMotion.framework in Frameworks */,
 				CE19A7DB1C1EA74F00B4CB6A /* AudioToolbox.framework in Frameworks */,
 				CE19A7DA1C1EA74600B4CB6A /* StoreKit.framework in Frameworks */,
 				CE19A7D91C1EA73E00B4CB6A /* AdSupport.framework in Frameworks */,
 				CE4B92B61BE881110044F66C /* QuartzCore.framework in Frameworks */,
-				CE19A8481C1EB55E00B4CB6A /* libSocialSina.a in Frameworks */,
-				CE19A84A1C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */,
 				9EA066441BC3A08D00F8884C /* Social.framework in Frameworks */,
-				CE19A84C1C1EB55E00B4CB6A /* libWeChatSDK.a in Frameworks */,
 				9EA066431BC3A03800F8884C /* Accounts.framework in Frameworks */,
 				9E0EAB6A1BB08E3900DFEF33 /* UIKit.framework in Frameworks */,
 				9E0EAB681BB08E2E00DFEF33 /* Foundation.framework in Frameworks */,
 				9E0EAB661BB08E2000DFEF33 /* CoreGraphics.framework in Frameworks */,
 				9E0EAB641BB08E0E00DFEF33 /* CoreTelephony.framework in Frameworks */,
-				CE3FD6101C46BE2B00FBEA19 /* CCAD.framework in Frameworks */,
 				9E0EAB621BB08DFF00DFEF33 /* CoreFoundation.framework in Frameworks */,
 				E39E27A11B9F61BD00665C3F /* libstdc++.6.0.9.dylib in Frameworks */,
-				CE19A84B1C1EB55E00B4CB6A /* libSocialWechat.a in Frameworks */,
 				9EE4F0731B79E2A40071423A /* Security.framework in Frameworks */,
 				9EE4F0711B79E29B0071423A /* CFNetwork.framework in Frameworks */,
-				CE19A83E1C1EB55E00B4CB6A /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				9EE4F06F1B79E2920071423A /* SystemConfiguration.framework in Frameworks */,
 				9EE4F0691B79E2760071423A /* libz.1.dylib in Frameworks */,
 				9EE4F0671B79E2660071423A /* libsqlite3.dylib in Frameworks */,
-				98E2EB1574E5ABD141674664 /* Pods.framework in Frameworks */,
+				5909215C9A691525CC3483B4 /* Pods_CocoaChinaPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		68E123AA6D61955990423E7D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8F6C2095090AAFB7289671D8 /* Pods.debug.xcconfig */,
-				5A619E00D361396FDA3FC696 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9E61C3311BBD4BA300C360E2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,12 +267,11 @@
 		9EE4EFF21B79DEE80071423A = {
 			isa = PBXGroup;
 			children = (
-				CE27F5501C53E789005A5DDF /* miku-dancing.coding.io */,
 				CE50C4DB1C05E19E0062EBC2 /* R.generated.swift */,
 				9EE4EFFD1B79DEE80071423A /* CocoaChinaPlus */,
 				9EE4EFFC1B79DEE80071423A /* Products */,
-				68E123AA6D61955990423E7D /* Pods */,
 				EDD8214EC046EF89D8B5AB5D /* Frameworks */,
+				D8796B289132E0BDF27DC91D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -353,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				9EE4EFFE1B79DEE80071423A /* AppDelegate.swift */,
-				CE68F2CD1C54072B00E0328D /* CCMikuView.swift */,
 				9E56F9191BB457B200F57CB0 /* CCAppConfiguration.swift */,
 				E3265D951BB4230700750716 /* CCRemoteNotificationHandler.swift */,
 				9E6B7DEC1B8E069400591846 /* AppDef.swift */,
@@ -413,8 +346,6 @@
 		9EE4F03F1B79E1C80071423A /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				CE3FD60E1C46B6BD00FBEA19 /* CCAD.framework */,
-				CE19A7F91C1EB55D00B4CB6A /* vender-lib */,
 				CE4AB8B21BE11661009551C1 /* RxDataSourceStarterKit */,
 			);
 			path = Vender;
@@ -423,6 +354,7 @@
 		9EE4F1091B7B8F2C0071423A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9EF330AF1E36FD0000477A9F /* ZXGuideViewController */,
 				9EE4F10B1B7B8F2C0071423A /* CCPHomePage.swift */,
 				9EE4F10D1B7B8F2C0071423A /* CCPHomeViewController.swift */,
 				9EE4F10E1B7B8F2C0071423A /* CCPTableArray.swift */,
@@ -459,142 +391,70 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		9EF330A61E36519400477A9F /* ZXPagingView */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330A71E36519400477A9F /* ZXPagingView.swift */,
+			);
+			path = ZXPagingView;
+			sourceTree = "<group>";
+		};
+		9EF330A91E365AFF00477A9F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330AA1E365B0700477A9F /* String+.swift */,
+				9E991A221E385440000E221A /* UIImage+.swift */,
+				9EF330BD1E377DCB00477A9F /* UINavigationItem+.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9EF330AC1E365C6300477A9F /* ZXOptionView */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330AD1E365C6300477A9F /* ZXOptionView.swift */,
+			);
+			path = ZXOptionView;
+			sourceTree = "<group>";
+		};
+		9EF330AF1E36FD0000477A9F /* ZXGuideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330B01E36FD0000477A9F /* ZXGuideViewController.swift */,
+			);
+			path = ZXGuideViewController;
+			sourceTree = "<group>";
+		};
+		9EF330B21E36FD2200477A9F /* ZXCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330B31E36FD2200477A9F /* ZXCircleView.swift */,
+			);
+			path = ZXCircleView;
+			sourceTree = "<group>";
+		};
+		9EF330B51E36FDE100477A9F /* ZXPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330B61E36FDE100477A9F /* ZXPageControl.swift */,
+			);
+			path = ZXPageControl;
+			sourceTree = "<group>";
+		};
+		9EF330BA1E36FF1D00477A9F /* ZXCuteView */ = {
+			isa = PBXGroup;
+			children = (
+				9EF330BB1E36FF1D00477A9F /* ZXCuteView.swift */,
+			);
+			path = ZXCuteView;
+			sourceTree = "<group>";
+		};
 		CE0B09701BDD264400D8F3AC /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				CE0B09711BDD264400D8F3AC /* CCSearchViewController.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		CE19A7F91C1EB55D00B4CB6A /* vender-lib */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8091C1EB55E00B4CB6A /* JPush */,
-				CE19A80D1C1EB55E00B4CB6A /* README.md */,
-				CE19A80E1C1EB55E00B4CB6A /* UM */,
-			);
-			path = "vender-lib";
-			sourceTree = "<group>";
-		};
-		CE19A8091C1EB55E00B4CB6A /* JPush */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A80A1C1EB55E00B4CB6A /* lib */,
-			);
-			path = JPush;
-			sourceTree = "<group>";
-		};
-		CE19A80A1C1EB55E00B4CB6A /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A80B1C1EB55E00B4CB6A /* APService.h */,
-				CE19A80C1C1EB55E00B4CB6A /* libPushSDK-1.8.5.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		CE19A80E1C1EB55E00B4CB6A /* UM */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A80F1C1EB55E00B4CB6A /* UMSocial */,
-			);
-			path = UM;
-			sourceTree = "<group>";
-		};
-		CE19A80F1C1EB55E00B4CB6A /* UMSocial */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8101C1EB55E00B4CB6A /* UMSocial_Sdk_4.2.3 */,
-				CE19A82B1C1EB55E00B4CB6A /* UMSocial_Sdk_Extra_Frameworks */,
-			);
-			path = UMSocial;
-			sourceTree = "<group>";
-		};
-		CE19A8101C1EB55E00B4CB6A /* UMSocial_Sdk_4.2.3 */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8111C1EB55E00B4CB6A /* UMSocialLocalizable.strings */,
-				CE19A8131C1EB55E00B4CB6A /* Header */,
-				CE19A81F1C1EB55E00B4CB6A /* libUMSocial_Sdk_4.2.3.a */,
-				CE19A8201C1EB55E00B4CB6A /* SocialSDKXib */,
-				CE19A8291C1EB55E00B4CB6A /* UMSocialSDKResourcesNew.bundle */,
-			);
-			path = UMSocial_Sdk_4.2.3;
-			sourceTree = "<group>";
-		};
-		CE19A8131C1EB55E00B4CB6A /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8141C1EB55E00B4CB6A /* UMSocial.h */,
-				CE19A8151C1EB55E00B4CB6A /* UMSocialAccountManager.h */,
-				CE19A8161C1EB55E00B4CB6A /* UMSocialBar.h */,
-				CE19A8171C1EB55E00B4CB6A /* UMSocialConfig.h */,
-				CE19A8181C1EB55E00B4CB6A /* UMSocialControllerService.h */,
-				CE19A8191C1EB55E00B4CB6A /* UMSocialControllerServiceComment.h */,
-				CE19A81A1C1EB55E00B4CB6A /* UMSocialData.h */,
-				CE19A81B1C1EB55E00B4CB6A /* UMSocialDataService.h */,
-				CE19A81C1C1EB55E00B4CB6A /* UMSocialSnsData.h */,
-				CE19A81D1C1EB55E00B4CB6A /* UMSocialSnsPlatformManager.h */,
-				CE19A81E1C1EB55E00B4CB6A /* UMSocialSnsService.h */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		CE19A8201C1EB55E00B4CB6A /* SocialSDKXib */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8211C1EB55E00B4CB6A /* UMSCommentDetailController.xib */,
-				CE19A8221C1EB55E00B4CB6A /* UMSCommentInputController.xib */,
-				CE19A8231C1EB55E00B4CB6A /* UMSCommentInputControlleriPad.xib */,
-				CE19A8241C1EB55E00B4CB6A /* UMShareEditViewController.xib */,
-				CE19A8251C1EB55E00B4CB6A /* UMShareEditViewControlleriPad.xib */,
-				CE19A8261C1EB55E00B4CB6A /* UMSLoginViewController.xib */,
-				CE19A8271C1EB55E00B4CB6A /* UMSnsAccountViewController.xib */,
-				CE19A8281C1EB55E00B4CB6A /* UMSShareListController.xib */,
-			);
-			path = SocialSDKXib;
-			sourceTree = "<group>";
-		};
-		CE19A82B1C1EB55E00B4CB6A /* UMSocial_Sdk_Extra_Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A82C1C1EB55E00B4CB6A /* Sina */,
-				CE19A82F1C1EB55E00B4CB6A /* UMSocial_Shake_Sdk */,
-				CE19A8331C1EB55E00B4CB6A /* Wechat */,
-			);
-			path = UMSocial_Sdk_Extra_Frameworks;
-			sourceTree = "<group>";
-		};
-		CE19A82C1C1EB55E00B4CB6A /* Sina */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A82D1C1EB55E00B4CB6A /* libSocialSina.a */,
-				CE19A82E1C1EB55E00B4CB6A /* UMSocialSinaHandler.h */,
-			);
-			path = Sina;
-			sourceTree = "<group>";
-		};
-		CE19A82F1C1EB55E00B4CB6A /* UMSocial_Shake_Sdk */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8301C1EB55E00B4CB6A /* ios-social-sdk-shake.html */,
-				CE19A8311C1EB55E00B4CB6A /* libUMSocial_Sdk_Shake_1.0.a */,
-				CE19A8321C1EB55E00B4CB6A /* UMSocialShakeService.h */,
-			);
-			path = UMSocial_Shake_Sdk;
-			sourceTree = "<group>";
-		};
-		CE19A8331C1EB55E00B4CB6A /* Wechat */ = {
-			isa = PBXGroup;
-			children = (
-				CE19A8341C1EB55E00B4CB6A /* libSocialWechat.a */,
-				CE19A8351C1EB55E00B4CB6A /* libWeChatSDK.a */,
-				CE19A8361C1EB55E00B4CB6A /* UMSocialWechatHandler.h */,
-				CE19A8371C1EB55E00B4CB6A /* WXApi.h */,
-				CE19A8381C1EB55E00B4CB6A /* WXApiObject.h */,
-			);
-			path = Wechat;
 			sourceTree = "<group>";
 		};
 		CE2FF12E1BE9EB58001396C8 /* Article */ = {
@@ -609,7 +469,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4AB8B31BE11661009551C1 /* Changeset.swift */,
-				CE4AB8B41BE11661009551C1 /* DataSources */,
 				CE4AB8BB1BE11661009551C1 /* Differentiator.swift */,
 				CE4AB8BC1BE11661009551C1 /* README.md */,
 				CE4AB8BD1BE11661009551C1 /* RxDataSourceStarterKit.swift */,
@@ -618,19 +477,6 @@
 				CE4AB8C01BE11661009551C1 /* SectionModelType.swift */,
 			);
 			path = RxDataSourceStarterKit;
-			sourceTree = "<group>";
-		};
-		CE4AB8B41BE11661009551C1 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				CE4AB8B51BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift */,
-				CE4AB8B61BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift */,
-				CE4AB8B71BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift */,
-				CE4AB8B81BE11661009551C1 /* RxTableViewSectionedAnimatedDataSource.swift */,
-				CE4AB8B91BE11661009551C1 /* RxTableViewSectionedDataSource.swift */,
-				CE4AB8BA1BE11661009551C1 /* RxTableViewSectionedReloadDataSource.swift */,
-			);
-			path = DataSources;
 			sourceTree = "<group>";
 		};
 		CE5380871BF18E3C00751F55 /* Collection */ = {
@@ -660,6 +506,7 @@
 		CE53808D1BF18F5900751F55 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9EF330A91E365AFF00477A9F /* Base */,
 				CE53808E1BF18F5900751F55 /* CCSqlite */,
 				CE5380971BF18F5900751F55 /* CCURLHelper.swift */,
 				CE5380981BF18F5900751F55 /* HTMLModel */,
@@ -738,8 +585,10 @@
 			isa = PBXGroup;
 			children = (
 				CE5380A31BF18F5900751F55 /* NSDate+String.swift */,
+				9EF330B81E36FE3C00477A9F /* NSURL+.swift */,
 				CE5380A41BF18F5900751F55 /* ZXBaseViewController.swift */,
 				CE5380A51BF18F5900751F55 /* ZXURLNavigator.swift */,
+				9E18D1761E364F4100AB1DC2 /* ZXNavigationController.swift */,
 			);
 			path = ZXURLNavigator;
 			sourceTree = "<group>";
@@ -747,6 +596,11 @@
 		CE5380A61BF18F5900751F55 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EF330BA1E36FF1D00477A9F /* ZXCuteView */,
+				9EF330B51E36FDE100477A9F /* ZXPageControl */,
+				9EF330B21E36FD2200477A9F /* ZXCircleView */,
+				9EF330AC1E365C6300477A9F /* ZXOptionView */,
+				9EF330A61E36519400477A9F /* ZXPagingView */,
 				CE5380A71BF18F5900751F55 /* CCArticleTableView */,
 				CE5380AA1BF18F5900751F55 /* CCocoaChinaWebView */,
 				CE5380AE1BF18F5900751F55 /* CCTableViewCell */,
@@ -766,7 +620,9 @@
 		CE5380AA1BF18F5900751F55 /* CCocoaChinaWebView */ = {
 			isa = PBXGroup;
 			children = (
+				9E991A241E38865B000E221A /* highlight */,
 				CE5380AB1BF18F5900751F55 /* CCCocoaChinaWebView.swift */,
+				9E18D1741E364D9700AB1DC2 /* ZXHighlightWebView.swift */,
 				CE5380AC1BF18F5900751F55 /* ccstyle.css */,
 				CE5380AD1BF18F5900751F55 /* jquery-1.6.4.min.js */,
 			);
@@ -779,6 +635,15 @@
 				CE5380AF1BF18F5900751F55 /* CCTableViewCell.swift */,
 			);
 			path = CCTableViewCell;
+			sourceTree = "<group>";
+		};
+		D8796B289132E0BDF27DC91D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30AB96711D154F2CD81B5D3F /* Pods-CocoaChinaPlus.debug.xcconfig */,
+				75E63D8D397E5339C926ABFC /* Pods-CocoaChinaPlus.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		E36A54CC1BBBAC4800AF5CFB /* Chat */ = {
@@ -821,6 +686,7 @@
 				9EE4F0681B79E2760071423A /* libz.1.dylib */,
 				9EE4F0661B79E2660071423A /* libsqlite3.dylib */,
 				A47496B69C33267C4F4BF8B3 /* Pods.framework */,
+				F62B142ECF6987B06FCC097A /* Pods_CocoaChinaPlus.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -832,14 +698,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EE4F00D1B79DEE80071423A /* Build configuration list for PBXNativeTarget "CocoaChinaPlus" */;
 			buildPhases = (
-				A01A8D940BA27A2404B04552 /* Check Pods Manifest.lock */,
+				3F271B43C0444D2D02805480 /* [CP] Check Pods Manifest.lock */,
 				9EE4EFF71B79DEE80071423A /* Sources */,
 				9EE4EFF81B79DEE80071423A /* Frameworks */,
 				9EE4EFF91B79DEE80071423A /* Resources */,
-				FCCDDA200306DF9A0ACC7BC4 /* Embed Pods Frameworks */,
-				E37CFCEFF49CAC392757178C /* Copy Pods Resources */,
 				CE50C4DA1C05E0170062EBC2 /* ShellScript */,
 				CE3FD6121C46BE2B00FBEA19 /* Embed Frameworks */,
+				ECBCCCFD30C97918106DF865 /* [CP] Embed Pods Frameworks */,
+				D8872114658EF3E084575357 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -863,6 +729,7 @@
 					9EE4EFFA1B79DEE80071423A = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = L35WZWVC98;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -890,43 +757,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE19A83F1C1EB55E00B4CB6A /* UMSCommentDetailController.xib in Resources */,
 				9EE4F0091B79DEE80071423A /* LaunchScreen.storyboard in Resources */,
+				9E991A251E38865B000E221A /* highlight in Resources */,
 				9EE4F0061B79DEE80071423A /* Assets.xcassets in Resources */,
-				CE19A8461C1EB55E00B4CB6A /* UMSShareListController.xib in Resources */,
-				CE19A83D1C1EB55E00B4CB6A /* UMSocialLocalizable.strings in Resources */,
-				CE19A8431C1EB55E00B4CB6A /* UMShareEditViewControlleriPad.xib in Resources */,
 				CE5380C51BF18F5900751F55 /* jquery-1.6.4.min.js in Resources */,
 				9E0EAB6C1BB08EF400DFEF33 /* PushConfig.plist in Resources */,
 				9E61C3301BBC463800C360E2 /* Localizable.strings in Resources */,
-				CE19A8491C1EB55E00B4CB6A /* ios-social-sdk-shake.html in Resources */,
-				CE19A8421C1EB55E00B4CB6A /* UMShareEditViewController.xib in Resources */,
-				CE19A8451C1EB55E00B4CB6A /* UMSnsAccountViewController.xib in Resources */,
-				CE19A8401C1EB55E00B4CB6A /* UMSCommentInputController.xib in Resources */,
 				CE5380C41BF18F5900751F55 /* ccstyle.css in Resources */,
-				CE19A8441C1EB55E00B4CB6A /* UMSLoginViewController.xib in Resources */,
-				CE27F5511C53E789005A5DDF /* miku-dancing.coding.io in Resources */,
-				CE19A8471C1EB55E00B4CB6A /* UMSocialSDKResourcesNew.bundle in Resources */,
-				CE19A8411C1EB55E00B4CB6A /* UMSCommentInputControlleriPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A01A8D940BA27A2404B04552 /* Check Pods Manifest.lock */ = {
+		3F271B43C0444D2D02805480 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CE50C4DA1C05E0170062EBC2 /* ShellScript */ = {
@@ -942,34 +798,34 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
 		};
-		E37CFCEFF49CAC392757178C /* Copy Pods Resources */ = {
+		D8872114658EF3E084575357 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaChinaPlus/Pods-CocoaChinaPlus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FCCDDA200306DF9A0ACC7BC4 /* Embed Pods Frameworks */ = {
+		ECBCCCFD30C97918106DF865 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaChinaPlus/Pods-CocoaChinaPlus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -982,6 +838,7 @@
 				CE5380C01BF18F5900751F55 /* ZXURLNavigator.swift in Sources */,
 				9EE4F0631B79E1C80071423A /* Note.markdown in Sources */,
 				CE5380BB1BF18F5900751F55 /* CCHTMLParser+SearchPage.swift in Sources */,
+				9E18D1771E364F4100AB1DC2 /* ZXNavigationController.swift in Sources */,
 				9EF1CB991B91FE0000E8F243 /* CCPBBSEditionParser.swift in Sources */,
 				CE4AB8C91BE11661009551C1 /* README.md in Sources */,
 				CE5380891BF18E3C00751F55 /* CCCollectionViewController.swift in Sources */,
@@ -999,18 +856,17 @@
 				CE5380B11BF18F5900751F55 /* CCDataBase.swift in Sources */,
 				9EF1CB9A1B91FE0000E8F243 /* CCPBBSEditionViewController.swift in Sources */,
 				CE5380B81BF18F5900751F55 /* CCArticleModel.swift in Sources */,
+				9EF330AB1E365B0700477A9F /* String+.swift in Sources */,
 				CE5380BA1BF18F5900751F55 /* CCHTMLParser+OptionPage.swift in Sources */,
 				CE4AB8C11BE11661009551C1 /* Changeset.swift in Sources */,
 				CE5380B61BF18F5900751F55 /* CCURLHelper.swift in Sources */,
-				CE4AB8C71BE11661009551C1 /* RxTableViewSectionedReloadDataSource.swift in Sources */,
 				CE4AB8CC1BE11661009551C1 /* SectionModel.swift in Sources */,
 				9EA065FC1BBEE2E500F8884C /* CCAboutViewController.swift in Sources */,
 				CE5380B41BF18F5900751F55 /* CCArticleCache.swift in Sources */,
+				9EF330B91E36FE3C00477A9F /* NSURL+.swift in Sources */,
+				9EF330B71E36FDE100477A9F /* ZXPageControl.swift in Sources */,
 				CE5380C61BF18F5900751F55 /* CCTableViewCell.swift in Sources */,
-				CE4AB8C21BE11661009551C1 /* RxCollectionViewSectionedAnimatedDataSource.swift in Sources */,
 				CE5380B21BF18F5900751F55 /* CCArticleDAO.swift in Sources */,
-				CE4AB8C31BE11661009551C1 /* RxCollectionViewSectionedDataSource.swift in Sources */,
-				CE4AB8C41BE11661009551C1 /* RxCollectionViewSectionedReloadDataSource.swift in Sources */,
 				CE5380B51BF18F5900751F55 /* CCArticleService.swift in Sources */,
 				9E6B7DED1B8E069400591846 /* AppDef.swift in Sources */,
 				CE2FF1301BE9EB58001396C8 /* CCPArticleViewController.swift in Sources */,
@@ -1019,20 +875,24 @@
 				CE5380C11BF18F5900751F55 /* CCArticleTableView.swift in Sources */,
 				9EE4F1121B7B8F2C0071423A /* CCPHomeViewController.swift in Sources */,
 				9EE4EFFF1B79DEE80071423A /* AppDelegate.swift in Sources */,
-				CE19A83C1C1EB55E00B4CB6A /* README.md in Sources */,
 				9EE4F1101B7B8F2C0071423A /* CCPHomePage.swift in Sources */,
+				9EF330BE1E377DCB00477A9F /* UINavigationItem+.swift in Sources */,
+				9EF330B11E36FD0000477A9F /* ZXGuideViewController.swift in Sources */,
+				9EF330BC1E36FF1D00477A9F /* ZXCuteView.swift in Sources */,
 				CE50C4DC1C05E19E0062EBC2 /* R.generated.swift in Sources */,
+				9EF330AE1E365C6300477A9F /* ZXOptionView.swift in Sources */,
+				9EF330A81E36519400477A9F /* ZXPagingView.swift in Sources */,
+				9EF330B41E36FD2200477A9F /* ZXCircleView.swift in Sources */,
 				CE4AB8CB1BE11661009551C1 /* SectionedViewType.swift in Sources */,
-				CE4AB8C61BE11661009551C1 /* RxTableViewSectionedDataSource.swift in Sources */,
 				CE4AB8CD1BE11661009551C1 /* SectionModelType.swift in Sources */,
+				9E18D1751E364D9700AB1DC2 /* ZXHighlightWebView.swift in Sources */,
 				CE5380C21BF18F5900751F55 /* CCArticleTableViewCell.swift in Sources */,
 				CE0B09721BDD264400D8F3AC /* CCSearchViewController.swift in Sources */,
 				CE5380BE1BF18F5900751F55 /* NSDate+String.swift in Sources */,
+				9E991A231E385440000E221A /* UIImage+.swift in Sources */,
 				CE5380B01BF18F5900751F55 /* CCArticleTableViewController.swift in Sources */,
-				CE68F2CE1C54072B00E0328D /* CCMikuView.swift in Sources */,
 				9E61C3331BBD4BC900C360E2 /* CCProfileViewController.swift in Sources */,
 				E3265D961BB4230700750716 /* CCRemoteNotificationHandler.swift in Sources */,
-				CE4AB8C51BE11661009551C1 /* RxTableViewSectionedAnimatedDataSource.swift in Sources */,
 				CE5380B71BF18F5900751F55 /* CCHTMLModelHandler.swift in Sources */,
 				CE5380BD1BF18F5900751F55 /* VenderExt.swift in Sources */,
 			);
@@ -1047,15 +907,6 @@
 				9EE4F0081B79DEE80071423A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		CE19A8111C1EB55E00B4CB6A /* UMSocialLocalizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE19A8121C1EB55E00B4CB6A /* en */,
-				CE19A82A1C1EB55E00B4CB6A /* zh-Hans */,
-			);
-			name = UMSocialLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1099,13 +950,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
@@ -1142,11 +994,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -1154,7 +1007,7 @@
 		};
 		9EE4F00E1B79DEE80071423A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F6C2095090AAFB7289671D8 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 30AB96711D154F2CD81B5D3F /* Pods-CocoaChinaPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1180,7 +1033,7 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender",
 				);
 				INFOPLIST_FILE = CocoaChinaPlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1218,18 +1071,20 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/vender-lib/UM/UMSocial/UMSocial_Sdk_Extra_Frameworks/UMSocial_Shake_Sdk",
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender/vender-lib/UM/UMSocial/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zixun.myhelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CocoaChinaPlus/CocoaChinaPlus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
 		9EE4F00F1B79DEE80071423A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A619E00D361396FDA3FC696 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 75E63D8D397E5339C926ABFC /* Pods-CocoaChinaPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
@@ -1254,7 +1109,7 @@
 					"$(PROJECT_DIR)/CocoaChinaPlus/Application/Vender",
 				);
 				INFOPLIST_FILE = CocoaChinaPlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1296,6 +1151,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CocoaChinaPlus/CocoaChinaPlus-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;

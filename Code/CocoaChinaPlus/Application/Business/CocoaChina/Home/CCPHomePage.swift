@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import ZXKit
 
 // MARK: CCPHomePage
 class CCPHomePage: ZXPage {
 
-    private weak var internalDisplayView: UIView?
+    fileprivate weak var internalDisplayView: UIView?
     
-    func setDisplayView(view: UIView?) {
+    func setDisplayView(_ view: UIView?) {
         
         //清除原先的 internalDisplayView
         if let displayView = self.internalDisplayView {

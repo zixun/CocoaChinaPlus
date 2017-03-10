@@ -8,15 +8,12 @@
 //友盟统计
 #import "MobClick.h"
 
-//友盟分享
-#import "UMSocial.h"
-#import "UMSocialWechatHandler.h"
-#import "UMSocialSinaHandler.h"
+
+#import <UMSocialCore/UMSocialCore.h>
+
+#import <UShareUI/UShareUI.h>
 
 //极光推送
-#import "APService.h"
-
-#import <CCAD/CCADBanner.h>
-#import <CCAD/CCADInterstitialService.h>
+//#import "APService.h"
 
 #endif

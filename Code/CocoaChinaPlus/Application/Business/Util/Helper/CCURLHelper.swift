@@ -10,23 +10,23 @@ import Foundation
 
 class CCURLHelper: NSObject {
     
-    class func generateIdentity(url: String) -> String {
-        let target = url.lowercaseString;
+    class func generateIdentity(_ url: String) -> String {
+        let target = url.lowercased();
         
-        if (target.rangeOfString("wap") != nil) {
+        if (target.range(of: "wap") != nil) {
             //wap
-            return url.componentsSeparatedByString("=").last!
+            return url.components(separatedBy: "=").last!
         }else {
             //pc
-            return url.componentsSeparatedByString("/").last!.componentsSeparatedByString(".").first!
+            return url.components(separatedBy: "/").last!.components(separatedBy: ".").first!
         }
     }
     
-    class func generateWapURL(identity:String) -> String {
+    class func generateWapURL(_ identity:String) -> String {
         return "http://www.cocoachina.com/cms/wap.php?action=article&id=\(identity)"
     }
     
-    class func generateWapURLFromURL(url:String) -> String {
+    class func generateWapURLFromURL(_ url:String) -> String {
         let identity = self.generateIdentity(url)
         return self.generateWapURL(identity)
     }
